@@ -41,6 +41,15 @@
     }
   },
   "files": {
-    "ignore": [".next", "node_modules", "out", "dist", ".vercel", "public", "*.config.mjs"]
+    "ignore": [
+      ".next",
+      "node_modules",
+      "out",
+      "dist",
+      ".vercel",
+      "public",
+      "*.config.mjs",
+      "next-env.d.ts"
+    ]
   }
 }
