@@ -10,10 +10,12 @@
 | 英語表記 | sokoe Inc. |
 | 設立 | 2026年5月1日 |
 | 代表者 | 槌田 一輝（つちだ かずき）、代表取締役 |
-| 所在地 | 兵庫県川西市 |
+| 本社所在地 | 大阪府大阪市淀川区新高3丁目7番17-603号 |
+| 関連施設 | レッツ倶楽部川西能勢口（兵庫県川西市）── 代表が施設長代理を兼任、sokoe Day の自社運用施設 |
 | 事業内容 | ヘルスケア領域のソフトウェア開発・AI コンサルティング |
 | 事業領域 | 介護、薬局、医療 |
 | URL | https://sokoe.co.jp/ |
+| X | https://x.com/sokoe_official |
 
 ## 2. 代表プロフィール
 
@@ -203,11 +205,10 @@ sokoe AI Lab は、介護・薬局・医療の現場で AI を毎日使ってい
 
 ## 9. SNS・外部リンク
 
-（公開後に追記）
-
-- Twitter / X
-- LinkedIn
-- note
+- X: https://x.com/sokoe_official
+- note: https://note.com/sokoe_official
+- LinkedIn（代表 槌田一輝）: https://www.linkedin.com/in/kazuki-tsuchida/
+- LinkedIn 会社ページ: （開設準備中）
 
 ## 10. お問い合わせ
 

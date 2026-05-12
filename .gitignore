@@ -45,3 +45,11 @@ next-env.d.ts
 # Sitemap (auto-generated)
 /public/sitemap*.xml
 /public/robots.txt
+
+# Local-only tooling and artifacts
+/screenshots/
+/scripts/
+
+# Step planning docs (delivered alongside zips, not part of codebase)
+/sokoe_*.md
+/sokoe-web-*.zip

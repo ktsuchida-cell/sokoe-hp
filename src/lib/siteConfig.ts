@@ -14,7 +14,8 @@ export const siteConfig = {
   // 連絡先
   contact: {
     email: 'info@sokoe.co.jp',
-    address: '兵庫県川西市',
+    address: '大阪府大阪市淀川区新高3丁目7番17-603号',
+    addressShort: '大阪府大阪市淀川区',
   },
 
   // 会社情報
@@ -23,13 +24,21 @@ export const siteConfig = {
     foundedDate: '2026-05-01',
     representative: '槌田 一輝',
     representativeRole: '代表取締役',
+    headquartersAddress: '大阪府大阪市淀川区新高3丁目7番17-603号',
+  },
+
+  // 関連施設（代表が施設長代理を兼任、自社運用の根拠）
+  affiliatedFacility: {
+    name: 'レッツ倶楽部川西能勢口',
+    address: '兵庫県川西市',
+    relationship: '代表取締役が施設長代理を兼任。sokoe Dayの自社運用施設。',
   },
 
   // ソーシャル（取得後に追記）
   social: {
-    twitter: '',
-    linkedin: '',
-    note: '',
+    twitter: 'https://x.com/sokoe_official',
+    linkedin: 'https://www.linkedin.com/in/kazuki-tsuchida/',
+    note: 'https://note.com/sokoe_official',
   },
 
   // 事業
