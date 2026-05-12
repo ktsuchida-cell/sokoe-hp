@@ -26,7 +26,7 @@ export function DayFAQ() {
   const accordionItems = dayFaqsForSchema.map((faq, i) => ({
     id: `day-faq-${i + 1}`,
     question: faq.question,
-    answer: <p>{faq.answer}</p>,
+    answer: <p className="whitespace-pre-line">{faq.answer}</p>,
   }));
 
   return (

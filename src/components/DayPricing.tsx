@@ -138,7 +138,7 @@ export function DayPricing() {
 
               <Link href="/day-service/document/" className="block">
                 <Button variant={plan.isRecommended ? 'product' : 'secondary'} size="md" fullWidth>
-                  資料請求
+                  資料をダウンロード（無料）
                 </Button>
               </Link>
             </article>

@@ -53,7 +53,7 @@ export function DayHero() {
               </Link>
               <Link href="/day-service/demo/">
                 <Button variant="secondary" size="lg">
-                  デモを見る
+                  デモを予約
                 </Button>
               </Link>
             </div>

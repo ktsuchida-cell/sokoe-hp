@@ -62,7 +62,7 @@ export function DayPain() {
           <p className="text-stone text-base md:text-lg leading-[1.85]">
             介護現場で、毎日積み上がる「本来の仕事ではないこと」。
             <br className="hidden md:block" />
-            私たち自身が、施設運営者として直面してきた課題です。
+            介護施設を運営する会社として、私たち自身が直面してきた課題です。
           </p>
         </div>
 

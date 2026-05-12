@@ -10,7 +10,7 @@ const useCases = [
   {
     metric: '30分 → 数分',
     label: 'ケアプラン転記時間',
-    description: 'OCR + Claude API で計画書を自動生成',
+    description: 'OCR ＋ 生成 AI で計画書を自動生成',
   },
   {
     metric: '1時間 → 10分',
