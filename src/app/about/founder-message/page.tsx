@@ -10,7 +10,7 @@ import { ProseSection } from '@/components/ProseSection';
 import { Section } from '@/components/Section';
 import { SignatureBlock } from '@/components/SignatureBlock';
 import { founderMessage } from '@/lib/content/founder-message';
-import { createArticleSchema, createBreadcrumbSchema } from '@/lib/schemas';
+import { createArticleSchema } from '@/lib/schemas';
 import { siteConfig } from '@/lib/siteConfig';
 import type { Metadata } from 'next';
 import Link from 'next/link';
@@ -54,14 +54,6 @@ export default function FounderMessagePage() {
           wordCount: founderMessage.estimatedWordCount,
         })}
       />
-      <JsonLd
-        data={createBreadcrumbSchema([
-          { name: 'ホーム', url: '/' },
-          { name: '会社情報', url: '/about/' },
-          { name: '代表メッセージ', url: '/about/founder-message/' },
-        ])}
-      />
-
       <Header />
       <main>
         <Breadcrumb items={breadcrumbItems} />

@@ -8,7 +8,7 @@ import { JsonLd } from '@/components/JsonLd';
 import { PageHero } from '@/components/PageHero';
 import { ProseSection } from '@/components/ProseSection';
 import { Section } from '@/components/Section';
-import { createBreadcrumbSchema, createWebPageSchema } from '@/lib/schemas';
+import { createWebPageSchema } from '@/lib/schemas';
 import { siteConfig } from '@/lib/siteConfig';
 import type { Metadata } from 'next';
 import Link from 'next/link';
@@ -50,14 +50,6 @@ export default function EditorialPolicyPage() {
           reviewedBy: 'self',
         })}
       />
-      <JsonLd
-        data={createBreadcrumbSchema([
-          { name: 'ホーム', url: '/' },
-          { name: '会社情報', url: '/about/' },
-          { name: '編集ポリシー', url: '/about/editorial-policy/' },
-        ])}
-      />
-
       <Header />
       <main>
         <Breadcrumb items={breadcrumbItems} />

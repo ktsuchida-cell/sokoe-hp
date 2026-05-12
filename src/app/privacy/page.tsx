@@ -8,7 +8,7 @@ import { LegalLastCTA } from '@/components/LegalLastCTA';
 import { PageHero } from '@/components/PageHero';
 import { Section } from '@/components/Section';
 import { privacyArticles, privacyMeta } from '@/lib/content/privacy';
-import { createBreadcrumbSchema, createWebPageSchema } from '@/lib/schemas';
+import { createWebPageSchema } from '@/lib/schemas';
 import { siteConfig } from '@/lib/siteConfig';
 import type { Metadata } from 'next';
 
@@ -43,13 +43,6 @@ export default function PrivacyPage() {
           dateModified: privacyMeta.updatedAt,
         })}
       />
-      <JsonLd
-        data={createBreadcrumbSchema([
-          { name: 'ホーム', url: '/' },
-          { name: 'プライバシーポリシー', url: '/privacy/' },
-        ])}
-      />
-
       <Header />
       <main>
         <Breadcrumb items={[{ label: 'プライバシーポリシー' }]} />

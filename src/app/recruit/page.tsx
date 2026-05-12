@@ -11,7 +11,7 @@ import { Label } from '@/components/Label';
 import { PageHero } from '@/components/PageHero';
 import { Section } from '@/components/Section';
 import { hiringProcess, positions, recruitMeta, values, workStyles } from '@/lib/content/recruit';
-import { createBreadcrumbSchema, createWebPageSchema } from '@/lib/schemas';
+import { createWebPageSchema } from '@/lib/schemas';
 import { siteConfig } from '@/lib/siteConfig';
 import type { Metadata } from 'next';
 import Link from 'next/link';
@@ -47,13 +47,6 @@ export default function RecruitPage() {
           dateModified: recruitMeta.updatedAt,
         })}
       />
-      <JsonLd
-        data={createBreadcrumbSchema([
-          { name: 'ホーム', url: '/' },
-          { name: '採用情報', url: '/recruit/' },
-        ])}
-      />
-
       <Header />
       <main>
         <Breadcrumb items={[{ label: '採用情報' }]} />

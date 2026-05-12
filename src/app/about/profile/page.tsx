@@ -10,7 +10,7 @@ import { PageHero } from '@/components/PageHero';
 import { ProseSection } from '@/components/ProseSection';
 import { Section } from '@/components/Section';
 import { Timeline, type TimelineItem } from '@/components/Timeline';
-import { createBreadcrumbSchema, personSchemaDetailed, profilePageSchema } from '@/lib/schemas';
+import { personSchemaDetailed, profilePageSchema } from '@/lib/schemas';
 import { siteConfig } from '@/lib/siteConfig';
 import type { Metadata } from 'next';
 import Link from 'next/link';
@@ -138,14 +138,6 @@ export default function ProfilePage() {
     <>
       <JsonLd data={personSchemaDetailed} />
       <JsonLd data={profilePageSchema} />
-      <JsonLd
-        data={createBreadcrumbSchema([
-          { name: 'ホーム', url: '/' },
-          { name: '会社情報', url: '/about/' },
-          { name: '代表プロフィール', url: '/about/profile/' },
-        ])}
-      />
-
       <Header />
       <main>
         <Breadcrumb items={breadcrumbItems} />

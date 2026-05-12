@@ -5,7 +5,7 @@ import { Header } from '@/components/Header';
 import { JsonLd } from '@/components/JsonLd';
 import { PageHero } from '@/components/PageHero';
 import { Section } from '@/components/Section';
-import { createBreadcrumbSchema, createWebPageSchema } from '@/lib/schemas';
+import { createWebPageSchema } from '@/lib/schemas';
 import { siteConfig } from '@/lib/siteConfig';
 import type { Metadata } from 'next';
 
@@ -42,13 +42,6 @@ export default function ContactPage() {
           dateModified: '2026-05-12',
         })}
       />
-      <JsonLd
-        data={createBreadcrumbSchema([
-          { name: 'ホーム', url: '/' },
-          { name: 'お問い合わせ', url: '/contact/' },
-        ])}
-      />
-
       <Header />
       <main>
         <Breadcrumb items={[{ label: 'お問い合わせ' }]} />

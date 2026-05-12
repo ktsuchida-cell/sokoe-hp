@@ -66,28 +66,32 @@ module.exports = {
 // ────────────────────────────────────────
 
 function getPriorityAndFreq(path) {
+  // next-sitemap は trailingSlash: true でも transform に渡す path は trailing slash なしで来る。
+  // 例：'/about' / '/day-service' / '/'。ルート '/' のみ例外として残し、それ以外は末尾スラッシュを除去。
+  const p = path === '/' ? '/' : path.replace(/\/+$/, '');
+
   // トップページは最高優先度
-  if (path === '/') {
+  if (p === '/') {
     return { priority: 1.0, changefreq: 'weekly' };
   }
 
   // 主要 LP（プロダクト・サービス）
-  if (path === '/day-service/' || path === '/consulting/') {
+  if (p === '/day-service' || p === '/consulting') {
     return { priority: 0.9, changefreq: 'weekly' };
   }
 
   // 会社情報・代表系
-  if (path.startsWith('/about/')) {
+  if (p === '/about' || p.startsWith('/about/')) {
     return { priority: 0.8, changefreq: 'monthly' };
   }
 
   // 採用・問い合わせ
-  if (path === '/recruit/' || path === '/contact/') {
+  if (p === '/recruit' || p === '/contact') {
     return { priority: 0.7, changefreq: 'monthly' };
   }
 
   // 規約系（更新頻度低）
-  if (path === '/privacy/' || path === '/terms/' || path === '/legal/' || path === '/disclaimer/') {
+  if (p === '/privacy' || p === '/terms' || p === '/legal' || p === '/disclaimer') {
     return { priority: 0.4, changefreq: 'yearly' };
   }
 

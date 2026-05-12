@@ -8,7 +8,7 @@ import { LegalLastCTA } from '@/components/LegalLastCTA';
 import { PageHero } from '@/components/PageHero';
 import { Section } from '@/components/Section';
 import { type LegalDataRow, legalDataRows, legalMeta } from '@/lib/content/legal';
-import { createBreadcrumbSchema, createWebPageSchema } from '@/lib/schemas';
+import { createWebPageSchema } from '@/lib/schemas';
 import { siteConfig } from '@/lib/siteConfig';
 import type { Metadata } from 'next';
 
@@ -65,13 +65,6 @@ export default function LegalPage() {
           dateModified: legalMeta.updatedAt,
         })}
       />
-      <JsonLd
-        data={createBreadcrumbSchema([
-          { name: 'ホーム', url: '/' },
-          { name: '特定商取引法に基づく表記', url: '/legal/' },
-        ])}
-      />
-
       <Header />
       <main>
         <Breadcrumb items={[{ label: '特定商取引法に基づく表記' }]} />

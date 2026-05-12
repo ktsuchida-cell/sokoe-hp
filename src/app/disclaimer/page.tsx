@@ -8,7 +8,7 @@ import { LegalLastCTA } from '@/components/LegalLastCTA';
 import { PageHero } from '@/components/PageHero';
 import { Section } from '@/components/Section';
 import { disclaimerArticles, disclaimerMeta } from '@/lib/content/disclaimer';
-import { createBreadcrumbSchema, createWebPageSchema } from '@/lib/schemas';
+import { createWebPageSchema } from '@/lib/schemas';
 import { siteConfig } from '@/lib/siteConfig';
 import type { Metadata } from 'next';
 
@@ -43,13 +43,6 @@ export default function DisclaimerPage() {
           dateModified: disclaimerMeta.updatedAt,
         })}
       />
-      <JsonLd
-        data={createBreadcrumbSchema([
-          { name: 'ホーム', url: '/' },
-          { name: '免責事項', url: '/disclaimer/' },
-        ])}
-      />
-
       <Header />
       <main>
         <Breadcrumb items={[{ label: '免責事項' }]} />

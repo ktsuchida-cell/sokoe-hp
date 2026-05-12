@@ -8,7 +8,7 @@ import { LegalLastCTA } from '@/components/LegalLastCTA';
 import { PageHero } from '@/components/PageHero';
 import { Section } from '@/components/Section';
 import { termsArticles, termsMeta } from '@/lib/content/terms';
-import { createBreadcrumbSchema, createWebPageSchema } from '@/lib/schemas';
+import { createWebPageSchema } from '@/lib/schemas';
 import { siteConfig } from '@/lib/siteConfig';
 import type { Metadata } from 'next';
 
@@ -43,13 +43,6 @@ export default function TermsPage() {
           dateModified: termsMeta.updatedAt,
         })}
       />
-      <JsonLd
-        data={createBreadcrumbSchema([
-          { name: 'ホーム', url: '/' },
-          { name: '利用規約', url: '/terms/' },
-        ])}
-      />
-
       <Header />
       <main>
         <Breadcrumb items={[{ label: '利用規約' }]} />

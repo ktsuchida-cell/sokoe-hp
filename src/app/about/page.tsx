@@ -13,7 +13,6 @@ import { ProseSection } from '@/components/ProseSection';
 import { Section } from '@/components/Section';
 import { Timeline, type TimelineItem } from '@/components/Timeline';
 import {
-  createBreadcrumbSchema,
   createWebPageSchema,
   localBusinessLetsKawanishi,
   organizationSchema,
@@ -150,12 +149,6 @@ export default function AboutPage() {
     <>
       <JsonLd data={organizationSchema} />
       <JsonLd data={localBusinessLetsKawanishi} />
-      <JsonLd
-        data={createBreadcrumbSchema([
-          { name: 'ホーム', url: '/' },
-          { name: '会社情報', url: '/about/' },
-        ])}
-      />
       <JsonLd
         data={createWebPageSchema({
           name: '会社概要 ｜ sokoe',
