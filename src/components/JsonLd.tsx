@@ -1,7 +1,8 @@
 import type { Thing, WithContext } from 'schema-dts';
 
+type JsonLdItem = WithContext<Thing> | Record<string, unknown>;
 type JsonLdProps = {
-  data: WithContext<Thing> | WithContext<Thing>[];
+  data: JsonLdItem | JsonLdItem[];
 };
 
 /**

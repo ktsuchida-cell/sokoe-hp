@@ -1,25 +1,39 @@
 /**
  * Schema.org 構造化データ定義
  *
- * Step 4.8 GEO/AEO 厳格診断より：
- * - Organization Schema + Person Schema は Entity Authority の最重要施策
- * - sameAs で外部権威プロファイルと紐付け（SNS 開設後に追加）
- * - hasCredential で薬剤師資格を明示
+ * Step 6-D: SoftwareApplication (sokoe Day) 追加
+ * Step 6-E: Service (sokoe AI Lab) 追加
+ * Step 6-F-1:
+ *   - Person Schema を詳細化（hasCredential 削除、alumniOf / hasOccupation 追加）
+ *   - createBreadcrumbSchema / createArticleSchema / createWebPageSchema 追加
+ *   - profilePageSchema 追加
+ *
+ * 設計方針：
+ *   - すべての主要 Entity に @id を付与し、サイト内・ページ間で参照を再利用
+ *   - Organization / Person はサイト全体で唯一の Entity として扱う
  */
 
 import { siteConfig } from '@/lib/siteConfig';
-import type { Organization, Person, WithContext } from 'schema-dts';
+import type { Organization, WithContext } from 'schema-dts';
 
 const SITE_URL = siteConfig.url;
 
-/* ─────────────────────────────────────────────
-   Organization Schema
-   全ページに埋め込む。会社のエンティティを定義。
-   ───────────────────────────────────────────── */
+// ─────────────────────────────────────────────
+// 共通 ID
+// ─────────────────────────────────────────────
+export const ORG_ID = `${SITE_URL}/#organization` as const;
+export const PERSON_ID = `${SITE_URL}/about/profile/#person` as const;
+export const WEBSITE_ID = `${SITE_URL}/#website` as const;
+export const PROFILE_PAGE_ID = `${SITE_URL}/about/profile/#webpage` as const;
+
+// ─────────────────────────────────────────────
+// Organization Schema
+// 全ページに埋め込む。会社のエンティティを定義。
+// ─────────────────────────────────────────────
 export const organizationSchema: WithContext<Organization> = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  '@id': `${SITE_URL}/#organization`,
+  '@id': ORG_ID,
   name: siteConfig.fullName,
   alternateName: siteConfig.name,
   url: SITE_URL,
@@ -31,9 +45,7 @@ export const organizationSchema: WithContext<Organization> = {
   },
   description: siteConfig.description,
   foundingDate: siteConfig.company.foundedDate,
-  founder: {
-    '@id': `${SITE_URL}/about/profile/#person`,
-  },
+  founder: { '@id': PERSON_ID },
   address: {
     '@type': 'PostalAddress',
     addressCountry: 'JP',
@@ -57,6 +69,9 @@ export const organizationSchema: WithContext<Organization> = {
     '介護施設運営',
     'デイサービスアプリ',
     '介護AI導入支援',
+    'ヘルスケアDX',
+    '半日型デイサービス',
+    'ケアプランAI',
   ],
   areaServed: {
     '@type': 'Country',
@@ -70,46 +85,60 @@ export const organizationSchema: WithContext<Organization> = {
   ],
 };
 
-/* ─────────────────────────────────────────────
-   Person Schema（代表 = 槌田一輝）
-   E-E-A-T の Experience（経験）と Expertise（専門性）の中核。
-   ───────────────────────────────────────────── */
-export const founderPersonSchema: WithContext<Person> = {
-  '@context': 'https://schema.org',
-  '@type': 'Person',
-  '@id': `${SITE_URL}/about/profile/#person`,
+// ─────────────────────────────────────────────
+// Person Schema（代表 槌田一輝）★ Step 6-F-1 詳細版
+// /about/profile/ の権威性中核
+// 免許資格は保有していないため hasCredential は使わない
+// ─────────────────────────────────────────────
+export const personSchemaDetailed = {
+  '@context': 'https://schema.org' as const,
+  '@type': 'Person' as const,
+  '@id': PERSON_ID,
   name: '槌田 一輝',
   givenName: '一輝',
   familyName: '槌田',
-  jobTitle: '代表取締役 / 施設長代理',
-  worksFor: {
-    '@id': `${SITE_URL}/#organization`,
+  alternateName: 'つちだ かずき',
+  jobTitle: '代表取締役',
+  worksFor: { '@id': ORG_ID },
+  description:
+    '株式会社sokoe 代表取締役。レッツ倶楽部川西能勢口（兵庫県川西市・1日型デイサービス）施設長代理を兼任。薬学部を卒業し、薬学・IT・薬局・介護現場を横断したキャリアを持つ。自社運営施設で AI を本番運用しながら、デイサービス向けアプリ「sokoe Day」と AI コンサルティング「sokoe AI Lab」を展開。',
+  alumniOf: {
+    '@type': 'EducationalOrganization' as const,
+    name: '薬学部',
+    description: '2025年3月 卒業',
   },
-  affiliation: {
-    '@type': 'Organization',
-    name: 'レッツ倶楽部川西能勢口',
-  },
-  hasCredential: {
-    '@type': 'EducationalOccupationalCredential',
-    credentialCategory: 'license',
-    name: '薬剤師資格',
-    recognizedBy: {
-      '@type': 'Organization',
-      name: '厚生労働省',
+  hasOccupation: [
+    {
+      '@type': 'Occupation' as const,
+      name: '代表取締役',
+      occupationLocation: { '@id': ORG_ID },
     },
-  },
+    {
+      '@type': 'Occupation' as const,
+      name: '施設長代理',
+      occupationLocation: {
+        '@type': 'Place' as const,
+        name: 'レッツ倶楽部川西能勢口',
+        address: {
+          '@type': 'PostalAddress' as const,
+          addressCountry: 'JP',
+          addressRegion: '兵庫県',
+          addressLocality: '川西市',
+        },
+      },
+    },
+  ],
   knowsAbout: [
     '介護施設運営',
-    'AI 戦略策定',
-    'ヘルスケア領域のソフトウェア開発',
-    'デイサービス業務',
-    '薬局業務',
-    'ケアプラン作成',
+    'デイサービス管理',
     '介護AI導入',
+    '薬局運営',
+    'ヘルスケアSaaS開発',
+    'AI戦略策定',
+    'ケアプラン業務',
+    '業務効率化',
   ],
-  description:
-    '薬学部卒業後、IT企業インターン、薬局運営、デイサービス管理者を経て、株式会社sokoeを創業。自社運営施設でAIを本番運用しながら、ヘルスケア領域のAIコンサルティングを提供している。',
-  // sameAs：外部権威プロファイル（Step 4.8 Entity Authority 強化）
+  knowsLanguage: ['ja'],
   sameAs: [
     'https://x.com/sokoe_official',
     'https://note.com/sokoe_official',
@@ -117,27 +146,158 @@ export const founderPersonSchema: WithContext<Person> = {
   ],
 };
 
-/* ─────────────────────────────────────────────
-   WebSite Schema（サイト全体）
-   サイト内検索が実装されたら potentialAction を追加
-   ───────────────────────────────────────────── */
+// 後方互換エイリアス（既存コードからの参照を維持）
+export const personSchema = personSchemaDetailed;
+export const founderPersonSchema = personSchemaDetailed;
+
+// ─────────────────────────────────────────────
+// WebSite Schema（サイト全体）
+// サイト内検索が実装されたら potentialAction を追加
+// ─────────────────────────────────────────────
 export const websiteSchema = {
   '@context': 'https://schema.org' as const,
   '@type': 'WebSite' as const,
-  '@id': `${SITE_URL}/#website`,
+  '@id': WEBSITE_ID,
   url: SITE_URL,
   name: siteConfig.name,
   description: siteConfig.description,
-  publisher: {
-    '@id': `${SITE_URL}/#organization`,
-  },
+  publisher: { '@id': ORG_ID },
   inLanguage: 'ja-JP',
 };
 
-/* ─────────────────────────────────────────────
-   SoftwareApplication Schema（sokoe Day）
-   AI Overview / Google Rich Result でプロダクト情報が表示される
-   ───────────────────────────────────────────── */
+// ─────────────────────────────────────────────
+// BreadcrumbList Schema ★ Step 6-F-1 新規
+// 全下層ページのパンくずに連動
+// ─────────────────────────────────────────────
+export type BreadcrumbSchemaItem = {
+  name: string;
+  url?: string;
+};
+
+export function createBreadcrumbSchema(items: BreadcrumbSchemaItem[]) {
+  return {
+    '@context': 'https://schema.org' as const,
+    '@type': 'BreadcrumbList' as const,
+    itemListElement: items.map((item, i) => ({
+      '@type': 'ListItem' as const,
+      position: i + 1,
+      name: item.name,
+      ...(item.url
+        ? { item: item.url.startsWith('http') ? item.url : `${SITE_URL}${item.url}` }
+        : {}),
+    })),
+  };
+}
+
+// ─────────────────────────────────────────────
+// Article Schema ★ Step 6-F-1 新規
+// /about/founder-message/ などの長文記事用
+// ─────────────────────────────────────────────
+type ArticleSchemaInput = {
+  headline: string;
+  description: string;
+  url: string;
+  datePublished: string;
+  dateModified: string;
+  image?: string;
+  articleSection?: string;
+  wordCount?: number;
+};
+
+export function createArticleSchema({
+  headline,
+  description,
+  url,
+  datePublished,
+  dateModified,
+  image,
+  articleSection = '会社情報',
+  wordCount,
+}: ArticleSchemaInput) {
+  return {
+    '@context': 'https://schema.org' as const,
+    '@type': 'Article' as const,
+    headline,
+    description,
+    mainEntityOfPage: { '@id': url },
+    url,
+    datePublished,
+    dateModified,
+    author: { '@id': PERSON_ID },
+    publisher: { '@id': ORG_ID },
+    inLanguage: 'ja-JP',
+    articleSection,
+    ...(image ? { image: { '@type': 'ImageObject' as const, url: image } } : {}),
+    ...(wordCount ? { wordCount } : {}),
+  };
+}
+
+// ─────────────────────────────────────────────
+// WebPage Schema（編集ポリシー・規約等の汎用ページ用）★ Step 6-F-1 新規
+// ─────────────────────────────────────────────
+type WebPageSchemaInput = {
+  name: string;
+  description: string;
+  url: string;
+  datePublished?: string;
+  dateModified?: string;
+  /** YMYL ページでレビュアーを明示する場合 */
+  reviewedBy?: 'self' | { name: string; id?: string };
+};
+
+export function createWebPageSchema({
+  name,
+  description,
+  url,
+  datePublished,
+  dateModified,
+  reviewedBy,
+}: WebPageSchemaInput) {
+  return {
+    '@context': 'https://schema.org' as const,
+    '@type': 'WebPage' as const,
+    name,
+    description,
+    url,
+    inLanguage: 'ja-JP',
+    isPartOf: { '@id': WEBSITE_ID },
+    about: { '@id': ORG_ID },
+    publisher: { '@id': ORG_ID },
+    ...(datePublished ? { datePublished } : {}),
+    ...(dateModified ? { dateModified } : {}),
+    ...(reviewedBy === 'self'
+      ? { reviewedBy: { '@id': PERSON_ID } }
+      : reviewedBy
+        ? {
+            reviewedBy: {
+              '@type': 'Person' as const,
+              name: reviewedBy.name,
+              ...(reviewedBy.id ? { '@id': reviewedBy.id } : {}),
+            },
+          }
+        : {}),
+  };
+}
+
+// ─────────────────────────────────────────────
+// ProfilePage Schema ★ Step 6-F-1 新規
+// /about/profile/ 用。Google が 2024 以降サポートする ProfilePage type
+// ─────────────────────────────────────────────
+export const profilePageSchema = {
+  '@context': 'https://schema.org' as const,
+  '@type': 'ProfilePage' as const,
+  '@id': PROFILE_PAGE_ID,
+  url: `${SITE_URL}/about/profile/`,
+  name: '代表プロフィール ― 槌田 一輝｜株式会社sokoe',
+  mainEntity: { '@id': PERSON_ID },
+  isPartOf: { '@id': WEBSITE_ID },
+  inLanguage: 'ja-JP',
+};
+
+// ─────────────────────────────────────────────
+// SoftwareApplication Schema（sokoe Day）★ Step 6-D
+// AI Overview / Google Rich Result でプロダクト情報が表示される
+// ─────────────────────────────────────────────
 export const sokoeDaySchema = {
   '@context': 'https://schema.org' as const,
   '@type': 'SoftwareApplication' as const,
@@ -191,17 +351,15 @@ export const sokoeDaySchema = {
     '名刺OCR',
     'ケアプランAI生成（OCR連携）',
   ],
-  provider: {
-    '@id': `${SITE_URL}/#organization`,
-  },
+  provider: { '@id': ORG_ID },
   inLanguage: 'ja-JP',
 };
 
-/* ─────────────────────────────────────────────
-   Service Schema（sokoe AI Lab）
-   AI コンサルティングサービス全体の構造化データ
-   Step 4.7 §4.4 / Step 4.8 §11.1 で必須実装
-   ───────────────────────────────────────────── */
+// ─────────────────────────────────────────────
+// Service Schema（sokoe AI Lab）★ Step 6-E
+// AI コンサルティングサービス全体の構造化データ
+// Step 4.7 §4.4 / Step 4.8 §11.1 で必須実装
+// ─────────────────────────────────────────────
 export const sokoeAILabSchema = {
   '@context': 'https://schema.org' as const,
   '@type': 'Service' as const,
@@ -211,9 +369,7 @@ export const sokoeAILabSchema = {
   description:
     'ヘルスケア領域（介護・薬局・医療）の現場でAIを毎日使っている会社のAIコンサルティングサービス。戦略策定、導入支援、研修、継続伴走の4サービスを提供。',
   url: `${SITE_URL}/consulting/`,
-  provider: {
-    '@id': `${SITE_URL}/#organization`,
-  },
+  provider: { '@id': ORG_ID },
   serviceType: 'AI Consulting',
   areaServed: {
     '@type': 'Country' as const,
@@ -264,10 +420,11 @@ export const sokoeAILabSchema = {
   inLanguage: 'ja-JP',
 };
 
-/* ─────────────────────────────────────────────
-   FAQPage Schema 生成ヘルパー
-   各 LP の FAQ セクションから動的に生成
-   ───────────────────────────────────────────── */
+// ─────────────────────────────────────────────
+// FAQPage Schema 生成ヘルパー（Step 6-D 由来・2-arg シグネチャを維持）
+// 既存呼び出し: createFAQSchema(faqs, pageUrl)
+// 各 LP の FAQ セクションから動的に生成
+// ─────────────────────────────────────────────
 export function createFAQSchema(
   faqs: Array<{ question: string; answer: string }>,
   pageUrl: string,

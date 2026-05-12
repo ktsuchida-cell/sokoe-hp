@@ -74,8 +74,8 @@ export function AboutUs() {
                 <p className="text-[15px] text-charcoal">レッツ倶楽部川西能勢口 施設長代理</p>
               </div>
               <div>
-                <p className="text-xs uppercase tracking-[0.15em] text-mid mb-1">資格</p>
-                <p className="text-[15px] text-charcoal">薬剤師</p>
+                <p className="text-xs uppercase tracking-[0.15em] text-mid mb-1">学歴</p>
+                <p className="text-[15px] text-charcoal">薬学部 卒業（2025年）</p>
               </div>
             </div>
 

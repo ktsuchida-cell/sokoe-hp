@@ -179,3 +179,173 @@
     }
   }
 }
+/* ============================================================
+ * Step 6-F-1：globals.css への追加分
+ *
+ * 既存の `src/app/globals.css` の末尾に、以下のスタイルを追記してください。
+ * 既存の @theme ブロック内に重複する変数がある場合は、追加不要です。
+ * ============================================================ */
+
+/* ────────────────────────────────────────────
+ * 1. 規約・記事系で使うトーン変数（既存になければ追加）
+ *    既存の Step 6-B で定義済みであれば、この追加は不要です。
+ *    シンボル名衝突がないか確認のうえ採否を判断してください。
+ * ──────────────────────────────────────────── */
+@theme {
+  /* 文字色トーン */
+  --color-charcoal-muted: #6a6a6a; /* 補助テキスト */
+
+  /* 背景・罫線トーン */
+  --color-bg-base: #ffffff;
+  --color-bg-muted: #f7f6f3; /* 編集メディア風の生成り */
+  --color-border-soft: #e5e3df;
+
+  /* フォントエイリアス
+     既存 globals.css に --font-display が未定義の場合のフォールバック。
+     既存で定義済みなら、こちらの行は削除して既存定義を優先してください。 */
+  --font-display: var(--font-serif);
+
+  /* prose の最大幅 */
+  --max-width-prose-sokoe: 68ch; /* 規約・記事の読みやすい幅 */
+}
+
+/* ────────────────────────────────────────────
+ * 2. 規約・長文本文ユーティリティ「.prose-sokoe」
+ *    Tailwind の @tailwindcss/typography は使わず、
+ *    sokoe のエディトリアル組みに最適化したカスタム実装。
+ * ──────────────────────────────────────────── */
+.prose-sokoe {
+  /* 本文 */
+  color: var(--color-ink);
+  font-size: 1rem;
+  line-height: 1.85;
+}
+
+.prose-sokoe > * + * {
+  margin-top: 1.25em;
+}
+
+.prose-sokoe p {
+  color: var(--color-charcoal);
+}
+
+.prose-sokoe h2 {
+  margin-top: 2.5em;
+  margin-bottom: 0.8em;
+  font-family: var(--font-sans);
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--color-ink);
+}
+
+.prose-sokoe h3 {
+  margin-top: 2em;
+  margin-bottom: 0.6em;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.prose-sokoe h4 {
+  margin-top: 1.75em;
+  margin-bottom: 0.5em;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.prose-sokoe strong {
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.prose-sokoe a {
+  color: var(--color-brand-red);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: opacity 200ms ease;
+}
+
+.prose-sokoe a:hover {
+  opacity: 0.7;
+}
+
+.prose-sokoe ul,
+.prose-sokoe ol {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding-left: 1.5em;
+  color: var(--color-charcoal);
+}
+
+.prose-sokoe ul {
+  list-style: disc;
+}
+
+.prose-sokoe ol {
+  list-style: decimal;
+}
+
+.prose-sokoe li {
+  margin-top: 0.5em;
+  line-height: 1.8;
+}
+
+.prose-sokoe li::marker {
+  color: var(--color-charcoal-muted);
+}
+
+.prose-sokoe blockquote {
+  margin: 1.5em 0;
+  padding-left: 1.25em;
+  border-left: 3px solid var(--color-brand-red);
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--color-ink);
+}
+
+.prose-sokoe hr {
+  margin: 2.5em 0;
+  border: 0;
+  border-top: 1px solid var(--color-border-soft);
+}
+
+.prose-sokoe code {
+  padding: 0.125em 0.375em;
+  background: var(--color-bg-muted);
+  border: 1px solid var(--color-border-soft);
+  border-radius: 2px;
+  font-size: 0.9em;
+}
+
+@media (min-width: 768px) {
+  .prose-sokoe {
+    font-size: 1.0625rem;
+  }
+  .prose-sokoe h2 {
+    font-size: 1.75rem;
+  }
+  .prose-sokoe h3 {
+    font-size: 1.25rem;
+  }
+}
+
+/* ────────────────────────────────────────────
+ * 3. .not-prose ── prose-sokoe の中で組版を一旦リセットする
+ * ──────────────────────────────────────────── */
+.not-prose {
+  /* 子要素に prose のスタイルを継承させない */
+}
+
+.not-prose ul,
+.not-prose ol {
+  list-style: none;
+  padding-left: 0;
+}
+
+.not-prose ul > li::marker,
+.not-prose ol > li::marker {
+  content: "";
+}
