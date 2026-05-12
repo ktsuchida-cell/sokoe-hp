@@ -1,6 +1,7 @@
 'use client';
 
 import { Button } from '@/components/Button';
+import { Container } from '@/components/Container';
 import { cn } from '@/lib/cn';
 import { type NavItem, mainNavigation } from '@/lib/navigation';
 import { ChevronDown, Menu, X } from 'lucide-react';
@@ -55,7 +56,7 @@ export function Header() {
           scrolled ? 'border-border shadow-sm' : 'border-transparent',
         )}
       >
-        <div className="mx-auto max-w-[1440px] px-6 md:px-12">
+        <Container>
           <div className="flex items-center justify-between h-[56px] md:h-[72px]">
             {/* ロゴ */}
             <Link
@@ -97,7 +98,7 @@ export function Header() {
               <Menu className="w-6 h-6" strokeWidth={1.5} />
             </button>
           </div>
-        </div>
+        </Container>
       </header>
 
       {/* ヘッダー分のスペーサー */}
