@@ -12,11 +12,7 @@ import { PageHero } from '@/components/PageHero';
 import { ProseSection } from '@/components/ProseSection';
 import { Section } from '@/components/Section';
 import { Timeline, type TimelineItem } from '@/components/Timeline';
-import {
-  createWebPageSchema,
-  localBusinessLetsKawanishi,
-  organizationSchema,
-} from '@/lib/schemas';
+import { createWebPageSchema, localBusinessLetsKawanishi, organizationSchema } from '@/lib/schemas';
 import { siteConfig } from '@/lib/siteConfig';
 import type { Metadata } from 'next';
 import Link from 'next/link';
