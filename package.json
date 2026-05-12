@@ -1,0 +1,45 @@
+{
+  "name": "sokoe-web",
+  "version": "0.1.0",
+  "private": true,
+  "description": "株式会社sokoe コーポレートサイト",
+  "scripts": {
+    "dev": "next dev -p 3100",
+    "build": "next build",
+    "start": "next start -p 3100",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "format": "biome format --write .",
+    "type-check": "tsc --noEmit",
+    "postbuild": "next-sitemap"
+  },
+  "dependencies": {
+    "next": "^16.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "lucide-react": "^0.300.0",
+    "react-countup": "^6.5.3",
+    "react-hook-form": "^7.50.0",
+    "zod": "^3.22.4",
+    "@hookform/resolvers": "^3.3.4",
+    "schema-dts": "^1.1.2",
+    "clsx": "^2.1.0",
+    "tailwind-merge": "^2.2.0",
+    "resend": "^3.2.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.5.3",
+    "@types/node": "^20.11.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@tailwindcss/postcss": "^4.0.0",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.3.3",
+    "postcss": "^8.4.33",
+    "next-sitemap": "^4.2.3"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "packageManager": "pnpm@8.15.0"
+}
