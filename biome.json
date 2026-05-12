@@ -49,8 +49,7 @@
       ".vercel",
       "public",
       "*.config.mjs",
-      "next-env.d.ts",
-      "sokoe-web"
+      "next-env.d.ts"
     ]
   }
 }

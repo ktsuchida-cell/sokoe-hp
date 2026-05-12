@@ -36,5 +36,5 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts"
   ],
-  "exclude": ["node_modules", "sokoe-web"]
+  "exclude": ["node_modules"]
 }
