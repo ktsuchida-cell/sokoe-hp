@@ -56,6 +56,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/icon-512.png', sizes: '512x512', type: 'image/png' },
+    ],
+    apple: '/apple-touch-icon.png',
+  },
   openGraph: {
     type: 'website',
     locale: 'ja_JP',
@@ -64,12 +72,21 @@ export const metadata: Metadata = {
     title: 'sokoe ｜ 現場を、本来の仕事に戻す。',
     description:
       '介護施設を運営する会社がつくった、ヘルスケア領域のソフトウェアとAIコンサルティング。',
+    images: [
+      {
+        url: '/og/default.png',
+        width: 1200,
+        height: 630,
+        alt: 'sokoe',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'sokoe ｜ 現場を、本来の仕事に戻す。',
     description:
       '介護施設を運営する会社がつくった、ヘルスケア領域のソフトウェアとAIコンサルティング。',
+    images: ['/og/default.png'],
   },
   robots: {
     index: true,
