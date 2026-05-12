@@ -14,12 +14,7 @@
  * constants.ts に分離している。
  */
 
-import {
-  INDUSTRIES,
-  INQUIRY_TYPES,
-  type ContactField,
-  type ContactFormState,
-} from './constants';
+import { type ContactField, type ContactFormState, INDUSTRIES, INQUIRY_TYPES } from './constants';
 
 const TO_EMAIL = 'info@sokoe.co.jp';
 const FROM_EMAIL = 'noreply@sokoe.co.jp'; // Resend 側でドメイン認証済みである必要あり

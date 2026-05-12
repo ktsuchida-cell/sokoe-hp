@@ -1,15 +1,10 @@
 'use client';
 
+import { Button } from '@/components/Button';
 import { useActionState } from 'react';
 import { useFormStatus } from 'react-dom';
-import { Button } from '@/components/Button';
 import { submitContact } from './actions';
-import {
-  INDUSTRIES,
-  INQUIRY_TYPES,
-  type ContactField,
-  type ContactFormState,
-} from './constants';
+import { type ContactField, type ContactFormState, INDUSTRIES, INQUIRY_TYPES } from './constants';
 
 const initialState: ContactFormState = { status: 'idle' };
 
