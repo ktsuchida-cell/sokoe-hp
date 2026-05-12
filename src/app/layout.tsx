@@ -1,3 +1,4 @@
+import { Analytics } from '@/components/Analytics';
 import type { Metadata, Viewport } from 'next';
 import { Inter, Noto_Sans_JP, Noto_Serif_JP, Playfair_Display } from 'next/font/google';
 import './globals.css';
@@ -96,7 +97,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       lang="ja"
       className={`${inter.variable} ${notoSansJP.variable} ${playfair.variable} ${notoSerifJP.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }

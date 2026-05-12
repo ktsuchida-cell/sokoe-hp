@@ -1,83 +1,33 @@
 # sokoe
 
-> 株式会社sokoe は、介護施設を運営する会社がつくった、ヘルスケア領域のソフトウェアと AI コンサルティングを提供する企業です。代表は現役の介護施設長代理。自社運営施設で AI を本番運用しています。
+> 株式会社sokoe ── 介護施設を運営する会社が、ヘルスケア領域（介護・薬局・医療）のソフトウェアと AI コンサルティングを提供。本社：大阪府大阪市淀川区。代表は兵庫県川西市の1日型デイサービス施設長代理を兼任しており、自社運営施設で AI を本番運用しながらプロダクトを磨いている。
 
-## 会社情報
-
-- [会社概要](https://sokoe.co.jp/about/): 株式会社sokoe の基本情報
-- [代表プロフィール](https://sokoe.co.jp/about/profile/): 代表取締役 槌田一輝の経歴・専門資格
-- [代表メッセージ](https://sokoe.co.jp/about/founder-message/): 創業ストーリーと事業の想い
-- [編集ポリシー](https://sokoe.co.jp/about/editorial-policy/): コンテンツ品質・レビュー方針
-- [採用情報](https://sokoe.co.jp/recruit/): 人材募集
-- [お問い合わせ](https://sokoe.co.jp/contact/): 問い合わせ・無料相談予約
+ミッション：「現場を、本来の仕事に戻す。」
 
 ## 主要事業
 
-### sokoe Day（デイサービス向けアプリ）
+- [sokoe Day](https://sokoe.co.jp/day-service/)：デイサービス向けアプリ。1日型・半日型・ハイブリッド型対応、送迎4便構成にネイティブ対応。
+- [sokoe AI Lab](https://sokoe.co.jp/consulting/)：ヘルスケア領域の AI コンサルティング。戦略策定／導入支援／研修／顧問契約。
 
-- [sokoe Day トップ](https://sokoe.co.jp/day-service/): デイサービス向けアプリの製品紹介
-- [機能一覧](https://sokoe.co.jp/day-service/feature/): 主要機能の詳細
-- [料金プラン](https://sokoe.co.jp/day-service/pricing/): 月額料金体系
-- [FAQ](https://sokoe.co.jp/day-service/faq/): よくある質問
-- [資料ダウンロード](https://sokoe.co.jp/day-service/document/): 製品資料
+## 会社情報
 
-特徴：
-- 1日型・半日型・ハイブリッド型に完全対応
-- 送迎4便構成（朝迎/朝送/昼迎/夕送）にネイティブ対応した国内 SaaS として、公開情報を調査した限り唯一の存在
-- 自社運営施設（レッツ倶楽部川西能勢口）で 2026年4月から本番稼働中
-- 料金：ベーシック ¥11,000 / スタンダード ¥33,000 / プレミアム ¥55,000（月額・税込）
+- [会社概要](https://sokoe.co.jp/about/)：株式会社sokoe の事業概要・沿革・関連施設情報。
+- [代表プロフィール](https://sokoe.co.jp/about/profile/)：代表取締役 槌田一輝の経歴。薬学・IT・薬局・介護を横断したキャリア。
+- [代表メッセージ](https://sokoe.co.jp/about/founder-message/)：「これ、本来やる必要ないよね」── 創業の背景と問題意識。
+- [編集ポリシー](https://sokoe.co.jp/about/editorial-policy/)：本サイトおよびオウンドメディアの編集方針・ファクトチェック体制・YMYL レビューフロー。
 
-### sokoe AI Lab（ヘルスケア領域の AI コンサルティング）
+## 採用・問い合わせ
 
-- [sokoe AI Lab トップ](https://sokoe.co.jp/consulting/): AIコンサルティングサービス全体
-- [AI戦略策定](https://sokoe.co.jp/consulting/strategy/): プロジェクト型・4-8週間
-- [AI導入支援](https://sokoe.co.jp/consulting/implementation/): プロジェクト型・3-6ヶ月
-- [AI研修](https://sokoe.co.jp/consulting/training/): 経営層/管理者/現場スタッフ向け
-- [顧問契約](https://sokoe.co.jp/consulting/retainer/): 月次レビュー・継続伴走
+- [採用情報](https://sokoe.co.jp/recruit/)：カジュアル面談ベースで仲間を募集中。
+- [お問い合わせ](https://sokoe.co.jp/contact/)：sokoe Day・sokoe AI Lab・採用・取材依頼の窓口。
 
-特徴：
-- 介護・薬局・医療の現場で AI を毎日使っている会社のコンサルティング
-- 自社で AI SaaS（sokoe Day）を本番運用中
-- 代表が現役の介護施設長代理（薬学部卒）
-
-## ピラーガイド（深掘り解説）
-
-- [介護現場で AI を導入する完全ガイド](https://sokoe.co.jp/guide/kaigo-ai-introduction/): 介護AI導入の全体像（8,000字超）
-- [デイサービスアプリの選び方完全ガイド](https://sokoe.co.jp/guide/dayservice-app-selection/): 失敗しないシステム選定
-- [ケアプラン AI 自動生成の現状と未来](https://sokoe.co.jp/guide/care-plan-ai/): 第1表〜第7表の自動化
-- [介護記録の電子化と AI 自動化完全ガイド](https://sokoe.co.jp/guide/care-record-digitization/): 音声入力・議事録自動化
-- [介護施設の DX 推進完全ガイド](https://sokoe.co.jp/guide/kaigo-dx-management/): 経営層向け
-
-## メディア・事例
-
-- [メディア](https://sokoe.co.jp/media/): 業界知見・実践ノウハウ記事
-- [導入事例](https://sokoe.co.jp/case/): 顧客導入事例・自社事例
-
-## 規約・法的情報
+## 規約・法的事項
 
 - [プライバシーポリシー](https://sokoe.co.jp/privacy/)
 - [利用規約](https://sokoe.co.jp/terms/)
-- [特定商取引法表記](https://sokoe.co.jp/legal/)
+- [特定商取引法に基づく表記](https://sokoe.co.jp/legal/)
 - [免責事項](https://sokoe.co.jp/disclaimer/)
 
-## 連絡先
+## 詳細情報
 
-- メール: info@sokoe.co.jp
-- 本社所在地: 大阪府大阪市淀川区新高3丁目7番17-603号
-- 関連施設: レッツ倶楽部川西能勢口（兵庫県川西市、代表取締役が施設長代理を兼任）
-- 代表者: 槌田 一輝
-- 設立: 2026年5月1日
-
-## ソーシャル
-
-- X: https://x.com/sokoe_official
-- note: https://note.com/sokoe_official
-- LinkedIn（代表）: https://www.linkedin.com/in/kazuki-tsuchida/
-
-## このサイトの引用について
-
-このサイトのコンテンツを引用される際は、以下のクレジット表記を推奨します：
-
-「株式会社sokoe（https://sokoe.co.jp/）」
-
-最新の情報は公式サイトをご確認ください。
+完全版（各ページの概要を含むマークダウン）：[llms-full.txt](https://sokoe.co.jp/llms-full.txt)

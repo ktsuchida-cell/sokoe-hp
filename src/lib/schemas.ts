@@ -421,6 +421,54 @@ export const sokoeAILabSchema = {
 };
 
 // ─────────────────────────────────────────────
+// LocalBusiness Schema（レッツ倶楽部川西能勢口）★ Step 6-G 新規
+// 兵庫県川西市・1日型デイサービス。株式会社ピースファーマシー運営。
+// sokoe コーポレートサイトでは「自社運営施設」として紹介する文脈で参照。
+// /about/ ページにのみ配置（layout.tsx には置かない）。
+// ─────────────────────────────────────────────
+export const LETS_FACILITY_ID = `${SITE_URL}/#facility-lets-kawanishi-noseguchi` as const;
+
+export const localBusinessLetsKawanishi = {
+  '@context': 'https://schema.org' as const,
+  '@type': 'LocalBusiness' as const,
+  '@id': LETS_FACILITY_ID,
+  name: 'レッツ倶楽部川西能勢口',
+  description:
+    '兵庫県川西市の1日型デイサービス。株式会社ピースファーマシー運営。株式会社sokoe 代表取締役 槌田一輝が施設長代理を兼任し、デイサービス向けアプリ sokoe Day の自社運営施設として AI を本番運用している。',
+  address: {
+    '@type': 'PostalAddress' as const,
+    addressCountry: 'JP',
+    addressRegion: '兵庫県',
+    addressLocality: '川西市',
+  },
+  areaServed: {
+    '@type': 'AdministrativeArea' as const,
+    name: '兵庫県川西市',
+  },
+  parentOrganization: {
+    '@type': 'Organization' as const,
+    name: '株式会社ピースファーマシー',
+  },
+  // 代表（兼任施設長代理）への弱い参照
+  employee: { '@id': PERSON_ID },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification' as const,
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '09:00',
+      closes: '17:00',
+    },
+    {
+      '@type': 'OpeningHoursSpecification' as const,
+      dayOfWeek: ['Saturday'],
+      opens: '09:00',
+      closes: '17:00',
+    },
+  ],
+  isRelatedTo: { '@id': ORG_ID },
+};
+
+// ─────────────────────────────────────────────
 // FAQPage Schema 生成ヘルパー（Step 6-D 由来・2-arg シグネチャを維持）
 // 既存呼び出し: createFAQSchema(faqs, pageUrl)
 // 各 LP の FAQ セクションから動的に生成

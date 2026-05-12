@@ -12,7 +12,12 @@ import { PageHero } from '@/components/PageHero';
 import { ProseSection } from '@/components/ProseSection';
 import { Section } from '@/components/Section';
 import { Timeline, type TimelineItem } from '@/components/Timeline';
-import { createBreadcrumbSchema, createWebPageSchema, organizationSchema } from '@/lib/schemas';
+import {
+  createBreadcrumbSchema,
+  createWebPageSchema,
+  localBusinessLetsKawanishi,
+  organizationSchema,
+} from '@/lib/schemas';
 import { siteConfig } from '@/lib/siteConfig';
 import type { Metadata } from 'next';
 import Link from 'next/link';
@@ -144,6 +149,7 @@ export default function AboutPage() {
   return (
     <>
       <JsonLd data={organizationSchema} />
+      <JsonLd data={localBusinessLetsKawanishi} />
       <JsonLd
         data={createBreadcrumbSchema([
           { name: 'ホーム', url: '/' },
