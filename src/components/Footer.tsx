@@ -24,7 +24,7 @@ export function Footer() {
             {/* ロゴ + 会社情報（左の大きいエリア） */}
             <div className="col-span-2">
               <Link href="/" className="inline-block mb-6 hover:opacity-80 transition-opacity">
-                <Logo variant="color" layout="horizontal" />
+                <Logo variant="lockup-horizontal" theme="default" height={32} />
               </Link>
               <p className="text-stone text-sm leading-relaxed max-w-sm">
                 {siteConfig.description}

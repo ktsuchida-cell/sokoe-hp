@@ -42,8 +42,8 @@ export function DayHero() {
 
             <p className="mx-auto mt-6 max-w-lg text-base leading-relaxed text-charcoal md:mt-8 md:text-lg md:leading-[1.85] lg:mx-0">
               介護施設を運営する会社がつくった、デイサービスのためのアプリ。 1
-              日型・半日型・ハイブリッド型に完全対応。 紙運用・転記・伝達ミスを、現場発の設計と AI
-              で消す。
+              日型・半日型・ハイブリッド型に柔軟に対応。
+              紙の記録・書き写し・伝え漏れを、現場発の設計と AI で削減します。
             </p>
 
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4 md:mt-10 lg:justify-start">
