@@ -59,10 +59,11 @@ export function DaySolution() {
             解決の仕方。
           </Heading>
           <p className="text-stone text-base md:text-lg leading-[1.85]">
-            機能の話ではなく、
-            <strong className="text-ink font-bold">運用の哲学</strong>から考える。
+            sokoe Day がどのように
+            <strong className="text-ink font-bold">デイサービスの現場課題</strong>
+            を解決していくのか。
             <br className="hidden md:block" />
-            私たちが自社で実証してきた、4つのアプローチ。
+            私たちが自社で実証してきた、4つのアプローチをご紹介します。
           </p>
         </div>
 
