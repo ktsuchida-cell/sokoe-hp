@@ -1,111 +1,67 @@
 import { Container } from '@/components/Container';
 import { Heading } from '@/components/Heading';
-import { Label } from '@/components/Label';
 import { Section } from '@/components/Section';
-import {
-  AlertTriangle,
-  ClipboardEdit,
-  Copy,
-  Files,
-  SplitSquareHorizontal,
-  type LucideIcon,
-} from 'lucide-react';
+import { Check } from 'lucide-react';
 
-type Pain = {
-  icon: LucideIcon;
-  title: string;
-  description: string;
-};
-
-const pains: Pain[] = [
-  {
-    icon: Files,
-    title: '紙のバインダーが、増え続ける。',
-    description:
-      'バイタル、申し送り、加算管理、ケアプラン ── すべて紙で運用していると、棚は埋まり、過去の情報は探せない。新人の引き継ぎにも時間がかかる。',
-  },
-  {
-    icon: Copy,
-    title: '転記、また転記。',
-    description:
-      '紙に書いて、PCに転記して、別のソフトに転記して。同じ情報を何度も書く時間が、本来の仕事を奪っている。',
-  },
-  {
-    icon: AlertTriangle,
-    title: '伝達ミスが、毎週のように起きる。',
-    description:
-      '送迎の変更、入浴の希望、家族からの伝言 ── 口頭やメモでの伝達は、必ずミスを生む。利用者のリスクに直結する。',
-  },
-  {
-    icon: SplitSquareHorizontal,
-    title: '半日型の運用が、複雑すぎる。',
-    description:
-      '4便の送迎、午前/午後/終日のセッション、終日券利用者の二重出欠管理 ── 既存システムは1日型前提で、半日型を「無理やり」運用している。',
-  },
-  {
-    icon: ClipboardEdit,
-    title: 'ケアプランの転記に、毎日30分。',
-    description:
-      'ケアマネージャーから受け取った計画書を、施設の様式に転記する作業に、1人あたり30分。月20名で10時間が消えていく。',
-  },
+const pains = [
+  '紙のバインダーが増え続け、過去の記録がすぐに探せない。',
+  'バイタル・申し送り・加算管理 ── 同じ情報を何度も転記している。',
+  '送迎変更や家族からの伝言が、口頭・メモで漏れることがある。',
+  '半日型運用 (4便・午前/午後/終日) を、既存の1日型システムで無理やり回している。',
+  'ケアマネ計画書を施設様式に転記する作業に、毎日30分かかっている。',
 ];
 
 /**
- * Pain セクション（5項目の現場の課題）
+ * Pain セクション（チェックリスト型 / EC LP 風）
  *
- * Step 3-C §4：
- * - 共感を引き出すセクション
- * - 「これ、本来やる必要ないよね」のファウンダーメッセージと連動
- * - 編集メディア風レイアウト
- *
- * Step 4.8 GEO/AEO：
- * - 具体的な数字（30分、10時間）でエンティティ密度を上げる
- * - AI が「介護現場の課題リスト」として引用しやすい構造
+ * - 上部にターゲット表記（両端の斜め線は擬似要素で表現）
+ * - 「こんなお悩みございませんか？」を中央寄せで強調
+ * - 各 pain は1行に圧縮し、チェックアイコンと並べて視認性を最大化
+ * - 末尾に「自社で向き合ってきた課題」という sokoe 独自性を一言添える
  */
 export function DayPain() {
   return (
     <Section variant="soft" spacing="lg" bordered>
       <Container>
-        <div className="max-w-3xl mb-14 md:mb-16">
-          <Label className="mb-5">PAIN POINTS</Label>
-          <Heading level="h2" serif className="mb-6">
-            こういう悩み、
-            <br className="hidden md:block" />
-            ありませんか？
-          </Heading>
-          <p className="text-stone text-base md:text-lg leading-[1.85]">
-            介護現場で、毎日のように繰り返される手間と伝達ミス。
-            <br className="hidden md:block" />
-            介護施設を運営する会社として、私たち自身もずっと向き合ってきた課題です。
+        <div className="max-w-3xl mx-auto text-center mb-10 md:mb-14">
+          {/* ターゲット表記 ── 両端の斜め線を擬似要素で再現 */}
+          <p className="relative inline-block px-8 md:px-12 mb-6 text-sm md:text-base font-medium text-charcoal">
+            <span
+              className="absolute left-0 top-1/2 -translate-y-1/2 block h-6 w-px bg-charcoal/50 -rotate-[18deg]"
+              aria-hidden="true"
+            />
+            現場の手間を本気で減らしたい施設長・管理者の方へ
+            <span
+              className="absolute right-0 top-1/2 -translate-y-1/2 block h-6 w-px bg-charcoal/50 rotate-[18deg]"
+              aria-hidden="true"
+            />
           </p>
+
+          <Heading level="h2" serif>
+            <span className="text-brand-red">こんなお悩み</span>
+            ございませんか？
+          </Heading>
         </div>
 
-        <div className="space-y-4 md:space-y-5">
-          {pains.map((pain) => {
-            const Icon = pain.icon;
-            return (
-              <article
-                key={pain.title}
-                className="flex items-start gap-5 md:gap-7 rounded-[8px] bg-white border border-border p-6 md:p-8 transition-shadow hover:shadow-sm"
-              >
+        <div className="mx-auto max-w-3xl rounded-[8px] bg-white border border-border p-7 md:p-10">
+          <ul className="space-y-4 md:space-y-5">
+            {pains.map((pain) => (
+              <li key={pain} className="flex items-start gap-4">
                 <span
-                  className="shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-full bg-brand-red/10 text-brand-red flex items-center justify-center"
+                  className="shrink-0 mt-0.5 flex h-6 w-6 md:h-7 md:w-7 items-center justify-center rounded-[4px] bg-brand-red/10 text-brand-red"
                   aria-hidden="true"
                 >
-                  <Icon className="w-6 h-6 md:w-7 md:h-7" strokeWidth={2} />
+                  <Check className="h-4 w-4 md:h-4.5 md:w-4.5" strokeWidth={2.5} />
                 </span>
-                <div className="flex-1 min-w-0">
-                  <h3 className="font-bold text-xl md:text-2xl text-ink mb-3 leading-snug">
-                    {pain.title}
-                  </h3>
-                  <p className="text-stone text-[15px] md:text-base leading-[1.85]">
-                    {pain.description}
-                  </p>
-                </div>
-              </article>
-            );
-          })}
+                <p className="flex-1 text-[15px] md:text-base leading-[1.8] text-ink">{pain}</p>
+              </li>
+            ))}
+          </ul>
         </div>
+
+        <p className="mx-auto mt-8 max-w-3xl text-center text-sm md:text-base leading-[1.85] text-stone">
+          介護施設を運営する会社として、私たち自身もずっと向き合ってきた課題です。
+        </p>
       </Container>
     </Section>
   );
