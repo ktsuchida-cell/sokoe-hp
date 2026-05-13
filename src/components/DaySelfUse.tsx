@@ -7,24 +7,24 @@ import Link from 'next/link';
 
 const useCases = [
   {
-    metric: '30分 → 数分',
-    label: 'ケアプラン転記時間',
-    description: 'OCR ＋ 生成 AI で計画書を自動生成。月20名で消えていた10時間を取り戻す。',
+    title: 'ケアプラン転記、30 分 → 数分',
+    description:
+      'OCR ＋ 生成 AI でケアマネ計画書を読み取り、施設様式へ自動変換。月 20 名で消えていた 10 時間が、ほぼゼロになります。',
   },
   {
-    metric: '1時間 → 10分',
-    label: '担当者会議の議事録',
-    description: '音声認識 + AI で自動議事録化。会議後の「書き起こし」がなくなる。',
+    title: '議事録作成、1 時間 → 10 分',
+    description:
+      '音声認識 + AI で会議の録音をその場で議事録化。発言者の識別もできるため、会議後の「書き起こし」が不要に。',
   },
   {
-    metric: '全員に',
-    label: '個別フィードバック',
-    description: '体力測定 AI 評価で、ご利用者一人ひとりへの賞状PDFを瞬時に。',
+    title: '個別フィードバック、ご利用者全員へ',
+    description:
+      '体力測定 AI 評価が、改善ポイントを優しい言葉で個別コメント化。賞状 PDF も自動出力できます。',
   },
   {
-    metric: '数秒で',
-    label: '名刺データ登録',
-    description: 'AI OCR でケアマネージャーの名刺を読み取り、営業データを自動登録。',
+    title: '名刺登録、撮るだけで数秒',
+    description:
+      'AI OCR で氏名・事業所・連絡先・役職を自動抽出。担当ご利用者リストにも自動で紐付きます。',
   },
 ];
 
@@ -67,22 +67,19 @@ export function DaySelfUse() {
         <ul className="mx-auto max-w-3xl space-y-4 md:space-y-5">
           {useCases.map((useCase, i) => (
             <li
-              key={useCase.label}
+              key={useCase.title}
               className="flex items-start gap-5 md:gap-7 rounded-[8px] bg-white border border-border p-6 md:p-8 transition-shadow hover:shadow-sm"
             >
               <span
-                className="shrink-0 flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-full bg-brand-red text-white font-serif text-lg md:text-xl font-bold"
+                className="shrink-0 flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-full bg-ink text-white font-serif text-lg md:text-xl font-bold"
                 aria-hidden="true"
               >
                 {i + 1}
               </span>
               <div className="flex-1 min-w-0">
-                <p className="font-serif text-xl md:text-2xl font-bold text-ink leading-tight mb-1">
-                  {useCase.metric}
-                </p>
-                <p className="text-xs uppercase tracking-[0.12em] text-mid mb-3">
-                  {useCase.label}
-                </p>
+                <h3 className="font-serif text-lg md:text-xl font-bold text-brand-red leading-snug mb-3">
+                  {useCase.title}
+                </h3>
                 <p className="text-stone text-[15px] md:text-base leading-[1.85]">
                   {useCase.description}
                 </p>

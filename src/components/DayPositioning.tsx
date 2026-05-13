@@ -78,13 +78,20 @@ export function DayPositioning() {
             </ul>
           </div>
 
-          {/* sokoe Day：現場サポート担当 */}
-          <div className="rounded-[8px] border-[1.5px] border-brand-red bg-white p-7 md:p-9 shadow-sm">
-            <p className="text-[11px] md:text-xs font-semibold uppercase tracking-[0.15em] text-brand-red mb-3">
+          {/* sokoe Day：現場サポート担当（主役カード） */}
+          <div className="relative rounded-[12px] border-2 border-brand-red bg-tint-pink/60 p-7 md:p-10 shadow-[0_12px_32px_-12px_rgba(213,46,52,0.25)] lg:scale-[1.02]">
+            {/* 上部のアクセントバッジ */}
+            <span className="absolute -top-3 left-6 inline-block bg-brand-red text-white text-[10px] md:text-[11px] font-bold uppercase tracking-[0.12em] px-3 py-1 rounded-full shadow-sm">
+              ここを sokoe Day が
+            </span>
+
+            <p className="mt-2 mb-3 text-[11px] md:text-xs font-semibold uppercase tracking-[0.15em] text-brand-red">
               現場は、sokoe Day が
             </p>
-            <h3 className="font-serif text-xl md:text-2xl font-bold text-ink mb-3">sokoe Day</h3>
-            <p className="text-product-orange text-[14px] md:text-[15px] font-semibold leading-[1.7] mb-5">
+            <h3 className="font-serif text-2xl md:text-3xl font-bold text-ink mb-3">
+              sokoe Day
+            </h3>
+            <p className="text-product-orange text-[15px] md:text-base font-semibold leading-[1.7] mb-5">
               現場業務の効率化は、お任せください。
             </p>
             <p className="text-stone text-[14px] md:text-[15px] leading-[1.85] mb-5">
