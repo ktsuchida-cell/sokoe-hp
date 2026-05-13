@@ -48,15 +48,23 @@ type Metric = {
 type FeatureCategory = {
   englishLabel: string;
   category: string;
+  /** 主に使う人（介護業界では役割分業が明確なので明示する） */
+  user: string;
+  /** 大タイトル直下の効能サブタイトル（1 行） */
+  subtitle: string;
   lead: string;
   metric: Metric;
   features: Feature[];
+  /** 現場発タグ：このカテゴリの機能が生まれた自社実証文脈 */
+  origin: string;
 };
 
 const featureCategories: FeatureCategory[] = [
   {
     englishLabel: 'FLOOR OPERATIONS',
     category: 'フロア業務',
+    user: '介護職員・看護師',
+    subtitle: '記録から申し送りまで、フロアの手間をまるごと圧縮。',
     lead: '日々の現場業務を、タブレット1枚で効率化。ご利用者の受け入れから記録・申し送りまで、7つの機能で支えます。',
     metric: {
       before: 100,
@@ -80,10 +88,13 @@ const featureCategories: FeatureCategory[] = [
         isAI: true,
       },
     ],
+    origin: 'フロアの記録業務は、自社施設「レッツ倶楽部川西能勢口」で介護職員が毎日使う中で設計されました。',
   },
   {
     englishLabel: 'TRANSPORT',
     category: '送迎業務',
+    user: 'ドライバー・運行管理者',
+    subtitle: '複雑な便構成も、運行と記録を一画面で。',
     lead: '4便 + 6パターンの便構成にネイティブ対応。AI 最適化された配車計画とドライバー専用 UI で、送迎業務を支える3つの機能。',
     metric: {
       before: 25,
@@ -98,10 +109,13 @@ const featureCategories: FeatureCategory[] = [
       { icon: Smartphone, title: 'ドライバー画面', description: 'モバイル専用UI' },
       { icon: Route, title: '送迎記録', description: '監査用に自動記録' },
     ],
+    origin: '4便構成の送迎を、自社施設のドライバーが現場で運用しながら磨き上げています。',
   },
   {
     englishLabel: 'BACK OFFICE',
     category: '管理者業務',
+    user: '施設長・管理者',
+    subtitle: 'ケアマネ営業から議事録・加算判定まで、AI で。',
     lead: 'ケアマネ営業から議事録・加算判定・レポートまで。施設運営に必要なバックオフィスを支える7つの機能。',
     metric: {
       before: 100,
@@ -125,6 +139,7 @@ const featureCategories: FeatureCategory[] = [
       { icon: FileText, title: '加算管理', description: '半日型加算も自動判定' },
       { icon: ClipboardList, title: 'レポート出力', description: '監査・実績データを即時出力' },
     ],
+    origin: '代表（現役の施設長代理）が、自施設の管理業務を毎日 sokoe Day で回しながら改善しています。',
   },
 ];
 
@@ -183,19 +198,27 @@ export function DayFeatures() {
         <div className="space-y-24 md:space-y-32">
           {featureCategories.map((cat) => (
             <article key={cat.category}>
-              {/* 上：英語ラベル + 大タイトル（ブロック単独で見出し化） */}
+              {/* 上：英語ラベル + 主に使う人バッジ + 大タイトル + 効能サブタイトル */}
               <div className="mb-10 md:mb-12 text-center lg:text-left">
-                <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-brand-red">
-                  {cat.englishLabel}
-                </p>
+                <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 mb-4">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-red">
+                    {cat.englishLabel}
+                  </p>
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-bg-muted px-3 py-1 text-[11px] md:text-xs font-medium text-charcoal">
+                    主に使う人：{cat.user}
+                  </span>
+                </div>
                 <Heading
                   level="h3"
                   serif
-                  className="!text-[32px] sm:!text-[40px] md:!text-[48px] lg:!text-[56px] !leading-[1.15]"
+                  className="!text-[32px] sm:!text-[40px] md:!text-[48px] lg:!text-[56px] !leading-[1.15] mb-4"
                 >
                   <span className="text-brand-red">sokoe Day</span>{' '}
                   <span className="text-ink">{cat.category}</span>
                 </Heading>
+                <p className="text-lg md:text-xl text-charcoal font-medium leading-[1.6] max-w-2xl mx-auto lg:mx-0">
+                  {cat.subtitle}
+                </p>
               </div>
 
               {/* 下：左にリード+メトリクス、右に機能+詳しく見る */}
@@ -206,20 +229,27 @@ export function DayFeatures() {
                   </p>
 
                   {/* メトリクスビジュアル */}
-                  <div className="flex flex-col items-center gap-5 sm:flex-row sm:items-center sm:gap-6">
-                    <MetricChart metric={cat.metric} />
-                    <div className="text-center sm:text-left flex-1 min-w-0">
-                      <p className="font-serif text-xl md:text-2xl font-bold text-ink leading-tight">
-                        {cat.metric.prefix}
-                        <br className="hidden sm:block" />
-                        <span className="text-product-orange text-[32px] md:text-[40px] mr-1 align-middle">
-                          {cat.metric.highlight}
-                        </span>
-                        {cat.metric.suffix}
-                      </p>
-                      <p className="mt-3 text-[12px] md:text-[13px] text-stone leading-[1.85] max-w-sm mx-auto sm:mx-0">
-                        {cat.metric.caption}
-                      </p>
+                  <div>
+                    <span className="inline-flex items-center gap-1.5 mb-4 rounded-full bg-product-orange/10 px-3 py-1 text-[11px] md:text-xs font-semibold tracking-[0.05em] text-product-orange">
+                      <Sparkles className="w-3 h-3" strokeWidth={2} />
+                      現場実証データ
+                    </span>
+                    <div className="flex flex-col items-center gap-5 sm:flex-row sm:items-center sm:gap-6">
+                      <MetricChart metric={cat.metric} />
+                      <div className="text-center sm:text-left flex-1 min-w-0">
+                        <p className="font-serif font-bold text-ink leading-tight">
+                          <span className="block text-base md:text-lg mb-1">
+                            {cat.metric.prefix}
+                          </span>
+                          <span className="text-product-orange text-[44px] md:text-[56px] leading-none align-middle">
+                            {cat.metric.highlight}
+                          </span>
+                          <span className="text-2xl md:text-3xl ml-1">{cat.metric.suffix}</span>
+                        </p>
+                        <p className="mt-3 text-[12px] md:text-[13px] text-stone leading-[1.85] max-w-sm mx-auto sm:mx-0">
+                          {cat.metric.caption}
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -232,25 +262,30 @@ export function DayFeatures() {
                         <li key={feature.title}>
                           <Link
                             href="/day-service/feature/"
-                            className="group flex items-center gap-4 bg-white border border-border rounded-[6px] p-4 hover:border-ink transition-colors"
+                            className="group flex items-start gap-4 bg-white border border-border rounded-[6px] p-4 hover:border-ink transition-colors"
                           >
                             <Icon
-                              className="shrink-0 w-5 h-5 text-charcoal"
+                              className="shrink-0 w-5 h-5 text-charcoal mt-0.5"
                               strokeWidth={1.5}
                             />
-                            <span className="flex-1 min-w-0 flex items-center gap-2">
-                              <span className="font-bold text-[14px] md:text-[15px] text-ink leading-snug">
-                                {feature.title}
-                              </span>
-                              {feature.isAI && (
-                                <span className="inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-[0.1em] text-product-orange bg-tint-orange px-1.5 py-0.5 rounded-[3px]">
-                                  <Sparkles className="w-2.5 h-2.5" strokeWidth={2} />
-                                  AI
+                            <div className="flex-1 min-w-0">
+                              <div className="flex items-center gap-2 mb-1">
+                                <span className="font-bold text-[14px] md:text-[15px] text-ink leading-snug">
+                                  {feature.title}
                                 </span>
-                              )}
-                            </span>
+                                {feature.isAI && (
+                                  <span className="inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-[0.1em] text-product-orange bg-tint-orange px-1.5 py-0.5 rounded-[3px]">
+                                    <Sparkles className="w-2.5 h-2.5" strokeWidth={2} />
+                                    AI
+                                  </span>
+                                )}
+                              </div>
+                              <p className="text-stone text-[12px] md:text-[13px] leading-[1.7]">
+                                {feature.description}
+                              </p>
+                            </div>
                             <ArrowRight
-                              className="shrink-0 w-4 h-4 text-mid group-hover:text-ink transition-colors"
+                              className="shrink-0 w-4 h-4 text-mid group-hover:text-ink transition-colors mt-1"
                               strokeWidth={1.5}
                             />
                           </Link>
@@ -268,6 +303,14 @@ export function DayFeatures() {
                     </Link>
                   </div>
                 </div>
+              </div>
+
+              {/* 現場発タグ（カテゴリ末尾） */}
+              <div className="mt-10 md:mt-12 border-t border-border pt-6">
+                <p className="text-[12px] md:text-[13px] text-mid leading-[1.85] flex items-start gap-2">
+                  <span className="shrink-0 inline-block mt-0.5 text-brand-red font-bold">●</span>
+                  <span>{cat.origin}</span>
+                </p>
               </div>
             </article>
           ))}
