@@ -6,21 +6,24 @@ import { Check } from 'lucide-react';
 
 const coverageFeatures = [
   {
-    title: '4便構成にネイティブ対応',
+    title: '4便 × 6パターンの便構成に対応',
     description:
-      '朝迎・朝送・昼迎・夕送の4便を1日内で同時運用できる設計。公開情報の範囲で同等の対応をする国内SaaSは確認できていません。※当社調べ・2026年5月時点',
+      '朝迎・朝送・昼迎・夕送の4便を1日内で同時運用。半日型・1日型・ハイブリッド型の組み合わせも、そのまま運用できます。',
   },
   {
-    title: '午前/午後/終日のセッション管理',
-    description: 'フロア業務もセッション別に管理。終日券利用者の二重出欠も自動で整合。',
+    title: '終日券利用者の二重出欠も、自動で整合',
+    description:
+      '午前/午後/終日をセッション別に管理。1人の利用者が複数セッションにまたがる場合も、出欠データを自動で揃えます。',
   },
   {
-    title: '1日型・半日型・ハイブリッドの混在対応',
-    description: '同じ施設で複数形態を運営している事業所にも、追加料金なしで対応。',
+    title: '複数形態の混在運用も、追加料金なし',
+    description:
+      '同じ施設で1日型・半日型・ハイブリッドを同時運営する場合も、プランを追加せず標準機能でご利用いただけます。',
   },
   {
-    title: '半日型特有の加算管理',
-    description: '個別機能訓練・延長加算など、半日型特有の加算を自動判定。',
+    title: '半日型固有の加算も、AI で判定',
+    description:
+      '個別機能訓練・延長加算など、半日型運用で複雑になりがちな加算条件を、AI が下書きします。最終確認は管理者が行います。',
   },
 ];
 
@@ -44,20 +47,18 @@ export function DayCoverage() {
             OPERATION COVERAGE
           </Label>
           <Heading level="h2" serif className="mb-6">
-            1日型・半日型・ハイブリッド、
+            半日型のために、
             <br />
-            どれにも本気で。
+            最初から設計しました。
           </Heading>
           <p className="text-stone text-base md:text-lg leading-[1.85]">
-            1日型・半日型・ハイブリッド型を同時運用できる国内 SaaS は、
-            <strong className="text-ink font-bold">
-              公開情報を調査した限り他に確認できていません
-            </strong>
-            ※。
+            4 便構成や午前/午後/終日のセッション管理、半日型固有の加算 ──
             <br className="hidden md:block" />
-            形態が混在する施設にも、追加料金なしで対応します。
-            <br />
-            <span className="text-xs text-mid mt-2 inline-block">※当社調べ・2026年5月時点</span>
+            半日型ならではの運用を、後付けではなく
+            <strong className="text-ink font-bold">最初から想定した設計</strong>
+            にしています。
+            <br className="hidden md:block" />
+            混在運用にも、追加料金なしで対応します。
           </p>
         </div>
 

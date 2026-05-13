@@ -5,6 +5,7 @@ import { DayFeatures } from '@/components/DayFeatures';
 import { DayHero } from '@/components/DayHero';
 import { DayLastCTA } from '@/components/DayLastCTA';
 import { DayPain } from '@/components/DayPain';
+import { DayPositioning } from '@/components/DayPositioning';
 import { DayPricing } from '@/components/DayPricing';
 import { DaySelfUse } from '@/components/DaySelfUse';
 import { DaySolution } from '@/components/DaySolution';
@@ -55,19 +56,20 @@ export const metadata: Metadata = {
 /**
  * sokoe Day LP（/day-service/）
  *
- * セクション構成（v2：Pain ファースト + Coverage を下層へ）：
+ * セクション構成（v3：Solution の後に Positioning を挿入）：
  * [1]  ヘッダー
  * [2]  Hero（プロダクトUIモック + コピー）
  * [3]  Pain（5項目の現場の課題 / 「こういう悩み、ありませんか？」）
  * [4]  Solution（4つの解決）
- * [5]  Self-Use（自社運営施設での実証）
- * [6]  Features（17機能グリッド）
- * [7]  Coverage（1日型・半日型・ハイブリッド型カバレッジ ※旧 HalfDayHero）
- * [8]  Pricing（3プラン）
- * [9]  FAQ（10問）
- * [10] About Founder（代表メッセージ要約）
- * [11] Last CTA（オレンジベタ）
- * [12] Footer
+ * [5]  Positioning（カイポケ等の介護記録ソフトとの併用関係を明示）
+ * [6]  Self-Use（自社運営施設での実証）
+ * [7]  Features（17機能グリッド）
+ * [8]  Coverage（1日型・半日型・ハイブリッド型カバレッジ ※旧 HalfDayHero）
+ * [9]  Pricing（3プラン）
+ * [10] FAQ（10問）
+ * [11] About Founder（代表メッセージ要約）
+ * [12] Last CTA（オレンジベタ）
+ * [13] Footer
  *
  * 構造化データ（Step 4.7 + 4.8）：
  * - SoftwareApplication Schema（sokoe Day）
@@ -95,6 +97,7 @@ export default function DayServicePage() {
         <DayHero />
         <DayPain />
         <DaySolution />
+        <DayPositioning />
         <DaySelfUse />
         <DayFeatures />
         <DayCoverage />
