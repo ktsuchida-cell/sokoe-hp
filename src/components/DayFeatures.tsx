@@ -14,6 +14,7 @@ import {
   FileText,
   Heart,
   LayoutDashboard,
+  type LucideIcon,
   MessageSquare,
   Mic,
   Route,
@@ -26,20 +27,24 @@ import {
 import Link from 'next/link';
 
 type Feature = {
-  icon: typeof LayoutDashboard;
+  icon: LucideIcon;
   title: string;
   description: string;
   isAI?: boolean;
 };
 
 type FeatureCategory = {
+  englishLabel: string;
   category: string;
+  lead: string;
   features: Feature[];
 };
 
 const featureCategories: FeatureCategory[] = [
   {
+    englishLabel: 'FLOOR OPERATIONS',
     category: 'フロア業務',
+    lead: 'ご利用者の受け入れから記録・申し送りまで。日々の現場業務を、タブレット1枚で進める7つの機能。',
     features: [
       {
         icon: LayoutDashboard,
@@ -81,7 +86,9 @@ const featureCategories: FeatureCategory[] = [
     ],
   },
   {
-    category: '送迎',
+    englishLabel: 'TRANSPORT',
+    category: '送迎業務',
+    lead: '4便 + 6パターンの便構成にネイティブ対応。AI 最適化された配車計画と、ドライバー専用 UI で送迎を支える3つの機能。',
     features: [
       {
         icon: CarFront,
@@ -102,7 +109,9 @@ const featureCategories: FeatureCategory[] = [
     ],
   },
   {
+    englishLabel: 'BACK OFFICE',
     category: '管理者業務',
+    lead: 'ケアマネ営業から議事録・加算判定・レポートまで。施設運営に必要なバックオフィスを支える7つの機能。',
     features: [
       {
         icon: Briefcase,
@@ -147,22 +156,19 @@ const featureCategories: FeatureCategory[] = [
 ];
 
 /**
- * Features セクション（17機能グリッド）
+ * Features セクション（SmartHR 「労務管理」ブロック型に寄せた構成）
  *
- * Step 3-C §7 + Step 4.6 オレンジアクセント：
- * - カテゴリ別（フロア / 送迎 / 管理者）に整理
- * - AI 機能には Sparkles アイコンと「AI」バッジ
- * - lucide-react で統一感のあるアイコン
- *
- * Step 4.8 GEO/AEO：
- * - 機能の名前と説明文に固有名詞を多用
- * - AI が「sokoe Day の機能一覧」として引用しやすい構造
+ * - セクション冒頭にサマリー（17 機能）
+ * - 各カテゴリを 12-col の 2 カラムブロックに分解
+ *   - 左 (lg:col-span-4): 英語ラベル + カテゴリ名 + リード + 機能詳細リンク
+ *   - 右 (lg:col-span-8): アイコン横置きの機能カード（2 列）
+ * - AI 機能には product-orange の AI バッジ
  */
 export function DayFeatures() {
   return (
     <Section variant="soft" spacing="lg" bordered>
       <Container>
-        <div className="text-center mb-14 md:mb-16">
+        <div className="text-center mb-16 md:mb-24">
           <Label className="mb-5">FEATURES</Label>
           <Heading level="h2" className="mb-6">
             デイサービスの全業務を、ひとつのアプリで。
@@ -172,47 +178,84 @@ export function DayFeatures() {
           </p>
         </div>
 
-        <div className="space-y-12 md:space-y-16">
+        <div className="space-y-20 md:space-y-28">
           {featureCategories.map((cat) => (
-            <div key={cat.category}>
-              <h3 className="font-bold text-lg md:text-xl text-ink mb-6 pb-3 border-b border-border">
-                {cat.category}
-              </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
-                {cat.features.map((feature) => {
-                  const Icon = feature.icon;
-                  return (
-                    <div
-                      key={feature.title}
-                      className="bg-white border border-border rounded-[6px] p-6 hover:border-ink transition-colors"
-                    >
-                      <div className="flex items-start justify-between mb-4">
-                        <Icon className="w-6 h-6 text-charcoal" strokeWidth={1.5} />
-                        {feature.isAI && (
-                          <span className="inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-[0.1em] text-product-orange bg-tint-orange px-2 py-1 rounded-[3px]">
-                            <Sparkles className="w-2.5 h-2.5" strokeWidth={2} />
-                            AI
-                          </span>
-                        )}
-                      </div>
-                      <h4 className="font-bold text-base text-ink mb-2 leading-snug">
-                        {feature.title}
-                      </h4>
-                      <p className="text-stone text-[13px] leading-[1.75]">{feature.description}</p>
-                    </div>
-                  );
-                })}
+            <div
+              key={cat.category}
+              className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12"
+            >
+              {/* 左：カテゴリヘッダー */}
+              <div className="lg:col-span-4">
+                <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-brand-red">
+                  {cat.englishLabel}
+                </p>
+                <Heading level="h3" serif className="mb-5">
+                  {cat.category}
+                </Heading>
+                <p className="text-stone text-[15px] md:text-base leading-[1.85] mb-7">
+                  {cat.lead}
+                </p>
+                <Link
+                  href="/day-service/feature/"
+                  className="inline-flex items-center gap-2 text-sm md:text-base font-semibold text-ink hover:text-brand-red transition-colors group"
+                >
+                  {cat.category}の機能を詳しく見る
+                  <ArrowRight
+                    className="w-4 h-4 transition-transform group-hover:translate-x-1"
+                    strokeWidth={1.5}
+                  />
+                </Link>
+              </div>
+
+              {/* 右：機能カードグリッド */}
+              <div className="lg:col-span-8">
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
+                  {cat.features.map((feature) => {
+                    const Icon = feature.icon;
+                    return (
+                      <li
+                        key={feature.title}
+                        className="group flex items-start gap-4 bg-white border border-border rounded-[6px] p-5 hover:border-ink transition-colors"
+                      >
+                        <Icon
+                          className="shrink-0 w-6 h-6 text-charcoal mt-0.5"
+                          strokeWidth={1.5}
+                        />
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center gap-2 mb-1">
+                            <h4 className="font-bold text-[15px] md:text-base text-ink leading-snug">
+                              {feature.title}
+                            </h4>
+                            {feature.isAI && (
+                              <span className="inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-[0.1em] text-product-orange bg-tint-orange px-1.5 py-0.5 rounded-[3px]">
+                                <Sparkles className="w-2.5 h-2.5" strokeWidth={2} />
+                                AI
+                              </span>
+                            )}
+                          </div>
+                          <p className="text-stone text-[13px] leading-[1.7]">
+                            {feature.description}
+                          </p>
+                        </div>
+                        <ArrowRight
+                          className="shrink-0 w-4 h-4 text-mid group-hover:text-ink transition-colors mt-1"
+                          strokeWidth={1.5}
+                        />
+                      </li>
+                    );
+                  })}
+                </ul>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="mt-14 text-center">
+        <div className="mt-16 md:mt-20 text-center">
           <Link
             href="/day-service/feature/"
             className="inline-flex items-center gap-2 text-base font-semibold text-ink hover:text-brand-red transition-colors group"
           >
-            機能一覧の詳細を見る
+            17機能の詳細を一覧で見る
             <ArrowRight
               className="w-4 h-4 transition-transform group-hover:translate-x-1"
               strokeWidth={1.5}
