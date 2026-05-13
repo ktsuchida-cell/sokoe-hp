@@ -3,106 +3,93 @@ import { Heading } from '@/components/Heading';
 import { Label } from '@/components/Label';
 import { Section } from '@/components/Section';
 import { ArrowRight } from 'lucide-react';
-import Image from 'next/image';
 import Link from 'next/link';
 
 const useCases = [
   {
     metric: '30分 → 数分',
     label: 'ケアプラン転記時間',
-    description: 'OCR ＋ 生成 AI で計画書を自動生成',
+    description: 'OCR ＋ 生成 AI で計画書を自動生成。月20名で消えていた10時間を取り戻す。',
   },
   {
     metric: '1時間 → 10分',
     label: '担当者会議の議事録',
-    description: '音声認識 + AI で自動議事録化',
+    description: '音声認識 + AI で自動議事録化。会議後の「書き起こし」がなくなる。',
   },
   {
     metric: '全員に',
     label: '個別フィードバック',
-    description: '体力測定 AI 評価で賞状PDFを瞬時に',
+    description: '体力測定 AI 評価で、ご利用者一人ひとりへの賞状PDFを瞬時に。',
   },
   {
     metric: '数秒で',
     label: '名刺データ登録',
-    description: 'AI OCR でケアマネ営業データを自動登録',
+    description: 'AI OCR でケアマネージャーの名刺を読み取り、営業データを自動登録。',
   },
 ];
 
 /**
  * Self-Use セクション（自社運営施設での実証）
  *
- * Step 3-C §6 + Step 4.8 §11 自社実践事例：
- * - 「他人事ではなく、自分たちで使っている」E-E-A-T 訴求
- * - 数値訴求でGEO/AEO 引用率を上げる
- * - 画像2（スタッフ2人がタブレットで連携）を使用
+ * SmartHR「選ばれる理由」型に寄せた構成：
+ *   - 中央寄せのタイトル + リード
+ *   - 番号バッジ付き縦並びカード 4 枚
+ *   - 末尾に「すべての実証事例を見る」リンク
+ *
+ * 写真は意図的に外し、メトリクスのインパクトに集中させる。
+ * E-E-A-T 訴求（自社実証）は本文リードで担保。
  */
 export function DaySelfUse() {
   return (
     <Section spacing="lg" bordered>
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center mb-14 md:mb-16">
-          {/* 左：テキスト */}
-          <div className="lg:col-span-7 order-2 lg:order-1">
-            <Label className="mb-5">SELF-USE PROOF</Label>
-            <Heading level="h2" serif className="mb-6">
-              自分たちで使い、
-              <br className="hidden md:block" />
-              自分たちで証明する。
-            </Heading>
-            <p className="text-stone text-base md:text-lg leading-[1.85] mb-8">
-              sokoe Day は、自社運営する50名規模のデイサービス「
-              <Link
-                href="/about/"
-                className="text-ink font-semibold underline-offset-4 hover:underline"
-              >
-                レッツ倶楽部川西能勢口
-              </Link>
-              」で 2026年4月から本番稼働中。
-              <br className="hidden md:block" />
-              代表が現役の施設長代理として、毎日 sokoe Day を使い、
-              <br className="hidden md:block" />
-              改善し、また使っています。
-            </p>
-            <p className="text-mid text-sm md:text-base leading-[1.85]">
-              「現場で動かないツール」を作らないために、
-              <br className="hidden md:block" />
-              私たちは現場にいます。
-            </p>
-          </div>
-
-          {/* 右：画像（スタッフ連携シーン） */}
-          <div className="lg:col-span-5 order-1 lg:order-2">
-            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[6px] border border-border">
-              <Image
-                src="/images/hero/dayservice-collab-1672x941.webp"
-                alt="自社運営施設で sokoe Day を使いながら、スタッフ2人が利用者情報を相談している様子"
-                fill
-                quality={85}
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 42vw"
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* 4つの実証メトリクス */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
-          {useCases.map((useCase) => (
-            <div
-              key={useCase.label}
-              className="bg-off-white border border-border rounded-[6px] p-6 md:p-7"
+        <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16">
+          <Label className="mb-5">SELF-USE PROOF</Label>
+          <Heading level="h2" serif className="mb-6">
+            自分たちで使い、
+            <br className="hidden md:block" />
+            自分たちで証明する。
+          </Heading>
+          <p className="text-stone text-base md:text-lg leading-[1.85]">
+            sokoe Day は、自社運営する50名規模のデイサービス「
+            <Link
+              href="/about/"
+              className="text-ink font-semibold underline-offset-4 hover:underline"
             >
-              <p className="font-serif text-2xl md:text-[28px] font-bold text-ink leading-none mb-2">
-                {useCase.metric}
-              </p>
-              <p className="text-xs uppercase tracking-[0.1em] text-mid mb-3">{useCase.label}</p>
-              <p className="text-stone text-[13px] md:text-sm leading-[1.7]">
-                {useCase.description}
-              </p>
-            </div>
-          ))}
+              レッツ倶楽部川西能勢口
+            </Link>
+            」で 2026年4月から本番稼働中。
+            <br className="hidden md:block" />
+            代表が現役の施設長代理として、毎日 sokoe Day を使い、改善し、また使っています。
+          </p>
         </div>
+
+        <ul className="mx-auto max-w-3xl space-y-4 md:space-y-5">
+          {useCases.map((useCase, i) => (
+            <li
+              key={useCase.label}
+              className="flex items-start gap-5 md:gap-7 rounded-[8px] bg-white border border-border p-6 md:p-8 transition-shadow hover:shadow-sm"
+            >
+              <span
+                className="shrink-0 flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-full bg-brand-red text-white font-serif text-lg md:text-xl font-bold"
+                aria-hidden="true"
+              >
+                {i + 1}
+              </span>
+              <div className="flex-1 min-w-0">
+                <p className="font-serif text-xl md:text-2xl font-bold text-ink leading-tight mb-1">
+                  {useCase.metric}
+                </p>
+                <p className="text-xs uppercase tracking-[0.12em] text-mid mb-3">
+                  {useCase.label}
+                </p>
+                <p className="text-stone text-[15px] md:text-base leading-[1.85]">
+                  {useCase.description}
+                </p>
+              </div>
+            </li>
+          ))}
+        </ul>
 
         <div className="mt-12 text-center">
           <Link
@@ -116,6 +103,10 @@ export function DaySelfUse() {
             />
           </Link>
         </div>
+
+        <p className="mt-10 text-center text-mid text-sm md:text-base leading-[1.85]">
+          「現場で動かないツール」を作らないために、私たちは現場にいます。
+        </p>
       </Container>
     </Section>
   );
