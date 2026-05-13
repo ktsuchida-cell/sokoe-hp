@@ -33,7 +33,7 @@ export function DayHero() {
             <Heading
               level="h1"
               serif
-              className="!text-4xl !leading-[1.15] md:!text-5xl lg:!text-6xl xl:!text-7xl"
+              className="!text-[28px] !leading-[1.2] sm:!text-4xl sm:!leading-[1.15] md:!text-5xl lg:!text-6xl xl:!text-7xl"
             >
               <span className="text-product-orange">現場発の、</span>
               <br />

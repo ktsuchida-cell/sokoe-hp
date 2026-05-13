@@ -53,16 +53,16 @@ export function Heading({
         tone === 'white' && 'text-white',
         tone === 'brand-red' && 'text-brand-red',
 
-        // サイズ
+        // サイズ（モバイル 375 で日本語が変な位置で折り返さないよう、起点を絞る）
         level === 'display' && [
-          'text-[44px] sm:text-[56px] md:text-[72px] lg:text-[88px]',
-          'leading-[1.05]',
+          'text-[32px] sm:text-[44px] md:text-[64px] lg:text-[80px]',
+          'leading-[1.1] sm:leading-[1.05]',
           '-tracking-[0.025em]',
         ],
-        level === 'h1' && 'text-[32px] sm:text-[40px] md:text-[52px] lg:text-[60px]',
-        level === 'h2' && 'text-[26px] sm:text-[30px] md:text-[36px] lg:text-[40px]',
-        level === 'h3' && 'text-[22px] sm:text-[24px] md:text-[28px]',
-        level === 'h4' && 'text-[18px] sm:text-[20px] md:text-[22px]',
+        level === 'h1' && 'text-[26px] sm:text-[34px] md:text-[48px] lg:text-[60px]',
+        level === 'h2' && 'text-[22px] sm:text-[28px] md:text-[34px] lg:text-[40px]',
+        level === 'h3' && 'text-[20px] sm:text-[22px] md:text-[26px] lg:text-[28px]',
+        level === 'h4' && 'text-[17px] sm:text-[19px] md:text-[22px]',
 
         className,
       )}
