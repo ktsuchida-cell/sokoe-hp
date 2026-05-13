@@ -1,7 +1,7 @@
 import { DayAboutFounder } from '@/components/DayAboutFounder';
+import { DayCoverage } from '@/components/DayCoverage';
 import { DayFAQ } from '@/components/DayFAQ';
 import { DayFeatures } from '@/components/DayFeatures';
-import { DayHalfDayHero } from '@/components/DayHalfDayHero';
 import { DayHero } from '@/components/DayHero';
 import { DayLastCTA } from '@/components/DayLastCTA';
 import { DayPain } from '@/components/DayPain';
@@ -55,14 +55,14 @@ export const metadata: Metadata = {
 /**
  * sokoe Day LP（/day-service/）
  *
- * Step 3-C で確定したセクション構成（Phase 0 コア10セクション）：
+ * セクション構成（v2：Pain ファースト + Coverage を下層へ）：
  * [1]  ヘッダー
  * [2]  Hero（プロダクトUIモック + コピー）
- * [3]  半日型対応訴求（最大の差別化）
- * [4]  Pain（5項目の現場の課題）
- * [5]  Solution（4つの解決）
- * [6]  Self-Use（自社運営施設での実証）
- * [7]  Features（17機能グリッド）
+ * [3]  Pain（5項目の現場の課題 / 「こういう悩み、ありませんか？」）
+ * [4]  Solution（4つの解決）
+ * [5]  Self-Use（自社運営施設での実証）
+ * [6]  Features（17機能グリッド）
+ * [7]  Coverage（1日型・半日型・ハイブリッド型カバレッジ ※旧 HalfDayHero）
  * [8]  Pricing（3プラン）
  * [9]  FAQ（10問）
  * [10] About Founder（代表メッセージ要約）
@@ -93,11 +93,11 @@ export default function DayServicePage() {
 
       <main>
         <DayHero />
-        <DayHalfDayHero />
         <DayPain />
         <DaySolution />
         <DaySelfUse />
         <DayFeatures />
+        <DayCoverage />
         <DayPricing />
         <DayFAQ />
         <DayAboutFounder />

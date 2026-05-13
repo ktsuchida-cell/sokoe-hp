@@ -25,15 +25,20 @@ export function DayHero() {
   return (
     <Section spacing="md" className="overflow-x-hidden">
       <Container size="wide">
-        <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-12 xl:gap-16">
+        <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-10 xl:gap-14">
           {/* ─── 左：テキスト + CTA ─── */}
-          <div className="text-center lg:col-span-5 lg:text-left">
+          {/*
+            lg: col-span-6（画像と等分）— 1024-1279 では左カラム実幅が約 444px しか取れないため、
+            5/7 比率だと「デイサービスアプリ。」がカラム幅を超え「プリ。」が orphan になる。
+            xl+: 本来の 5/7 比率に戻す（カラム幅 465px 以上が取れるため）。
+          */}
+          <div className="text-center lg:col-span-6 lg:text-left xl:col-span-5">
             <Label className="mb-6 text-product-orange">SOKOE DAY ─ デイサービス向けアプリ</Label>
 
             <Heading
               level="h1"
               serif
-              className="!text-[28px] !leading-[1.2] sm:!text-4xl sm:!leading-[1.15] md:!text-5xl lg:!text-6xl xl:!text-7xl"
+              className="!text-[28px] !leading-[1.2] sm:!text-4xl sm:!leading-[1.15] md:!text-5xl lg:!text-[40px] xl:!text-[44px] 2xl:!text-5xl"
             >
               <span className="text-product-orange">現場発の、</span>
               <br />
@@ -61,7 +66,7 @@ export function DayHero() {
           </div>
 
           {/* ─── 右：プロダクト画像（大） ─── */}
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-6 xl:col-span-7">
             <Image
               src="/images/day/hero-mockup.svg"
               alt="sokoe Day のホーム画面：バイタル・入浴・マシン訓練の進捗、本日の業務、To-Do、メモボード、申し送りが一画面で見える"
@@ -69,7 +74,7 @@ export function DayHero() {
               height={1100}
               priority
               unoptimized
-              sizes="(min-width: 1024px) 58vw, 100vw"
+              sizes="(min-width: 1280px) 58vw, (min-width: 1024px) 50vw, 100vw"
               className="h-auto w-full"
             />
           </div>

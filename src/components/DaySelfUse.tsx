@@ -51,7 +51,7 @@ export function DaySelfUse() {
               自分たちで証明する。
             </Heading>
             <p className="text-stone text-base md:text-lg leading-[1.85] mb-8">
-              sokoe Day は、自社運営施設「
+              sokoe Day は、自社運営する50名規模のデイサービス「
               <Link
                 href="/about/"
                 className="text-ink font-semibold underline-offset-4 hover:underline"

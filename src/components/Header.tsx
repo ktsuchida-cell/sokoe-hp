@@ -82,7 +82,7 @@ export function Header() {
             {/* PC CTA */}
             <div className="hidden lg:flex items-center gap-3">
               <Link href="/contact/">
-                <Button variant="secondary" size="sm">
+                <Button variant="secondary" size="md">
                   お問い合わせ
                 </Button>
               </Link>
@@ -128,7 +128,7 @@ function NavItemPC({ item, isOpen, onOpenChange }: NavItemPCProps) {
       <Link
         href={item.href}
         className={cn(
-          'px-4 py-2 text-[14px] font-medium text-charcoal',
+          'px-4 py-2 text-[16px] font-medium text-charcoal',
           'transition-colors hover:text-brand-red',
         )}
       >
@@ -146,14 +146,14 @@ function NavItemPC({ item, isOpen, onOpenChange }: NavItemPCProps) {
       <button
         type="button"
         className={cn(
-          'flex items-center gap-1 px-4 py-2 text-[14px] font-medium text-charcoal',
+          'flex items-center gap-1 px-4 py-2 text-[16px] font-medium text-charcoal',
           'transition-colors hover:text-brand-red',
         )}
         aria-expanded={isOpen}
         aria-haspopup="menu"
       >
         {item.label}
-        <ChevronDown className="w-3.5 h-3.5" strokeWidth={2} />
+        <ChevronDown className="w-4 h-4" strokeWidth={2} />
       </button>
 
       {isOpen && (
@@ -164,7 +164,7 @@ function NavItemPC({ item, isOpen, onOpenChange }: NavItemPCProps) {
                 key={child.label}
                 href={child.href}
                 className={cn(
-                  'block px-5 py-3 text-[14px] text-charcoal',
+                  'block px-5 py-3 text-[15px] text-charcoal',
                   'transition-colors hover:bg-soft-bg hover:text-brand-red',
                 )}
                 role="menuitem"
