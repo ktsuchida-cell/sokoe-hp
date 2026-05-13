@@ -64,7 +64,7 @@ export function Header() {
               className="shrink-0 transition-opacity hover:opacity-80"
               aria-label="sokoe ホーム"
             >
-              <Logo variant="lockup-horizontal" theme="default" height={40} priority />
+              <Logo variant="lockup-horizontal" theme="default" height={48} priority />
             </Link>
 
             {/* PC ナビゲーション */}
@@ -199,7 +199,7 @@ function MobileMenu({ open, onClose }: MobileMenuProps) {
       aria-hidden={!open}
     >
       <div className="flex items-center justify-between px-6 h-[56px] border-b border-border">
-        <Logo variant="lockup-horizontal" theme="default" height={40} priority />
+        <Logo variant="lockup-horizontal" theme="default" height={48} priority />
         <button type="button" onClick={onClose} className="p-2 -mr-2" aria-label="メニューを閉じる">
           <X className="w-6 h-6" strokeWidth={1.5} />
         </button>
