@@ -182,9 +182,12 @@ export function DayFeatures() {
 
         <div className="space-y-24 md:space-y-32">
           {featureCategories.map((cat) => (
-            <article key={cat.category} className="mx-auto max-w-3xl">
-              {/* ヘッダー */}
-              <div className="text-center mb-10 md:mb-12">
+            <article
+              key={cat.category}
+              className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start"
+            >
+              {/* 左：ヘッダー + メトリクス */}
+              <div className="lg:col-span-5 text-center lg:text-left">
                 <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-brand-red">
                   {cat.englishLabel}
                 </p>
@@ -192,67 +195,70 @@ export function DayFeatures() {
                   <span className="text-brand-red">sokoe Day</span>{' '}
                   <span className="text-ink">{cat.category}</span>
                 </Heading>
-                <p className="text-stone text-[15px] md:text-base leading-[1.85] mb-7 max-w-xl mx-auto">
+                <p className="text-stone text-[15px] md:text-base leading-[1.85] mb-7 max-w-xl mx-auto lg:mx-0">
                   {cat.lead}
                 </p>
-                <Link href="/day-service/feature/" className="inline-block">
+                <Link href="/day-service/feature/" className="inline-block mb-10">
                   <Button variant="secondary" size="sm">
                     詳しく見る →
                   </Button>
                 </Link>
-              </div>
 
-              {/* メトリクスビジュアル */}
-              <div className="flex flex-col items-center gap-6 mb-10 md:mb-12 md:flex-row md:justify-center md:gap-10">
-                <MetricChart metric={cat.metric} />
-                <div className="text-center md:text-left">
-                  <p className="font-serif text-2xl md:text-3xl font-bold text-ink leading-tight">
-                    {cat.metric.prefix}
-                    <span className="text-product-orange text-[40px] md:text-[52px] mx-1 align-middle">
-                      {cat.metric.highlight}
-                    </span>
-                    {cat.metric.suffix}
-                  </p>
-                  <p className="mt-3 text-[13px] md:text-sm text-stone leading-[1.85] max-w-md">
-                    {cat.metric.caption}
-                  </p>
+                {/* メトリクスビジュアル */}
+                <div className="flex flex-col items-center gap-5 sm:flex-row sm:items-center sm:gap-6">
+                  <MetricChart metric={cat.metric} />
+                  <div className="text-center sm:text-left flex-1 min-w-0">
+                    <p className="font-serif text-xl md:text-2xl font-bold text-ink leading-tight">
+                      {cat.metric.prefix}
+                      <br className="hidden sm:block" />
+                      <span className="text-product-orange text-[32px] md:text-[40px] mr-1 align-middle">
+                        {cat.metric.highlight}
+                      </span>
+                      {cat.metric.suffix}
+                    </p>
+                    <p className="mt-3 text-[12px] md:text-[13px] text-stone leading-[1.85] max-w-sm mx-auto sm:mx-0">
+                      {cat.metric.caption}
+                    </p>
+                  </div>
                 </div>
               </div>
 
-              {/* 機能リスト（ボタン風カード） */}
-              <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                {cat.features.map((feature) => {
-                  const Icon = feature.icon;
-                  return (
-                    <li key={feature.title}>
-                      <Link
-                        href="/day-service/feature/"
-                        className="group flex items-center gap-4 bg-white border border-border rounded-[6px] p-4 hover:border-ink transition-colors"
-                      >
-                        <Icon
-                          className="shrink-0 w-5 h-5 text-charcoal"
-                          strokeWidth={1.5}
-                        />
-                        <span className="flex-1 min-w-0 flex items-center gap-2">
-                          <span className="font-bold text-[14px] md:text-[15px] text-ink leading-snug">
-                            {feature.title}
-                          </span>
-                          {feature.isAI && (
-                            <span className="inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-[0.1em] text-product-orange bg-tint-orange px-1.5 py-0.5 rounded-[3px]">
-                              <Sparkles className="w-2.5 h-2.5" strokeWidth={2} />
-                              AI
+              {/* 右：機能リスト（ボタン風カード） */}
+              <div className="lg:col-span-7">
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {cat.features.map((feature) => {
+                    const Icon = feature.icon;
+                    return (
+                      <li key={feature.title}>
+                        <Link
+                          href="/day-service/feature/"
+                          className="group flex items-center gap-4 bg-white border border-border rounded-[6px] p-4 hover:border-ink transition-colors"
+                        >
+                          <Icon
+                            className="shrink-0 w-5 h-5 text-charcoal"
+                            strokeWidth={1.5}
+                          />
+                          <span className="flex-1 min-w-0 flex items-center gap-2">
+                            <span className="font-bold text-[14px] md:text-[15px] text-ink leading-snug">
+                              {feature.title}
                             </span>
-                          )}
-                        </span>
-                        <ArrowRight
-                          className="shrink-0 w-4 h-4 text-mid group-hover:text-ink transition-colors"
-                          strokeWidth={1.5}
-                        />
-                      </Link>
-                    </li>
-                  );
-                })}
-              </ul>
+                            {feature.isAI && (
+                              <span className="inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-[0.1em] text-product-orange bg-tint-orange px-1.5 py-0.5 rounded-[3px]">
+                                <Sparkles className="w-2.5 h-2.5" strokeWidth={2} />
+                                AI
+                              </span>
+                            )}
+                          </span>
+                          <ArrowRight
+                            className="shrink-0 w-4 h-4 text-mid group-hover:text-ink transition-colors"
+                            strokeWidth={1.5}
+                          />
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
             </article>
           ))}
         </div>
