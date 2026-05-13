@@ -54,9 +54,7 @@ export function DaySolution() {
             OUR SOLUTION
           </Label>
           <Heading level="h2" serif className="mb-6">
-            sokoe Day の、
-            <br className="hidden md:block" />
-            解決の仕方。
+            sokoe Day の、解決の仕方。
           </Heading>
           <p className="text-stone text-base md:text-lg leading-[1.85]">
             sokoe Day がどのように
