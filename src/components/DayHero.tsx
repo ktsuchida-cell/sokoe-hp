@@ -1,3 +1,4 @@
+import { Check } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from './Button';
@@ -63,6 +64,27 @@ export function DayHero() {
             <p className="mt-6 text-sm text-charcoal-muted">
               自社運営施設で 2026 年 4 月から本番稼働中
             </p>
+
+            {/* 判断材料 3 点バッジ */}
+            <ul className="mt-6 flex flex-wrap justify-center gap-x-5 gap-y-2 lg:justify-start">
+              {[
+                'カイポケ等の介護記録ソフトと併用 OK',
+                '1 日型・半日型・ハイブリッドに対応',
+                '30 日間無料トライアル',
+              ].map((badge) => (
+                <li
+                  key={badge}
+                  className="flex items-center gap-1.5 text-[12px] md:text-[13px] font-medium text-charcoal"
+                >
+                  <Check
+                    className="shrink-0 w-3.5 h-3.5 text-product-orange"
+                    strokeWidth={2.5}
+                    aria-hidden="true"
+                  />
+                  {badge}
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* ─── 右：プロダクト画像（大） ─── */}

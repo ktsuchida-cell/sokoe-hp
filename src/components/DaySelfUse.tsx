@@ -103,10 +103,6 @@ export function DaySelfUse() {
             />
           </Link>
         </div>
-
-        <p className="mt-10 text-center text-mid text-sm md:text-base leading-[1.85]">
-          「現場で動かないツール」を作らないために、私たちは現場にいます。
-        </p>
       </Container>
     </Section>
   );

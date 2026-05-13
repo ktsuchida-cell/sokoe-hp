@@ -136,9 +136,12 @@ export function DayPricing() {
                 ))}
               </ul>
 
-              <Link href="/day-service/document/" className="block">
+              <Link
+                href={plan.isRecommended ? '/contact/?type=sokoe-day' : '/day-service/document/'}
+                className="block"
+              >
                 <Button variant={plan.isRecommended ? 'product' : 'secondary'} size="md" fullWidth>
-                  資料をダウンロード（無料）
+                  {plan.isRecommended ? '無料相談を予約（30 分）' : '資料をダウンロード（無料）'}
                 </Button>
               </Link>
             </article>
