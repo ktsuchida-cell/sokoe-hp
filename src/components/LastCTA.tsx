@@ -23,21 +23,21 @@ export function LastCTA() {
           </Label>
 
           <Heading level="h2" tone="white" serif className="mb-10">
-            まずはお話を、
+            ベンダーが書いた仕様書ではなく、
             <br className="hidden md:block" />
-            聞かせてください。
+            施設長が書いた仕様書。
           </Heading>
 
           <p className="text-white/90 text-base md:text-lg leading-[1.85] mb-12">
-            「うちの場合、何ができるんだろう」を、
+            代表は現役の施設長代理として、毎日 sokoe Day を使っています。
             <br className="hidden md:block" />
-            30分のオンライン相談で。無料で承ります。
+            「うちの場合、何ができるんだろう」を、30 分のオンライン相談で。
           </p>
 
           <div className="flex flex-wrap justify-center gap-4">
             <Link href="/contact/">
               <Button variant="white" size="lg">
-                無料相談を予約
+                無料相談を予約（30 分）
               </Button>
             </Link>
             <Link href="/day-service/document/">

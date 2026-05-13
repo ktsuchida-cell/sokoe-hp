@@ -28,7 +28,7 @@ export function DayHero() {
         <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-12 xl:gap-16">
           {/* ─── 左：テキスト + CTA ─── */}
           <div className="text-center lg:col-span-5 lg:text-left">
-            <Label className="mb-6 text-product-orange">SOKOE DAY ─ DAY-SERVICE OS</Label>
+            <Label className="mb-6 text-product-orange">SOKOE DAY ─ デイサービス向けアプリ</Label>
 
             <Heading
               level="h1"

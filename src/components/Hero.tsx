@@ -19,7 +19,7 @@ export function Hero() {
     <Section spacing="xl">
       <Container>
         <div className="max-w-4xl mx-auto text-center">
-          <Label className="mb-8">SOKOE — HEALTHCARE OS</Label>
+          <Label className="mb-8">SOKOE ─ 株式会社 sokoe</Label>
 
           <Heading level="display" serif className="mb-10">
             介護施設を運営する会社が、

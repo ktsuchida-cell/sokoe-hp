@@ -11,6 +11,7 @@ import { DaySolution } from '@/components/DaySolution';
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
 import { JsonLd } from '@/components/JsonLd';
+import { StickyDayCTA } from '@/components/StickyDayCTA';
 import { dayFaqsForSchema } from '@/lib/dayFaqs';
 import { createFAQSchema, sokoeDaySchema } from '@/lib/schemas';
 import { siteConfig } from '@/lib/siteConfig';
@@ -104,6 +105,7 @@ export default function DayServicePage() {
       </main>
 
       <Footer />
+      <StickyDayCTA />
     </>
   );
 }
