@@ -62,10 +62,12 @@ const featureCategories: FeatureCategory[] = [
     subtitle: '記録から申し送りまで、フロアの手間をまるごと圧縮。',
     lead: '日々の現場業務を、タブレット1枚で効率化。ご利用者の受け入れから記録・申し送りまで、7つの機能で支えます。',
     metric: {
-      prefix: '現場の記録業務を、',
-      highlight: '約 52%',
-      suffix: '削減',
-      caption: '自社運営施設「レッツ倶楽部川西能勢口」の実証データから試算。',
+      badge: '自社運営で実践中',
+      prefix: '紙のバインダーから、',
+      highlight: 'タブレット 1 枚へ',
+      suffix: '。',
+      caption:
+        '自社運営施設「レッツ倶楽部川西能勢口」で、フロアの記録・申し送り・入浴・バイタル管理を sokoe Day で運用しています。',
     },
     features: [
       { icon: LayoutDashboard, title: 'ダッシュボード', description: '今日の業務状況を一目で把握' },
