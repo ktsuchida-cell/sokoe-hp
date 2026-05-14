@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 const useCases = [
   {
-    title: 'OCR で、通所介護計画書（ケアプラン）が 30 分 → 数分',
+    title: '通所介護計画書（ケアプラン）が 30 分 → 数分',
     description:
       'ケアマネージャーから受け取った計画書を OCR で読み取り、AI が施設様式へ自動変換。月 20 名で消えていた 10 時間の転記業務が、ほぼゼロになります。',
   },
