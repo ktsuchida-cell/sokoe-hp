@@ -1,5 +1,5 @@
 /**
- * sokoe Day の 17 機能の詳細データ。
+ * sokoe Day の 16 機能の詳細データ。
  * /day-service/feature/ ページで RECORE 風の縦並びブロックとして表示。
  *
  * 画像は後でユーザーが撮影して差し替える前提で、現状は src を空にし
@@ -64,7 +64,7 @@ export const featureDetails: FeatureDetail[] = [
     bullets: [
       '前日確定の出欠が、自動的に配車計画へ反映される',
       '当日のキャンセル・追加もタップ 1 つで、ドライバー画面に即時通知',
-      '実績データは加算判定とレポートへ自動連携',
+      '実績データは月次レポートへ自動連携',
     ],
     image: { alt: '出欠管理画面：ご利用者の出欠状況をリスト表示' },
   },
@@ -235,20 +235,6 @@ export const featureDetails: FeatureDetail[] = [
     image: { alt: 'スケジュール管理画面：シフトと利用予定の統合' },
   },
   {
-    id: 'addition-mgmt',
-    category: 'backoffice',
-    categoryLabel: '管理者業務',
-    positioning: '加算判定を、AI が自動でチェック',
-    title: '加算管理',
-    bullets: [
-      '個別機能訓練・延長加算・半日型加算など、複雑な算定条件を自動判定',
-      '不足書類があれば、月次レポート前に警告',
-      '半日型固有の加算にも、ネイティブ対応',
-    ],
-    image: { alt: '加算管理画面：加算判定の自動チェック' },
-    isAI: true,
-  },
-  {
     id: 'reports',
     category: 'backoffice',
     categoryLabel: '管理者業務',
@@ -285,6 +271,6 @@ export const featureCategories: {
     id: 'backoffice',
     label: '管理者業務',
     englishLabel: 'BACK OFFICE',
-    lead: 'ケアマネ営業から議事録・加算判定・レポートまで。バックオフィスを支える 7 機能。',
+    lead: 'ケアマネ営業から議事録・名刺データ・レポートまで。バックオフィスを支える 6 機能。',
   },
 ];

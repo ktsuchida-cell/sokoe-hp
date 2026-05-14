@@ -62,7 +62,7 @@ export const metadata: Metadata = {
  * [4]  Solution（4つの解決）
  * [5]  Positioning（カイポケ等の介護記録ソフトとの併用関係を明示）
  * [6]  Self-Use（自社運営施設での実証）
- * [7]  Features（17機能グリッド、TRANSPORT カテゴリで半日型対応も訴求）
+ * [7]  Features（16機能グリッド、TRANSPORT カテゴリで半日型対応も訴求）
  * [8]  Pricing（3プラン）
  * [9]  FAQ（10問）
  * [10] About Founder（代表メッセージ要約）

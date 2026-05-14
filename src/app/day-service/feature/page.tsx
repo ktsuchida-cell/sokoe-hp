@@ -20,7 +20,7 @@ const PAGE_URL = `${siteConfig.url}/day-service/feature/`;
 export const metadata: Metadata = {
   title: 'sokoe Day 機能一覧 ｜ sokoe',
   description:
-    'sokoe Day（デイサービス向けアプリ）の 17 機能を、フロア業務／送迎業務／管理者業務の 3 カテゴリで詳しく紹介。各機能の画面例と運用フローを掲載しています。',
+    'sokoe Day（デイサービス向けアプリ）の 16 機能を、フロア業務／送迎業務／管理者業務の 3 カテゴリで詳しく紹介。各機能の画面例と運用フローを掲載しています。',
   alternates: { canonical: PAGE_URL },
 };
 
@@ -32,7 +32,7 @@ export default function DayServiceFeaturePage() {
       <JsonLd
         data={createWebPageSchema({
           name: 'sokoe Day 機能一覧 ｜ sokoe',
-          description: 'sokoe Day の 17 機能の詳細ページ。',
+          description: 'sokoe Day の 16 機能の詳細ページ。',
           url: PAGE_URL,
         })}
       />
@@ -47,12 +47,12 @@ export default function DayServiceFeaturePage() {
             <div className="max-w-3xl mx-auto text-center">
               <Label className="mb-5">FEATURE DETAILS</Label>
               <Heading level="h1" serif className="mb-6">
-                sokoe Day の 17 機能を、
+                sokoe Day の 16 機能を、
                 <br className="hidden md:block" />
                 ひとつずつ解説します。
               </Heading>
               <p className="text-stone text-base md:text-lg leading-[1.85]">
-                フロア業務・送迎業務・管理者業務の 3 カテゴリで構成する 17 機能。
+                フロア業務・送迎業務・管理者業務の 3 カテゴリで構成する 16 機能。
                 <br className="hidden md:block" />
                 それぞれの画面と、自社運営施設で実証している運用フローをご紹介します。
               </p>
