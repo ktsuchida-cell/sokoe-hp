@@ -119,169 +119,182 @@ export function DayPricing() {
           <p className="text-stone text-base md:text-lg leading-[1.85] max-w-2xl mx-auto">
             フロア機能をベースに、送迎・管理者業務を必要に応じて追加できる従量課金制。
             <br className="hidden md:block" />
-            カードをタップで追加 / 解除、料金が下に自動計算されます。
+            人数を入れて、機能を選ぶだけで料金目安が自動計算されます。
           </p>
         </div>
 
-        {/* プランカード（クリッカブル選択 UI） */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
-          {plans.map((plan) => {
-            const isSelected = selected[plan.id];
-            const isInteractive = !plan.isBase;
-            const CardTag = isInteractive ? 'button' : 'div';
-
-            return (
-              <CardTag
-                key={plan.id}
-                type={isInteractive ? 'button' : undefined}
-                onClick={isInteractive ? () => togglePlan(plan.id) : undefined}
-                aria-pressed={isInteractive ? isSelected : undefined}
-                className={cn(
-                  'relative bg-white rounded-[6px] p-8 md:p-10 transition-all text-left',
-                  // 選択状態のスタイル
-                  plan.isBase
-                    ? 'border-2 border-product-orange'
-                    : isSelected
-                      ? 'border-2 border-product-orange shadow-sm'
-                      : 'border border-border opacity-75 hover:opacity-100 hover:border-ink',
-                  isInteractive && 'cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-product-orange focus-visible:ring-offset-2',
-                )}
-              >
-                {/* バッジ */}
-                <span
-                  className={cn(
-                    'absolute -top-3 left-1/2 -translate-x-1/2 inline-block text-[11px] font-bold uppercase tracking-[0.12em] px-3 py-1 rounded-full',
-                    plan.isBase || isSelected
-                      ? 'bg-product-orange text-white'
-                      : 'bg-bg-muted text-charcoal',
-                  )}
-                >
-                  {plan.badge}
-                </span>
-
-                {/* 選択状態インジケーター（OPTION のみ右上） */}
-                {isInteractive && (
-                  <span
-                    className={cn(
-                      'absolute top-4 right-4 inline-flex items-center justify-center w-7 h-7 rounded-full transition-colors',
-                      isSelected
-                        ? 'bg-product-orange text-white'
-                        : 'bg-bg-muted text-mid border border-border',
-                    )}
-                    aria-hidden="true"
-                  >
-                    {isSelected ? (
-                      <Check className="w-4 h-4" strokeWidth={3} />
-                    ) : (
-                      <Plus className="w-4 h-4" strokeWidth={2.5} />
-                    )}
-                  </span>
-                )}
-
-                <div className="mb-6 pb-6 border-b border-border">
-                  <h3 className="font-bold text-xl md:text-2xl text-ink mb-2">{plan.name}</h3>
-                  <p className="text-mid text-sm mb-5 leading-[1.7]">{plan.description}</p>
-
-                  <div className="flex items-baseline gap-1 mb-2">
-                    {!plan.isBase && (
-                      <span className="font-serif text-[32px] md:text-[36px] font-bold text-product-orange leading-none">
-                        ＋
-                      </span>
-                    )}
-                    <span className="font-serif text-[40px] md:text-[44px] font-bold text-ink leading-none">
-                      ¥{plan.pricePerUser.toLocaleString()}
-                    </span>
-                  </div>
-
-                  <p className="text-xs text-mid leading-[1.7]">{plan.priceUnit}（税込）</p>
-                </div>
-
-                <ul className="space-y-3">
-                  {plan.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-3 text-[14px] text-charcoal">
-                      <Check
-                        className={cn(
-                          'w-4 h-4 mt-0.5 shrink-0',
-                          plan.isBase || isSelected ? 'text-product-orange' : 'text-mid',
-                        )}
-                        strokeWidth={2}
-                      />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                {/* 補助メッセージ */}
-                {isInteractive && (
-                  <p className="mt-6 pt-5 border-t border-border text-[12px] md:text-[13px] text-mid">
-                    {isSelected ? 'タップで解除' : 'タップで追加'}
-                  </p>
-                )}
-                {plan.isBase && (
-                  <p className="mt-6 pt-5 border-t border-border text-[12px] md:text-[13px] text-product-orange font-semibold">
-                    sokoe Day のベース機能（必須）
-                  </p>
-                )}
-              </CardTag>
-            );
-          })}
-        </div>
-
-        {/* 料金シミュレーター下段：人数 + 合計 */}
-        <div className="mt-10 md:mt-12 max-w-3xl mx-auto rounded-[12px] border-2 border-product-orange bg-tint-orange/40 p-7 md:p-10">
-          <div className="text-center mb-6 md:mb-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-product-orange mb-3">
-              料金シミュレーター
-            </p>
-            <h3 className="font-serif text-xl md:text-2xl font-bold text-ink">
-              あなたの施設の、ひと月の目安。
-            </h3>
-          </div>
-
-          {/* 1 日平均利用者数 input */}
-          <div className="mb-6 md:mb-8">
+        {/* STEP 1: 1 日平均利用者数を入力 */}
+        <div className="max-w-3xl mx-auto mb-8 md:mb-10 rounded-[12px] border border-border bg-white p-7 md:p-9">
+          <div className="flex items-baseline gap-3 mb-4">
+            <span className="font-serif text-xl md:text-2xl font-bold text-product-orange">
+              STEP 1
+            </span>
             <label
               htmlFor="people-input"
-              className="block text-sm md:text-base font-semibold text-ink mb-3"
+              className="text-base md:text-lg font-semibold text-ink"
             >
               1 日平均利用者数
             </label>
-            <div className="flex items-center gap-3">
-              <button
-                type="button"
-                onClick={() => setPeople((n) => clampPeople(n - 5))}
-                className="shrink-0 w-11 h-11 flex items-center justify-center rounded-full border border-border bg-white text-ink hover:border-ink transition-colors"
-                aria-label="5 名減らす"
-              >
-                <Minus className="w-4 h-4" strokeWidth={2} />
-              </button>
-              <input
-                id="people-input"
-                type="number"
-                min={PEOPLE_MIN}
-                max={PEOPLE_MAX}
-                value={people}
-                onChange={(e) => setPeople(clampPeople(Number(e.target.value)))}
-                className="flex-1 text-center font-serif text-3xl md:text-4xl font-bold text-ink bg-white border border-border rounded-[6px] py-3 focus:outline-none focus:border-product-orange"
-              />
-              <span className="shrink-0 text-base md:text-lg text-ink font-semibold">名</span>
-              <button
-                type="button"
-                onClick={() => setPeople((n) => clampPeople(n + 5))}
-                className="shrink-0 w-11 h-11 flex items-center justify-center rounded-full border border-border bg-white text-ink hover:border-ink transition-colors"
-                aria-label="5 名増やす"
-              >
-                <Plus className="w-4 h-4" strokeWidth={2} />
-              </button>
-            </div>
-            <p className="mt-2 text-xs text-mid">5 名単位でも、自由入力でも調整できます（1〜200 名）。</p>
+          </div>
+          <div className="flex items-center gap-3">
+            <button
+              type="button"
+              onClick={() => setPeople((n) => clampPeople(n - 5))}
+              className="shrink-0 w-11 h-11 flex items-center justify-center rounded-full border border-border bg-white text-ink hover:border-ink transition-colors"
+              aria-label="5 名減らす"
+            >
+              <Minus className="w-4 h-4" strokeWidth={2} />
+            </button>
+            <input
+              id="people-input"
+              type="number"
+              min={PEOPLE_MIN}
+              max={PEOPLE_MAX}
+              value={people}
+              onChange={(e) => setPeople(clampPeople(Number(e.target.value)))}
+              className="flex-1 text-center font-serif text-3xl md:text-4xl font-bold text-ink bg-bg-muted border border-border rounded-[6px] py-3 focus:outline-none focus:border-product-orange"
+            />
+            <span className="shrink-0 text-base md:text-lg text-ink font-semibold">名</span>
+            <button
+              type="button"
+              onClick={() => setPeople((n) => clampPeople(n + 5))}
+              className="shrink-0 w-11 h-11 flex items-center justify-center rounded-full border border-border bg-white text-ink hover:border-ink transition-colors"
+              aria-label="5 名増やす"
+            >
+              <Plus className="w-4 h-4" strokeWidth={2} />
+            </button>
+          </div>
+          <p className="mt-2 text-xs text-mid">5 名単位でも、自由入力でも調整できます（1〜200 名）。</p>
+        </div>
+
+        {/* STEP 2: 使う機能を選ぶ（プランカード自体がトグル） */}
+        <div className="max-w-6xl mx-auto mb-10 md:mb-12">
+          <div className="flex items-baseline gap-3 mb-5 md:mb-6">
+            <span className="font-serif text-xl md:text-2xl font-bold text-product-orange">
+              STEP 2
+            </span>
+            <span className="text-base md:text-lg font-semibold text-ink">使う機能を選ぶ</span>
           </div>
 
-          {/* 合計 */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
+            {plans.map((plan) => {
+              const isSelected = selected[plan.id];
+              const isInteractive = !plan.isBase;
+              const CardTag = isInteractive ? 'button' : 'div';
+
+              return (
+                <CardTag
+                  key={plan.id}
+                  type={isInteractive ? 'button' : undefined}
+                  onClick={isInteractive ? () => togglePlan(plan.id) : undefined}
+                  aria-pressed={isInteractive ? isSelected : undefined}
+                  className={cn(
+                    'relative bg-white rounded-[6px] p-8 md:p-10 transition-all text-left',
+                    plan.isBase
+                      ? 'border-2 border-product-orange'
+                      : isSelected
+                        ? 'border-2 border-product-orange shadow-sm'
+                        : 'border border-border opacity-75 hover:opacity-100 hover:border-ink',
+                    isInteractive &&
+                      'cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-product-orange focus-visible:ring-offset-2',
+                  )}
+                >
+                  <span
+                    className={cn(
+                      'absolute -top-3 left-1/2 -translate-x-1/2 inline-block text-[11px] font-bold uppercase tracking-[0.12em] px-3 py-1 rounded-full',
+                      plan.isBase || isSelected
+                        ? 'bg-product-orange text-white'
+                        : 'bg-bg-muted text-charcoal',
+                    )}
+                  >
+                    {plan.badge}
+                  </span>
+
+                  {isInteractive && (
+                    <span
+                      className={cn(
+                        'absolute top-4 right-4 inline-flex items-center justify-center w-7 h-7 rounded-full transition-colors',
+                        isSelected
+                          ? 'bg-product-orange text-white'
+                          : 'bg-bg-muted text-mid border border-border',
+                      )}
+                      aria-hidden="true"
+                    >
+                      {isSelected ? (
+                        <Check className="w-4 h-4" strokeWidth={3} />
+                      ) : (
+                        <Plus className="w-4 h-4" strokeWidth={2.5} />
+                      )}
+                    </span>
+                  )}
+
+                  <div className="mb-6 pb-6 border-b border-border">
+                    <h3 className="font-bold text-xl md:text-2xl text-ink mb-2">{plan.name}</h3>
+                    <p className="text-mid text-sm mb-5 leading-[1.7]">{plan.description}</p>
+
+                    <div className="flex items-baseline gap-1 mb-2">
+                      {!plan.isBase && (
+                        <span className="font-serif text-[32px] md:text-[36px] font-bold text-product-orange leading-none">
+                          ＋
+                        </span>
+                      )}
+                      <span className="font-serif text-[40px] md:text-[44px] font-bold text-ink leading-none">
+                        ¥{plan.pricePerUser.toLocaleString()}
+                      </span>
+                    </div>
+
+                    <p className="text-xs text-mid leading-[1.7]">{plan.priceUnit}（税込）</p>
+                  </div>
+
+                  <ul className="space-y-3">
+                    {plan.features.map((feature) => (
+                      <li
+                        key={feature}
+                        className="flex items-start gap-3 text-[14px] text-charcoal"
+                      >
+                        <Check
+                          className={cn(
+                            'w-4 h-4 mt-0.5 shrink-0',
+                            plan.isBase || isSelected ? 'text-product-orange' : 'text-mid',
+                          )}
+                          strokeWidth={2}
+                        />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  {isInteractive && (
+                    <p className="mt-6 pt-5 border-t border-border text-[12px] md:text-[13px] text-mid">
+                      {isSelected ? 'タップで解除' : 'タップで追加'}
+                    </p>
+                  )}
+                  {plan.isBase && (
+                    <p className="mt-6 pt-5 border-t border-border text-[12px] md:text-[13px] text-product-orange font-semibold">
+                      sokoe Day のベース機能（必須）
+                    </p>
+                  )}
+                </CardTag>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* STEP 3: 合計目安 */}
+        <div className="max-w-3xl mx-auto rounded-[12px] border-2 border-product-orange bg-tint-orange/40 p-7 md:p-9">
+          <div className="flex items-baseline gap-3 mb-5 md:mb-6">
+            <span className="font-serif text-xl md:text-2xl font-bold text-product-orange">
+              STEP 3
+            </span>
+            <span className="text-base md:text-lg font-semibold text-ink">
+              ひと月の目安
+            </span>
+          </div>
+
           <div className="rounded-[8px] bg-white border border-border p-5 md:p-6">
             {breakdown.length === 0 ? (
               <p className="text-center text-sm text-mid py-2">
-                上のカードから機能を選んでください。
+                STEP 2 から機能を選んでください。
               </p>
             ) : (
               <ul className="space-y-1.5 text-[13px] md:text-[14px] text-stone mb-4">
