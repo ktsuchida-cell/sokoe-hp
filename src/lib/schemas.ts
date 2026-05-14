@@ -314,24 +314,24 @@ export const sokoeDaySchema = {
   offers: [
     {
       '@type': 'Offer' as const,
-      name: 'ベーシック',
-      price: '11000',
+      name: 'フロア機能（ベース）',
+      price: '700',
       priceCurrency: 'JPY',
-      description: '10名規模のデイサービス向け',
+      description: '1 日平均利用者 1 名あたり月額 700 円（税込）',
     },
     {
       '@type': 'Offer' as const,
-      name: 'スタンダード',
-      price: '33000',
+      name: '送迎機能（オプション）',
+      price: '300',
       priceCurrency: 'JPY',
-      description: '30名規模のデイサービス向け',
+      description: '登録利用者 1 名あたり月額 300 円（税込）',
     },
     {
       '@type': 'Offer' as const,
-      name: 'プレミアム',
-      price: '55000',
+      name: '管理者業務（オプション）',
+      price: '300',
       priceCurrency: 'JPY',
-      description: '50名規模のデイサービス向け',
+      description: '登録利用者 1 名あたり月額 300 円（税込）',
     },
   ],
   featureList: [
