@@ -84,8 +84,8 @@ const featureCategories: FeatureCategory[] = [
     englishLabel: 'TRANSPORT',
     category: '送迎業務',
     user: 'ドライバー・運行管理者',
-    subtitle: '複雑な便構成も、運行と記録を一画面で。',
-    lead: '4便 + 6パターンの便構成、半日型と1日型の混在運用にもネイティブ対応。AI 配車計画とドライバー専用 UI で送迎業務を支える3つの機能です。同じ施設で形態が混ざる場合も、追加料金なしで運用できます。',
+    subtitle: '当日の運転席に、寄り添う設計。',
+    lead: '4 便 + 6 パターンの便構成や AI 配車最適化はもちろん、ドライバー画面では訪問先の写真・ご家族連絡先・注意点まで事前に参照できます。送迎計画とアプリが連携しているため、順番通りに操作すれば迷わず、急な便変更や飛び込みの追加もその場で対応できる、現場発の設計です。',
     metric: {
       prefix: '便構成の組み合わせを、',
       highlight: '24 パターン',
@@ -93,9 +93,13 @@ const featureCategories: FeatureCategory[] = [
       caption: '半日型・1日型・ハイブリッド型を含む、複雑な運用構成をネイティブ対応。',
     },
     features: [
-      { icon: CarFront, title: '配車計画', description: 'AI 最適化＋6パターン便対応', isAI: true },
-      { icon: Smartphone, title: 'ドライバー画面', description: 'モバイル専用 UI で送迎中も操作しやすく' },
-      { icon: Route, title: '送迎記録', description: '監査用に自動記録' },
+      { icon: CarFront, title: '配車計画', description: 'AI 最適化＋6 パターン便対応', isAI: true },
+      {
+        icon: Smartphone,
+        title: 'ドライバー画面',
+        description: '訪問先の写真・連絡先・注意点を参照、急な追加にも対応',
+      },
+      { icon: Route, title: '送迎記録', description: '監査用に自動記録、当日変更履歴も保存' },
     ],
   },
   {
