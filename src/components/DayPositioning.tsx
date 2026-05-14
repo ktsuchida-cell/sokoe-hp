@@ -7,12 +7,13 @@ import { Check } from 'lucide-react';
 /**
  * Positioning セクション
  *
- * 介護業界の方が「sokoe Day = カイポケや既存介護記録ソフトの代替」と
- * 誤解しないように、明示的に位置づけを書くセクション。
+ * 介護記録ソフト（カイポケ等）と sokoe Day の関係を「対立ではなく加算」として伝える。
  *
- * - sokoe Day は介護給付請求機能を提供しない（既存システムをそのまま使う）
- * - sokoe Day は「現場効率化の支援ツール」として、既存システムの隣で動く
- * - 両者は対立ではなく併用関係
+ * 設計判断は design-notes/positioning.md に集約。
+ * 主要な原則：
+ *   - カード 2 枚の間に「＋」円形チップを置いて加算を視覚化
+ *   - 左右カードは同寸・同枠線太さ（差別化は背景色とラベル色のみ）
+ *   - 末尾コピーは結論文として H2 と本文の中間サイズで強調（serif + ink）
  */
 export function DayPositioning() {
   return (
@@ -34,7 +35,12 @@ export function DayPositioning() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        {/* スクリーンリーダー向けの関係性補足 */}
+        <p className="sr-only">
+          介護記録ソフトに sokoe Day を加える関係です。請求業務は介護記録ソフト、現場業務は sokoe Day が担当します。
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-0 md:gap-6 items-stretch">
           {/* 介護記録ソフト：請求担当 */}
           <div className="rounded-[8px] border border-border bg-bg-muted p-7 md:p-9">
             <p className="text-[11px] md:text-xs font-semibold uppercase tracking-[0.15em] text-mid mb-3">
@@ -78,20 +84,35 @@ export function DayPositioning() {
             </ul>
           </div>
 
-          {/* sokoe Day：現場サポート担当（主役カード） */}
-          <div className="relative rounded-[12px] border-2 border-brand-red bg-tint-pink/60 p-7 md:p-10 shadow-[0_12px_32px_-12px_rgba(213,46,52,0.25)] lg:scale-[1.02]">
-            {/* 上部のアクセントバッジ */}
-            <span className="absolute -top-3 left-6 inline-block bg-brand-red text-white text-[10px] md:text-[11px] font-bold uppercase tracking-[0.12em] px-3 py-1 rounded-full shadow-sm">
-              ここを sokoe Day が
+          {/* ＋ チップ（デスクトップは中央カラム、モバイルは縦の間） */}
+          <div className="hidden md:flex items-center justify-center" aria-hidden="true">
+            <span
+              className="flex items-center justify-center
+                         w-14 h-14 lg:w-16 lg:h-16 rounded-full
+                         bg-white border border-border
+                         text-brand-red text-[28px] lg:text-[32px] font-light leading-none
+                         shadow-[0_2px_8px_-2px_rgba(0,0,0,0.08)]"
+            >
+              +
             </span>
+          </div>
+          <div className="md:hidden flex justify-center -my-2" aria-hidden="true">
+            <span
+              className="flex items-center justify-center
+                         w-11 h-11 rounded-full bg-white border border-border
+                         text-brand-red text-[22px] font-light leading-none shadow-sm"
+            >
+              +
+            </span>
+          </div>
 
-            <p className="mt-2 mb-3 text-[11px] md:text-xs font-semibold uppercase tracking-[0.15em] text-brand-red">
+          {/* sokoe Day：現場サポート担当 */}
+          <div className="rounded-[8px] border border-brand-red/40 bg-tint-pink/40 p-7 md:p-9">
+            <p className="text-[11px] md:text-xs font-semibold uppercase tracking-[0.15em] text-brand-red mb-3">
               現場は、sokoe Day が
             </p>
-            <h3 className="font-serif text-2xl md:text-3xl font-bold text-ink mb-3">
-              sokoe Day
-            </h3>
-            <p className="text-product-orange text-[15px] md:text-base font-semibold leading-[1.7] mb-5">
+            <h3 className="font-serif text-xl md:text-2xl font-bold text-ink mb-3">sokoe Day</h3>
+            <p className="text-product-orange text-[14px] md:text-[15px] font-semibold leading-[1.7] mb-5">
               現場業務の効率化は、お任せください。
             </p>
             <p className="text-stone text-[14px] md:text-[15px] leading-[1.85] mb-5">
@@ -121,7 +142,7 @@ export function DayPositioning() {
                   strokeWidth={2.5}
                   aria-hidden="true"
                 />
-                <span>4便 × 6パターンの半日型運用</span>
+                <span>4 便 × 6 パターンの半日型運用</span>
               </li>
               <li className="flex items-start gap-2">
                 <Check
@@ -135,11 +156,20 @@ export function DayPositioning() {
           </div>
         </div>
 
-        <p className="mt-10 md:mt-12 max-w-2xl mx-auto text-center text-mid text-[13px] md:text-sm leading-[1.85]">
-          請求は介護記録ソフトで、現場は sokoe Day で。
-          <br className="hidden md:block" />
-          ふたつを役割分担して、施設の毎日を整えていきます。
-        </p>
+        {/* 結論文（注記ではなく結論として昇格） */}
+        <div className="mt-14 md:mt-16 max-w-2xl mx-auto text-center">
+          <p className="text-[11px] md:text-xs font-semibold uppercase tracking-[0.18em] text-brand-red mb-4">
+            CONCLUSION
+          </p>
+          <p className="font-serif text-[20px] md:text-[24px] lg:text-[26px] leading-[1.7] text-ink">
+            請求は介護記録ソフトで、現場は sokoe Day で。
+            <br className="hidden md:block" />
+            ふたつを役割分担して、
+            <br className="md:hidden" />
+            施設の毎日を整えていきます。
+          </p>
+          <div className="mx-auto mt-6 h-px w-12 bg-brand-red/40" aria-hidden="true" />
+        </div>
       </Container>
     </Section>
   );
