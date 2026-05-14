@@ -90,7 +90,7 @@ const featureCategories: FeatureCategory[] = [
     englishLabel: 'TRANSPORT',
     category: '送迎業務',
     user: 'ドライバー・運行管理者',
-    subtitle: '当日の運転席に、寄り添う設計。',
+    subtitle: '当日のドライバーに、寄り添った設計。',
     lead: '4 便 + 6 パターンの便構成や AI 配車最適化はもちろん、ドライバー画面では訪問先の写真・ご家族連絡先・注意点まで事前に参照できます。送迎計画とアプリが連携しているため、順番通りに操作すれば迷わず、急な便変更や飛び込みの追加もその場で対応できる、現場発の設計です。',
     metric: {
       badge: '現場発の設計',
