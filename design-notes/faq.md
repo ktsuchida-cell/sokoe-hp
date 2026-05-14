@@ -26,21 +26,22 @@
 ### 改善内容
 
 **リード文**
-- サイズ: `text-sm md:text-base` → `text-base md:text-lg`（脚注 → 本文同等のサイズ）
+- サイズ: `text-sm md:text-base` → `text-lg md:text-xl`（脚注 → 結論レイヤー）
 - 色: `text-stone`（灰）→ `text-charcoal`（濃いめ、読みやすさ優先）
 - コピー: 一文 → 二文に拡張、二文目で「代表（現役の施設長代理）が現場目線で答える」と sokoe 独自性を出す
 
 **CTA**
-- テキストリンク → `Button variant="secondary" size="md"` に昇格
+- テキストリンク → `Button variant="secondary" size="lg"` に昇格
 - ラベル: 「お問い合わせはこちら →」→「お問い合わせ」（CTA ラベル統一の方針に従う）
+- size="lg" を採用した理由: 最終 CTA（DayLastCTA）と並ぶ重さの「最後の橋」なので、Header / Pricing OPTION の `size="md"` よりも一段大きく扱う
 
 ### 根拠
 
 | 階層 | 役割 | 採用サイズ |
 |---|---|---|
 | H2「よくあるご質問」 | セクション見出し | `text-3xl/4xl`（維持） |
-| **末尾誘導文** | **FAQ で解消しなかった人への声かけ（結論レイヤー）** | **`text-base/lg`（脚注ではなく本文）** |
-| **末尾 CTA** | **最後の CV ポイント** | **Button md（他 CTA と同フォーマット）** |
+| **末尾誘導文** | **FAQ で解消しなかった人への声かけ（結論レイヤー）** | **`text-lg/xl`（結論サイズ）** |
+| **末尾 CTA** | **最後の CV ポイント** | **Button size="lg"（最終 CTA と同等の重さ）** |
 | Accordion 質問 | 一覧 | 維持 |
 | Accordion 答え | 詳細 | 維持 |
 
