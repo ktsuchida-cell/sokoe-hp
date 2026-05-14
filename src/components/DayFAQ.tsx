@@ -1,6 +1,7 @@
 'use client';
 
 import { Accordion } from '@/components/Accordion';
+import { Button } from '@/components/Button';
 import { Container } from '@/components/Container';
 import { Heading } from '@/components/Heading';
 import { Label } from '@/components/Label';
@@ -44,15 +45,16 @@ export function DayFAQ() {
 
         <Accordion items={accordionItems} />
 
-        <div className="mt-12 text-center">
-          <p className="text-stone text-sm md:text-base mb-4">
-            他にご質問があれば、お気軽にお問い合わせください。
+        <div className="mt-14 md:mt-16 text-center">
+          <p className="text-charcoal text-base md:text-lg leading-[1.85] mb-6">
+            ここにない疑問がある方は、お気軽にお問い合わせください。
+            <br className="hidden md:block" />
+            代表（現役の施設長代理）が、現場目線で直接お答えします。
           </p>
-          <Link
-            href="/contact/"
-            className="inline-block text-base font-semibold text-brand-red hover:text-brand-red-hover transition-colors"
-          >
-            お問い合わせはこちら →
+          <Link href="/contact/" className="inline-block">
+            <Button variant="secondary" size="md">
+              お問い合わせ
+            </Button>
           </Link>
         </div>
       </Container>
