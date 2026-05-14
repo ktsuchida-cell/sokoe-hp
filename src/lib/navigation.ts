@@ -20,22 +20,21 @@ export const mainNavigation: NavItem[] = [
     ],
   },
   {
-    label: 'AIコンサル事業',
+    label: 'AIコンサル',
     href: '/consulting/',
   },
   {
-    label: '事例',
+    label: '導入事例',
     href: '/case/',
   },
   {
-    label: 'お役立ち',
+    label: 'コラム',
     href: '#',
     children: [
       { label: 'ガイド', href: '/guide/' },
       { label: 'メディア', href: '/media/' },
       { label: '無料ツール', href: '/tool/' },
       { label: '用語集', href: '/glossary/' },
-      { label: '資料ダウンロード', href: '/resource/' },
     ],
   },
   {

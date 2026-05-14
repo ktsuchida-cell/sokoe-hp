@@ -81,6 +81,11 @@ export function Header() {
 
             {/* PC CTA */}
             <div className="hidden lg:flex items-center gap-3">
+              <Link href="/resource/">
+                <Button variant="secondary" size="md">
+                  資料ダウンロード
+                </Button>
+              </Link>
               <Link href="/contact/">
                 <Button variant="secondary" size="md">
                   お問い合わせ
@@ -246,6 +251,11 @@ function MobileMenu({ open, onClose }: MobileMenuProps) {
         </ul>
 
         <div className="mt-8 space-y-3">
+          <Link href="/resource/" onClick={onClose} className="block">
+            <Button variant="secondary" size="lg" fullWidth>
+              資料ダウンロード
+            </Button>
+          </Link>
           <Link href="/contact/" onClick={onClose} className="block">
             <Button variant="primary" size="lg" fullWidth>
               お問い合わせ
