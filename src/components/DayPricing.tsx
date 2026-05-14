@@ -45,7 +45,7 @@ const plans: Plan[] = [
     badge: 'OPTION',
     isBase: false,
     pricePerUser: 300,
-    priceUnit: '登録利用者 1 名／月',
+    priceUnit: '1 日平均利用者 1 名／月',
     description: '4 便 × 6 パターンの便構成、AI 配車最適化まで。',
     features: [
       '配車計画（AI 最適化＋6 パターン便対応）',
@@ -58,7 +58,7 @@ const plans: Plan[] = [
     badge: 'OPTION',
     isBase: false,
     pricePerUser: 300,
-    priceUnit: '登録利用者 1 名／月',
+    priceUnit: '1 日平均利用者 1 名／月',
     description: 'バックオフィスを AI で支える、施設長・管理者向け機能群。',
     features: [
       '営業管理 / 名刺 OCR',
@@ -157,20 +157,20 @@ export function DayPricing() {
             料金イメージ
           </p>
           <p className="text-charcoal text-[15px] md:text-base leading-[1.85]">
-            たとえば、<strong className="text-ink">1 日平均 30 名・登録 60 名</strong>
+            たとえば、<strong className="text-ink">1 日平均 30 名</strong>
             の施設で、フロア＋送迎＋管理者業務をすべて使う場合：
           </p>
           <ul className="mt-4 space-y-1.5 text-[14px] md:text-[15px] text-stone">
             <li>・フロア機能：¥700 × 30 名 = <strong className="text-ink">¥21,000</strong>／月</li>
             <li>
-              ・送迎機能：¥300 × 60 名 = <strong className="text-ink">¥18,000</strong>／月
+              ・送迎機能：¥300 × 30 名 = <strong className="text-ink">¥9,000</strong>／月
             </li>
             <li>
-              ・管理者業務：¥300 × 60 名 = <strong className="text-ink">¥18,000</strong>／月
+              ・管理者業務：¥300 × 30 名 = <strong className="text-ink">¥9,000</strong>／月
             </li>
           </ul>
           <p className="mt-4 pt-4 border-t border-border text-charcoal text-[15px] md:text-base">
-            合計目安：<strong className="font-serif text-2xl md:text-3xl text-ink">¥57,000</strong>
+            合計目安：<strong className="font-serif text-2xl md:text-3xl text-ink">¥39,000</strong>
             ／月（税込）
           </p>
         </div>

@@ -324,14 +324,14 @@ export const sokoeDaySchema = {
       name: '送迎機能（オプション）',
       price: '300',
       priceCurrency: 'JPY',
-      description: '登録利用者 1 名あたり月額 300 円（税込）',
+      description: '1 日平均利用者 1 名あたり月額 300 円（税込）',
     },
     {
       '@type': 'Offer' as const,
       name: '管理者業務（オプション）',
       price: '300',
       priceCurrency: 'JPY',
-      description: '登録利用者 1 名あたり月額 300 円（税込）',
+      description: '1 日平均利用者 1 名あたり月額 300 円（税込）',
     },
   ],
   featureList: [
