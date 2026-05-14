@@ -1,26 +1,22 @@
+'use client';
+
 import { Button } from '@/components/Button';
 import { Container } from '@/components/Container';
 import { Heading } from '@/components/Heading';
 import { Label } from '@/components/Label';
 import { Section } from '@/components/Section';
 import { cn } from '@/lib/cn';
-import { Check } from 'lucide-react';
+import { Check, Minus, Plus } from 'lucide-react';
 import Link from 'next/link';
+import { useState } from 'react';
 
 type Plan = {
-  /** プラン名 */
   name: string;
-  /** プランの位置づけバッジ (BASE / OPTION) */
   badge: 'BASE' | 'OPTION';
-  /** ベース料金は固定で表示、オプションは "+" 付きで表示 */
   isBase: boolean;
-  /** 1 人あたりの月額（円） */
   pricePerUser: number;
-  /** 課金対象（フロアは「1日平均利用者」、オプションは「登録利用者」） */
   priceUnit: string;
-  /** プランの一行説明 */
   description: string;
-  /** 含まれる機能 */
   features: string[];
 };
 
@@ -69,15 +65,27 @@ const plans: Plan[] = [
   },
 ];
 
+const FLOOR_PRICE = 700;
+const TRANSPORT_PRICE = 300;
+const BACKOFFICE_PRICE = 300;
+const PEOPLE_MIN = 1;
+const PEOPLE_MAX = 200;
+
 /**
- * Pricing セクション（従量課金制：機能パック × 利用者数）
- *
- * - フロア機能をベースとして組み、送迎・管理者業務を必要に応じてオプション追加。
- * - フロアは 1 日平均利用者 1 名あたり 700 円／月。
- *   送迎・管理者業務は登録利用者 1 名あたり +300 円／月。
- * - 末尾に概算計算例とコール CTA。
+ * Pricing セクション（従量課金制 + インタラクティブシミュレーター）
  */
 export function DayPricing() {
+  const [people, setPeople] = useState(30);
+  const [transport, setTransport] = useState(true);
+  const [backoffice, setBackoffice] = useState(true);
+
+  const clampPeople = (n: number) => Math.max(PEOPLE_MIN, Math.min(PEOPLE_MAX, n || 0));
+
+  const floorCost = FLOOR_PRICE * people;
+  const transportCost = transport ? TRANSPORT_PRICE * people : 0;
+  const backofficeCost = backoffice ? BACKOFFICE_PRICE * people : 0;
+  const total = floorCost + transportCost + backofficeCost;
+
   return (
     <Section spacing="lg" bordered>
       <Container>
@@ -151,27 +159,133 @@ export function DayPricing() {
           ))}
         </div>
 
-        {/* 概算例 */}
-        <div className="mt-12 md:mt-14 max-w-3xl mx-auto rounded-[8px] border border-border bg-bg-muted p-6 md:p-8">
-          <p className="text-xs font-semibold uppercase tracking-[0.15em] text-product-orange mb-3">
-            料金イメージ
-          </p>
-          <p className="text-charcoal text-[15px] md:text-base leading-[1.85]">
-            たとえば、<strong className="text-ink">1 日平均 30 名</strong>
-            の施設で、フロア＋送迎＋管理者業務をすべて使う場合：
-          </p>
-          <ul className="mt-4 space-y-1.5 text-[14px] md:text-[15px] text-stone">
-            <li>・フロア機能：¥700 × 30 名 = <strong className="text-ink">¥21,000</strong>／月</li>
-            <li>
-              ・送迎機能：¥300 × 30 名 = <strong className="text-ink">¥9,000</strong>／月
-            </li>
-            <li>
-              ・管理者業務：¥300 × 30 名 = <strong className="text-ink">¥9,000</strong>／月
-            </li>
-          </ul>
-          <p className="mt-4 pt-4 border-t border-border text-charcoal text-[15px] md:text-base">
-            合計目安：<strong className="font-serif text-2xl md:text-3xl text-ink">¥39,000</strong>
-            ／月（税込）
+        {/* 料金シミュレーター */}
+        <div className="mt-14 md:mt-16 max-w-3xl mx-auto rounded-[12px] border-2 border-product-orange bg-tint-orange/40 p-7 md:p-10">
+          <div className="text-center mb-6 md:mb-8">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-product-orange mb-3">
+              料金シミュレーター
+            </p>
+            <h3 className="font-serif text-2xl md:text-3xl font-bold text-ink">
+              あなたの施設の、ひと月の目安。
+            </h3>
+          </div>
+
+          {/* 1 日平均利用者数 input */}
+          <div className="mb-6 md:mb-8">
+            <label
+              htmlFor="people-input"
+              className="block text-sm md:text-base font-semibold text-ink mb-3"
+            >
+              1 日平均利用者数
+            </label>
+            <div className="flex items-center gap-3">
+              <button
+                type="button"
+                onClick={() => setPeople((n) => clampPeople(n - 5))}
+                className="shrink-0 w-11 h-11 flex items-center justify-center rounded-full border border-border bg-white text-ink hover:border-ink transition-colors"
+                aria-label="5 名減らす"
+              >
+                <Minus className="w-4 h-4" strokeWidth={2} />
+              </button>
+              <input
+                id="people-input"
+                type="number"
+                min={PEOPLE_MIN}
+                max={PEOPLE_MAX}
+                value={people}
+                onChange={(e) => setPeople(clampPeople(Number(e.target.value)))}
+                className="flex-1 text-center font-serif text-3xl md:text-4xl font-bold text-ink bg-white border border-border rounded-[6px] py-3 focus:outline-none focus:border-product-orange"
+              />
+              <span className="shrink-0 text-base md:text-lg text-ink font-semibold">名</span>
+              <button
+                type="button"
+                onClick={() => setPeople((n) => clampPeople(n + 5))}
+                className="shrink-0 w-11 h-11 flex items-center justify-center rounded-full border border-border bg-white text-ink hover:border-ink transition-colors"
+                aria-label="5 名増やす"
+              >
+                <Plus className="w-4 h-4" strokeWidth={2} />
+              </button>
+            </div>
+            <p className="mt-2 text-xs text-mid">5 名単位でも、自由入力でも調整できます（1〜200 名）。</p>
+          </div>
+
+          {/* プラン選択 */}
+          <fieldset className="mb-6 md:mb-8">
+            <legend className="block text-sm md:text-base font-semibold text-ink mb-3">
+              使う機能
+            </legend>
+            <div className="space-y-2.5">
+              <div className="flex items-center gap-3 rounded-[6px] bg-white border border-product-orange p-4">
+                <span
+                  className="shrink-0 flex items-center justify-center w-5 h-5 rounded-[4px] bg-product-orange text-white"
+                  aria-hidden="true"
+                >
+                  <Check className="w-3.5 h-3.5" strokeWidth={3} />
+                </span>
+                <span className="flex-1 text-[14px] md:text-[15px] text-ink">
+                  <strong>フロア機能（必須）</strong>
+                  <span className="ml-2 text-mid">¥{FLOOR_PRICE}／1 名</span>
+                </span>
+              </div>
+              <label className="flex items-center gap-3 rounded-[6px] bg-white border border-border p-4 cursor-pointer hover:border-ink transition-colors">
+                <input
+                  type="checkbox"
+                  checked={transport}
+                  onChange={(e) => setTransport(e.target.checked)}
+                  className="shrink-0 w-5 h-5 accent-product-orange cursor-pointer"
+                />
+                <span className="flex-1 text-[14px] md:text-[15px] text-ink">
+                  <strong>送迎機能</strong>
+                  <span className="ml-2 text-mid">＋¥{TRANSPORT_PRICE}／1 名</span>
+                </span>
+              </label>
+              <label className="flex items-center gap-3 rounded-[6px] bg-white border border-border p-4 cursor-pointer hover:border-ink transition-colors">
+                <input
+                  type="checkbox"
+                  checked={backoffice}
+                  onChange={(e) => setBackoffice(e.target.checked)}
+                  className="shrink-0 w-5 h-5 accent-product-orange cursor-pointer"
+                />
+                <span className="flex-1 text-[14px] md:text-[15px] text-ink">
+                  <strong>管理者業務</strong>
+                  <span className="ml-2 text-mid">＋¥{BACKOFFICE_PRICE}／1 名</span>
+                </span>
+              </label>
+            </div>
+          </fieldset>
+
+          {/* 合計 */}
+          <div className="rounded-[8px] bg-white border border-border p-5 md:p-6">
+            <ul className="space-y-1.5 text-[13px] md:text-[14px] text-stone mb-4">
+              <li className="flex justify-between">
+                <span>フロア機能：¥{FLOOR_PRICE} × {people} 名</span>
+                <strong className="text-ink">¥{floorCost.toLocaleString()}</strong>
+              </li>
+              {transport && (
+                <li className="flex justify-between">
+                  <span>送迎機能：¥{TRANSPORT_PRICE} × {people} 名</span>
+                  <strong className="text-ink">¥{transportCost.toLocaleString()}</strong>
+                </li>
+              )}
+              {backoffice && (
+                <li className="flex justify-between">
+                  <span>管理者業務：¥{BACKOFFICE_PRICE} × {people} 名</span>
+                  <strong className="text-ink">¥{backofficeCost.toLocaleString()}</strong>
+                </li>
+              )}
+            </ul>
+            <div className="flex items-baseline justify-between pt-4 border-t border-border">
+              <span className="text-sm md:text-base text-charcoal font-semibold">
+                合計目安／月（税込）
+              </span>
+              <span className="font-serif text-3xl md:text-4xl font-bold text-product-orange">
+                ¥{total.toLocaleString()}
+              </span>
+            </div>
+          </div>
+
+          <p className="mt-5 text-center text-[12px] md:text-[13px] text-mid leading-[1.7]">
+            ※ 上記は目安です。実際の運用は導入相談で詳細を確認させてください。
           </p>
         </div>
 
