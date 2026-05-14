@@ -45,15 +45,14 @@ export const featureDetails: FeatureDetail[] = [
     id: 'user-management',
     category: 'floor',
     categoryLabel: 'フロア業務',
-    positioning: '利用者情報とケアプランを一元化',
+    positioning: '利用者情報を、フロアで一画面に',
     title: '利用者管理',
     bullets: [
       'バイタル・申し送り・写真をご利用者ごとに時系列で確認できる',
-      'ケアマネ計画書を OCR で取り込み、AI が施設用ケアプランへ自動変換',
+      '管理者業務側で生成したケアプランを、現場のタブレットから常時参照',
       'ご家族との連絡帳も、アプリから直接送信',
     ],
     image: { alt: '利用者管理画面：ご利用者の詳細プロフィールと履歴' },
-    isAI: true,
   },
   {
     id: 'attendance',

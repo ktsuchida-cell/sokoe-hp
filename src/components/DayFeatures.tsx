@@ -34,6 +34,8 @@ type Feature = {
 };
 
 type Metric = {
+  /** メトリクス上部のバッジ。省略時は "現場実証データ" */
+  badge?: string;
   prefix: string;
   highlight: string;
   suffix: string;
@@ -67,7 +69,11 @@ const featureCategories: FeatureCategory[] = [
     },
     features: [
       { icon: LayoutDashboard, title: 'ダッシュボード', description: '今日の業務状況を一目で把握' },
-      { icon: Users, title: '利用者管理', description: '一元管理＋AIケアプラン生成', isAI: true },
+      {
+        icon: Users,
+        title: '利用者管理',
+        description: 'バイタル・申し送り・写真を時系列で確認',
+      },
       { icon: CheckSquare, title: '出欠管理', description: '配車と完全連動' },
       { icon: Bath, title: '入浴カンバン', description: 'ドラッグ&ドロップで進行管理' },
       { icon: Heart, title: 'バイタル記録', description: '異常値の自動警告' },
@@ -87,10 +93,11 @@ const featureCategories: FeatureCategory[] = [
     subtitle: '当日の運転席に、寄り添う設計。',
     lead: '4 便 + 6 パターンの便構成や AI 配車最適化はもちろん、ドライバー画面では訪問先の写真・ご家族連絡先・注意点まで事前に参照できます。送迎計画とアプリが連携しているため、順番通りに操作すれば迷わず、急な便変更や飛び込みの追加もその場で対応できる、現場発の設計です。',
     metric: {
-      prefix: '便構成の組み合わせを、',
-      highlight: '24 パターン',
-      suffix: '対応',
-      caption: '半日型・1日型・ハイブリッド型を含む、複雑な運用構成をネイティブ対応。',
+      badge: '現場発の設計',
+      prefix: '初訪問の参照も、急な追加も、ぜんぶ',
+      highlight: '運転席に',
+      suffix: '。',
+      caption: '送迎計画とアプリの連携で、ドライバーは順番通り操作すれば進められる設計です。急な便変更や飛び込みの追加も、その場で対応できます。',
     },
     features: [
       { icon: CarFront, title: '配車計画', description: 'AI 最適化＋6 パターン便対応', isAI: true },
@@ -191,7 +198,7 @@ export function DayFeatures() {
                   <div className="rounded-[12px] bg-tint-orange border border-product-orange/20 p-6 md:p-8">
                     <span className="inline-flex items-center gap-1.5 mb-5 rounded-full bg-white px-3 py-1 text-[11px] md:text-xs font-semibold tracking-[0.05em] text-product-orange shadow-sm">
                       <Sparkles className="w-3 h-3" strokeWidth={2} />
-                      現場実証データ
+                      {cat.metric.badge ?? '現場実証データ'}
                     </span>
 
                     <p className="font-serif font-bold text-ink leading-tight mb-5">
