@@ -30,7 +30,7 @@ const plans: Plan[] = [
     isBase: true,
     pricePerUser: 700,
     priceUnit: '1 日平均利用者 1 名／月',
-    description: 'sokoe Day のベース。日々の現場業務を、タブレット 1 枚で。',
+    description: 'sokoe Day のベース。日々の現場業務を、スマホ 1 台で。',
     features: [
       'ダッシュボード / 利用者管理 / 出欠管理',
       '入浴カンバン / バイタル記録 / 申し送り',
@@ -139,9 +139,9 @@ export function DayPricing() {
           <div className="flex items-center gap-3">
             <button
               type="button"
-              onClick={() => setPeople((n) => clampPeople(n - 5))}
+              onClick={() => setPeople((n) => clampPeople(n - 1))}
               className="shrink-0 w-11 h-11 flex items-center justify-center rounded-full border border-border bg-white text-ink hover:border-ink transition-colors"
-              aria-label="5 名減らす"
+              aria-label="1 名減らす"
             >
               <Minus className="w-4 h-4" strokeWidth={2} />
             </button>
@@ -157,14 +157,14 @@ export function DayPricing() {
             <span className="shrink-0 text-base md:text-lg text-ink font-semibold">名</span>
             <button
               type="button"
-              onClick={() => setPeople((n) => clampPeople(n + 5))}
+              onClick={() => setPeople((n) => clampPeople(n + 1))}
               className="shrink-0 w-11 h-11 flex items-center justify-center rounded-full border border-border bg-white text-ink hover:border-ink transition-colors"
-              aria-label="5 名増やす"
+              aria-label="1 名増やす"
             >
               <Plus className="w-4 h-4" strokeWidth={2} />
             </button>
           </div>
-          <p className="mt-2 text-xs text-mid">5 名単位でも、自由入力でも調整できます（1〜200 名）。</p>
+          <p className="mt-2 text-xs text-mid">＋ / − は 1 名ずつ、入力欄からは自由入力できます（1〜200 名）。</p>
         </div>
 
         {/* STEP 2: 使う機能を選ぶ（プランカード自体がトグル） */}

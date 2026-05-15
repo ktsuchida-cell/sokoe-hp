@@ -15,7 +15,7 @@ export function FullBleedImage() {
       <div className="relative aspect-[16/9] md:aspect-[16/9] w-full max-h-[80vh]">
         <Image
           src="/images/hero/corporate-facility-1672x941.webp"
-          alt="介護スタッフ2人がタブレットで業務情報を確認しながら連携している現場の様子"
+          alt="介護スタッフ2人がスマホで業務情報を確認しながら連携している現場の様子"
           fill
           priority
           quality={90}
