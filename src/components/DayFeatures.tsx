@@ -45,8 +45,6 @@ type Metric = {
 type FeatureCategory = {
   englishLabel: string;
   category: string;
-  /** 主に使う人（介護業界では役割分業が明確なので明示する） */
-  user: string;
   /** 大タイトル直下の効能サブタイトル（1 行） */
   subtitle: string;
   lead: string;
@@ -58,7 +56,6 @@ const featureCategories: FeatureCategory[] = [
   {
     englishLabel: 'FLOOR OPERATIONS',
     category: 'フロア業務',
-    user: '介護職員・看護師',
     subtitle: '記録から申し送りまで、フロアの手間をまるごと圧縮。',
     lead: '日々の現場業務を、スマホ 1 台で効率化。ご利用者の受け入れから記録・申し送りまで、7つの機能で支えます。',
     metric: {
@@ -91,7 +88,6 @@ const featureCategories: FeatureCategory[] = [
   {
     englishLabel: 'TRANSPORT',
     category: '送迎業務',
-    user: 'ドライバー・運行管理者',
     subtitle: '当日のドライバーに、寄り添った設計。',
     lead: '4 便 + 6 パターンの便構成や AI 配車最適化はもちろん、ドライバー画面では訪問先の写真・ご家族連絡先・注意点まで事前に参照できます。送迎計画とアプリが連携しているため、順番通りに操作すれば迷わず、急な便変更や飛び込みの追加もその場で対応できる、現場発の設計です。',
     metric: {
@@ -114,7 +110,6 @@ const featureCategories: FeatureCategory[] = [
   {
     englishLabel: 'BACK OFFICE',
     category: '管理者業務',
-    user: '施設長・管理者',
     subtitle: 'ケアマネ営業から議事録・名刺データまで、AI で。',
     lead: 'ケアマネ営業から議事録・名刺データ・レポートまで。施設運営のバックオフィスを支える 6 つの機能。',
     metric: {
@@ -168,14 +163,9 @@ export function DayFeatures() {
             <article key={cat.category}>
               {/* 上：英語ラベル + 主に使う人バッジ + 大タイトル + 効能サブタイトル */}
               <div className="mb-10 md:mb-12 text-center lg:text-left">
-                <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 mb-4">
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-red">
-                    {cat.englishLabel}
-                  </p>
-                  <span className="inline-flex items-center gap-1.5 rounded-full bg-bg-muted px-3 py-1 text-[11px] md:text-xs font-medium text-charcoal">
-                    主に使う人：{cat.user}
-                  </span>
-                </div>
+                <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-brand-red">
+                  {cat.englishLabel}
+                </p>
                 <Heading
                   level="h3"
                   serif
