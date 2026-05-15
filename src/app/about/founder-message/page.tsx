@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `${founderMessage.title} ｜ 代表メッセージ`,
     description:
-      '株式会社sokoe 代表取締役 槌田一輝による創業メッセージ。介護施設を運営する会社が、ヘルスケアの現場をソフトウェアと AI で変えていく。',
+      '株式会社sokoe 代表取締役 槌田一輝による創業メッセージ。デイサービス・介護施設・薬局を運営する会社が、医療・介護の現場をソフトウェアと AI で変えていく。',
     url: PAGE_URL,
     siteName: 'sokoe',
     locale: 'ja_JP',
@@ -61,18 +61,12 @@ export default function FounderMessagePage() {
         <PageHero
           label="FOUNDER MESSAGE"
           title={founderMessage.title}
-          lead="株式会社sokoe 代表取締役 槌田一輝 ── 介護現場の施設長代理として、ヘルスケアの違和感をソフトウェアと AI で消そうとしている、その理由について。"
+          lead="株式会社sokoe 代表取締役 槌田一輝 ── 介護現場の施設長代理として、医療・介護の違和感をソフトウェアと AI で消そうとしている、その理由について。"
           updatedAt={founderMessage.updatedAtLabel}
         />
 
         {/* 本文 */}
         <ProseSection containerSize="narrow">
-          <p className="text-sm text-charcoal-muted">
-            読了時間：約 {founderMessage.estimatedReadingMinutes} 分
-          </p>
-
-          <hr className="my-8 border-border-soft" />
-
           {founderMessage.body.map((block, i) => {
             const key = `${block.type}-${i}-${block.text.slice(0, 20)}`;
             if (block.type === 'h2') {

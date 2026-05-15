@@ -4,7 +4,7 @@
  * お問い合わせフォームの送信処理。
  *
  * 動作モード（環境変数による）：
- *   - RESEND_API_KEY が設定済み：Resend API 経由で info@sokoe.co.jp へ送信
+ *   - RESEND_API_KEY が設定済み：Resend API 経由で k.tsuchida@phelix-hd.com へ送信
  *   - 未設定：暫定モード。サーバーログに出力したうえで、ユーザーに mailto: 代替を案内する
  *
  * 依存パッケージは追加なし（fetch で Resend API を叩く）。
@@ -16,7 +16,7 @@
 
 import { type ContactField, type ContactFormState, INDUSTRIES, INQUIRY_TYPES } from './constants';
 
-const TO_EMAIL = 'info@sokoe.co.jp';
+const TO_EMAIL = 'k.tsuchida@phelix-hd.com';
 const FROM_EMAIL = 'noreply@sokoe.co.jp'; // Resend 側でドメイン認証済みである必要あり
 
 export async function submitContact(
@@ -90,7 +90,7 @@ export async function submitContact(
       status: 'error',
       values: raw,
       message:
-        '送信に失敗しました。お手数ですが、info@sokoe.co.jp まで直接メールにてお問い合わせください。',
+        '送信に失敗しました。お手数ですが、k.tsuchida@phelix-hd.com まで直接メールにてお問い合わせください。',
     };
   }
 }

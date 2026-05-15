@@ -23,11 +23,11 @@ const PAGE_URL = `${SITE_URL}/recruit/`;
 export const metadata: Metadata = {
   title: '採用情報 ｜ sokoe',
   description:
-    '株式会社sokoe の採用情報。「現場を、本来の仕事に戻す」をミッションに、ヘルスケア領域でソフトウェアと AI を作る仲間を募集しています。まずはカジュアル面談から、お気軽にどうぞ。',
+    '株式会社sokoe の採用情報。「現場を、本来の仕事に戻す」をミッションに、医療・介護・福祉領域でソフトウェアと AI を作る仲間を募集しています。まずはカジュアル面談から、お気軽にどうぞ。',
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: '採用情報 ｜ sokoe',
-    description: 'ヘルスケア領域でソフトウェアと AI を作る仲間を募集中。まずはカジュアル面談から。',
+    description: '医療・介護・福祉領域でソフトウェアと AI を作る仲間を募集中。まずはカジュアル面談から。',
     url: PAGE_URL,
     siteName: 'sokoe',
     locale: 'ja_JP',
@@ -41,7 +41,7 @@ export default function RecruitPage() {
       <JsonLd
         data={createWebPageSchema({
           name: '採用情報 ｜ sokoe',
-          description: '株式会社sokoe の採用情報。ヘルスケア領域で挑戦する仲間を募集中。',
+          description: '株式会社sokoe の採用情報。医療・介護・福祉領域で挑戦する仲間を募集中。',
           url: PAGE_URL,
           datePublished: recruitMeta.publishedAt,
           dateModified: recruitMeta.updatedAt,

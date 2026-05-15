@@ -78,7 +78,7 @@ export function WhatWeDo() {
             4 つの事業
           </Heading>
           <p className="text-stone text-base md:text-lg max-w-2xl mx-auto leading-[1.85]">
-            ヘルスケア領域の現場で動くソフトウェアと、AIコンサルティング。
+            医療・介護の現場で動くソフトウェアと、AIコンサルティング。
           </p>
         </div>
 

@@ -84,10 +84,10 @@ export default function ContactPage() {
                   </h2>
                   <p className="mt-2 text-base leading-relaxed text-ink">
                     <a
-                      href="mailto:info@sokoe.co.jp"
+                      href="mailto:k.tsuchida@phelix-hd.com"
                       className="text-brand-red underline transition-opacity hover:opacity-70"
                     >
-                      info@sokoe.co.jp
+                      k.tsuchida@phelix-hd.com
                     </a>
                   </p>
                 </div>

@@ -197,10 +197,10 @@ export function ContactForm() {
         <p>
           フォームがうまく送信できない場合は、お手数ですが{' '}
           <a
-            href="mailto:info@sokoe.co.jp"
+            href="mailto:k.tsuchida@phelix-hd.com"
             className="text-brand-red underline transition-opacity hover:opacity-70"
           >
-            info@sokoe.co.jp
+            k.tsuchida@phelix-hd.com
           </a>{' '}
           まで直接メールでお問い合わせください。
         </p>
@@ -265,10 +265,10 @@ function ContactSuccess({ message }: { message?: string }) {
       <p className="mt-4 text-sm leading-relaxed text-charcoal-muted">
         ※ 2営業日を過ぎても返信がない場合は、メール到着不具合の可能性があります。お手数ですが{' '}
         <a
-          href="mailto:info@sokoe.co.jp"
+          href="mailto:k.tsuchida@phelix-hd.com"
           className="text-brand-red underline transition-opacity hover:opacity-70"
         >
-          info@sokoe.co.jp
+          k.tsuchida@phelix-hd.com
         </a>{' '}
         まで直接ご連絡ください。
       </p>

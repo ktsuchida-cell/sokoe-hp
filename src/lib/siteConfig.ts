@@ -8,12 +8,12 @@ export const siteConfig = {
   tagline: '現場を、本来の仕事に戻す。',
   taglineEn: 'Bring back the work that matters.',
   description:
-    '介護施設を運営する会社がつくった、ヘルスケア領域のソフトウェアとAIコンサルティング。',
+    '介護施設を運営する会社がつくった、医療・介護・福祉領域のソフトウェアとAIコンサルティング。',
   url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://sokoe.co.jp',
 
   // 連絡先
   contact: {
-    email: 'info@sokoe.co.jp',
+    email: 'k.tsuchida@phelix-hd.com',
     address: '大阪府大阪市淀川区新高3丁目7番17-603号',
     addressShort: '大阪府大阪市淀川区',
   },

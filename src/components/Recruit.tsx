@@ -32,7 +32,7 @@ export function Recruit() {
               いっしょに。
             </Heading>
             <p className="text-stone text-base md:text-lg leading-[1.85] mb-8">
-              ヘルスケア領域の現場で、本当に動くソフトウェアと AI を作りたい仲間を探しています。
+              医療・介護の現場で、本当に動くソフトウェアと AI を作りたい仲間を探しています。
               現役の介護施設長代理が代表だからこそ、現場に届くプロダクトが作れます。
             </p>
 

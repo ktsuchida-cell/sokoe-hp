@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     template: '%s ｜ sokoe',
   },
   description:
-    '介護施設を運営する会社がつくった、ヘルスケア領域のソフトウェアとAIコンサルティング。現場経験者が伴走します。',
+    '介護施設を運営する会社がつくった、医療・介護・福祉領域のソフトウェアとAIコンサルティング。現場経験者が伴走します。',
   keywords: [
     '介護AI',
     'デイサービスアプリ',
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
     siteName: 'sokoe',
     title: 'sokoe ｜ 現場を、本来の仕事に戻す。',
     description:
-      '介護施設を運営する会社がつくった、ヘルスケア領域のソフトウェアとAIコンサルティング。',
+      '介護施設を運営する会社がつくった、医療・介護・福祉領域のソフトウェアとAIコンサルティング。',
     images: [
       {
         url: '/og/default.png',
@@ -85,7 +85,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'sokoe ｜ 現場を、本来の仕事に戻す。',
     description:
-      '介護施設を運営する会社がつくった、ヘルスケア領域のソフトウェアとAIコンサルティング。',
+      '介護施設を運営する会社がつくった、医療・介護・福祉領域のソフトウェアとAIコンサルティング。',
     images: ['/og/default.png'],
   },
   robots: {

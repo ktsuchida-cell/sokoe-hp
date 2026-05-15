@@ -118,7 +118,7 @@ export const privacyArticles: LegalArticle[] = [
       '',
       '株式会社sokoe 個人情報取扱担当',
       '〒532-0033 大阪府大阪市淀川区新高3丁目7番17-603号',
-      'Email：info@sokoe.co.jp',
+      'Email：k.tsuchida@phelix-hd.com',
     ],
   },
 ];

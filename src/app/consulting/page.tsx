@@ -25,14 +25,14 @@ const LAB_URL = `${siteConfig.url}/consulting/`;
  * - canonical 必須
  */
 export const metadata: Metadata = {
-  title: 'sokoe AI Lab ｜ ヘルスケア領域のAIコンサル',
+  title: 'sokoe AI Lab ｜ 医療・介護・福祉領域のAIコンサル',
   description:
     '介護・薬局・医療の現場でAIを毎日使っている会社のAIコンサルティング。机上の戦略ではなく、現場で動くAIを。戦略策定・導入支援・研修・継続伴走の4サービス。',
   alternates: {
     canonical: LAB_URL,
   },
   openGraph: {
-    title: 'sokoe AI Lab ｜ ヘルスケア領域のAIコンサル',
+    title: 'sokoe AI Lab ｜ 医療・介護・福祉領域のAIコンサル',
     description: '介護・薬局・医療の現場でAIを毎日使っている会社のAIコンサルティング。',
     url: LAB_URL,
     type: 'website',

@@ -38,7 +38,7 @@ export function LabHero() {
             <strong className="text-ink font-bold">AI を毎日使っている会社</strong>
             の、
             <br className="hidden md:block" />
-            ヘルスケア領域専門の AI コンサルティング。
+            医療・介護・福祉領域専門の AI コンサルティング。
             <br className="hidden md:block" />
             自社運営施設で実証したことを、貴社に伴走します。
           </p>

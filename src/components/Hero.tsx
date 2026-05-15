@@ -24,7 +24,7 @@ export function Hero() {
           <Heading level="display" serif className="mb-10">
             介護施設を運営する会社が、
             <br className="hidden md:block" />
-            ヘルスケアの現場を
+            医療・介護の現場を
             <br className="hidden md:block" />
             ソフトウェアと AI で変える。
           </Heading>

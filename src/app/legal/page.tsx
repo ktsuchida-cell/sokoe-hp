@@ -93,7 +93,7 @@ export default function LegalPage() {
           </Container>
         </Section>
 
-        <LegalLastCTA description="本表記に関するご質問は、お問い合わせフォームまたは info@sokoe.co.jp までお寄せください。" />
+        <LegalLastCTA description="本表記に関するご質問は、お問い合わせフォームまたは k.tsuchida@phelix-hd.com までお寄せください。" />
       </main>
       <Footer />
     </>

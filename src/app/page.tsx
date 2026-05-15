@@ -26,14 +26,14 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'sokoe ｜ 現場を、本来の仕事に戻す。',
   description:
-    '介護施設を運営する会社がつくった、ヘルスケア領域のソフトウェアとAIコンサルティング。現役の介護施設長代理が代表。自社運営施設で2026年4月から本番稼働中。',
+    '介護施設を運営する会社がつくった、医療・介護・福祉領域のソフトウェアとAIコンサルティング。現役の介護施設長代理が代表。自社運営施設で2026年4月から本番稼働中。',
   alternates: {
     canonical: siteConfig.url,
   },
   openGraph: {
     title: 'sokoe ｜ 現場を、本来の仕事に戻す。',
     description:
-      '介護施設を運営する会社がつくった、ヘルスケア領域のソフトウェアとAIコンサルティング。',
+      '介護施設を運営する会社がつくった、医療・介護・福祉領域のソフトウェアとAIコンサルティング。',
     url: siteConfig.url,
     type: 'website',
   },

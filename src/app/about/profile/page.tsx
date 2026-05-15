@@ -56,9 +56,9 @@ const profileInfoRows: InfoRow[] = [
     value: (
       <ul className="space-y-1.5">
         <li>・介護施設運営／デイサービス管理</li>
-        <li>・ヘルスケア領域の AI 導入</li>
+        <li>・医療・介護・福祉領域の AI 導入</li>
         <li>・薬局運営</li>
-        <li>・ヘルスケア SaaS の設計</li>
+        <li>・医療・介護 SaaS の設計</li>
       </ul>
     ),
   },
@@ -107,7 +107,7 @@ const careerTimeline: TimelineItem[] = [
     month: '5月',
     event: '株式会社sokoe 設立',
     detail:
-      '大阪府大阪市淀川区に株式会社sokoe を設立。ヘルスケア領域のソフトウェアと AI コンサルティング事業を開始。',
+      '大阪府大阪市淀川区に株式会社sokoe を設立。医療・介護・福祉領域のソフトウェアと AI コンサルティング事業を開始。',
   },
 ];
 
@@ -126,7 +126,7 @@ const expertiseAreas = [
       '薬局を運営する株式会社ピースファーマシーで薬局現場に携わった経験。服薬・健康領域に対する理解と、現場オペレーション設計の引き出し。',
   },
   {
-    title: 'ヘルスケア SaaS の設計',
+    title: '医療・介護 SaaS の設計',
     detail: '半日型・1日型・ハイブリッド型に対応するデイサービスアプリ sokoe Day を設計・運用。',
   },
 ];
@@ -172,7 +172,7 @@ export default function ProfilePage() {
                   を設立。薬学・IT・薬局・介護を横断してきた経験から、業務効率化に必要な視点を異業種側から持ち込むことを強みとする。
                 </p>
                 <p className="mt-4 text-base leading-relaxed text-charcoal md:text-lg">
-                  「介護施設を運営する会社が、ヘルスケア領域のソフトウェアと AI
+                  「介護施設を運営する会社が、医療・介護・福祉領域のソフトウェアと AI
                   コンサルティングを提供する」── これが sokoe
                   の事業構造であり、他社にはない独自性です。
                 </p>
@@ -196,7 +196,7 @@ export default function ProfilePage() {
           eyebrow="EXPERTISE"
           title="専門領域・知見"
           variant="muted"
-          lead="現場経験と専門資格、そしてソフトウェア開発の知見を横断的に組み合わせ、ヘルスケア領域に貢献しています。"
+          lead="現場経験と専門資格、そしてソフトウェア開発の知見を横断的に組み合わせ、医療・介護・福祉領域に貢献しています。"
         >
           <div className="grid gap-6 md:grid-cols-2">
             {expertiseAreas.map((area) => (
@@ -211,7 +211,7 @@ export default function ProfilePage() {
         {/* 発信 */}
         <ProseSection eyebrow="WRITING & SPEAKING" title="発信">
           <p>
-            介護現場での AI 実践、ヘルスケア SaaS
+            介護現場での AI 実践、医療・介護 SaaS
             の設計思想、薬学・IT・薬局・介護を横断してきた視点を、X・note・LinkedIn
             で継続的に発信しています。
           </p>
@@ -266,7 +266,7 @@ export default function ProfilePage() {
                 代表に直接、相談できます。
               </Heading>
               <p className="mb-8 text-base text-charcoal">
-                ヘルスケア領域の AI 導入・現場 DX について、30分の無料相談を承っています。
+                医療・介護・福祉領域の AI 導入・現場 DX について、30分の無料相談を承っています。
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Link href="/consulting/">

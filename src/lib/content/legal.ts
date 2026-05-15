@@ -49,7 +49,7 @@ export const legalDataRows: LegalDataRow[] = [
   },
   {
     label: 'メールアドレス',
-    value: 'info@sokoe.co.jp',
+    value: 'k.tsuchida@phelix-hd.com',
   },
   {
     label: 'ウェブサイト',
@@ -75,7 +75,7 @@ export const legalDataRows: LegalDataRow[] = [
   {
     label: '申込方法',
     value: [
-      'ウェブサイトのお問い合わせフォーム、または info@sokoe.co.jp までご連絡ください。',
+      'ウェブサイトのお問い合わせフォーム、または k.tsuchida@phelix-hd.com までご連絡ください。',
       '個別にヒアリングのうえ、お見積もり・契約書の提示を行います。',
     ],
   },

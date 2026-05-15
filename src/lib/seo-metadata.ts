@@ -22,7 +22,7 @@ const SITE_URL = siteConfig.url;
 export const SITE_NAME = 'sokoe' as const;
 export const SITE_TAGLINE = '現場を、本来の仕事に戻す。' as const;
 export const SITE_DESCRIPTION_DEFAULT =
-  '株式会社sokoe は、介護施設を運営する会社が、ヘルスケア領域のソフトウェアと AI コンサルティングを提供する会社です。デイサービス向けアプリ sokoe Day、ヘルスケア AI コンサルティング sokoe AI Lab を展開。' as const;
+  '株式会社sokoe は、介護施設を運営する会社が、医療・介護・福祉領域のソフトウェアと AI コンサルティングを提供する会社です。デイサービス向けアプリ sokoe Day、医療・介護・福祉 AI コンサルティング sokoe AI Lab を展開。' as const;
 
 // OG 画像（共通）。各ページで個別指定がない場合のフォールバック。
 export const SITE_OG_IMAGE = `${SITE_URL}/og/default.png` as const;
@@ -36,7 +36,7 @@ export const PAGE_SEO = {
     path: '/',
     title: 'sokoe｜現場を、本来の仕事に戻す。',
     description:
-      '株式会社sokoe ── 介護施設を運営する会社が、ヘルスケア領域のソフトウェアと AI コンサルティングを提供します。デイサービス向けアプリ「sokoe Day」、ヘルスケア AI コンサルティング「sokoe AI Lab」。',
+      '株式会社sokoe ── 介護施設を運営する会社が、医療・介護・福祉領域のソフトウェアと AI コンサルティングを提供します。デイサービス向けアプリ「sokoe Day」、医療・介護・福祉 AI コンサルティング「sokoe AI Lab」。',
     ogType: 'website' as const,
   },
 
@@ -50,9 +50,9 @@ export const PAGE_SEO = {
 
   consulting: {
     path: '/consulting/',
-    title: 'sokoe AI Lab｜ヘルスケア AI コンサルティング',
+    title: 'sokoe AI Lab｜医療・介護・福祉 AI コンサルティング',
     description:
-      'ヘルスケア領域に特化した AI コンサルティング。戦略策定／導入支援／研修／顧問契約の4形態で、現場で動く AI 導入を支援します。介護施設を自社運営しながらの実装経験を、机上の助言ではなく現場のリアルとして提供。',
+      '医療・介護・福祉領域に特化した AI コンサルティング。戦略策定／導入支援／研修／顧問契約の4形態で、現場で動く AI 導入を支援します。介護施設を自社運営しながらの実装経験を、机上の助言ではなく現場のリアルとして提供。',
     ogType: 'website' as const,
   },
 
@@ -60,7 +60,7 @@ export const PAGE_SEO = {
     path: '/about/',
     title: '会社概要 ｜ sokoe',
     description:
-      '株式会社sokoe の会社概要。介護施設を運営する会社が、ヘルスケア領域のソフトウェアと AI コンサルティングを提供。本社：大阪府大阪市淀川区。代表取締役 槌田一輝（レッツ倶楽部川西能勢口 施設長代理／株式会社ピースファーマシー 在籍）。',
+      '株式会社sokoe の会社概要。介護施設を運営する会社が、医療・介護・福祉領域のソフトウェアと AI コンサルティングを提供。本社：大阪府大阪市淀川区。代表取締役 槌田一輝（レッツ倶楽部川西能勢口 施設長代理／株式会社ピースファーマシー 在籍）。',
     ogType: 'website' as const,
   },
 
@@ -132,7 +132,7 @@ export const PAGE_SEO = {
     path: '/recruit/',
     title: '採用情報 ｜ sokoe',
     description:
-      '株式会社sokoe の採用情報。「現場を、本来の仕事に戻す」をミッションに、ヘルスケア領域でソフトウェアと AI を作る仲間を募集しています。まずはカジュアル面談から、お気軽にどうぞ。',
+      '株式会社sokoe の採用情報。「現場を、本来の仕事に戻す」をミッションに、医療・介護・福祉領域でソフトウェアと AI を作る仲間を募集しています。まずはカジュアル面談から、お気軽にどうぞ。',
     ogType: 'website' as const,
   },
 } as const;

@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: '編集ポリシー ｜ sokoe',
     description:
-      'sokoe の編集ポリシー。ヘルスケア領域における情報発信の方針・ファクトチェック・引用ルール。',
+      'sokoe の編集ポリシー。医療・介護・福祉領域における情報発信の方針・ファクトチェック・引用ルール。',
     url: PAGE_URL,
     siteName: 'sokoe',
     locale: 'ja_JP',
@@ -57,14 +57,14 @@ export default function EditorialPolicyPage() {
         <PageHero
           label="EDITORIAL POLICY"
           title="編集ポリシー"
-          lead="sokoe コーポレートサイトおよびオウンドメディアにおける、情報発信の基本方針を公開しています。ヘルスケア領域における正確性・信頼性を担保するための運用ルールです。"
+          lead="sokoe コーポレートサイトおよびオウンドメディアにおける、情報発信の基本方針を公開しています。医療・介護・福祉領域における正確性・信頼性を担保するための運用ルールです。"
           updatedAt={UPDATED_AT_LABEL}
         />
 
         {/* 1. 基本方針 */}
         <ProseSection eyebrow="01" title="基本方針" containerSize="narrow">
           <p>
-            株式会社sokoe（以下「当社」といいます）は、介護・薬局・医療をはじめとするヘルスケア領域で事業を行っています。当社が発信する情報は、読者の健康・安全・経営判断に影響を及ぼす可能性があるため、Google
+            株式会社sokoe（以下「当社」といいます）は、介護・薬局・医療をはじめとする医療・介護・福祉領域で事業を行っています。当社が発信する情報は、読者の健康・安全・経営判断に影響を及ぼす可能性があるため、Google
             の品質評価ガイドラインにおける YMYL（Your Money or Your
             Life）領域に該当することを認識し、以下の方針に基づき記事を制作・公開しています。
           </p>
@@ -137,7 +137,7 @@ export default function EditorialPolicyPage() {
           title="YMYL レビューフロー"
           variant="muted"
           containerSize="narrow"
-          lead="ヘルスケア領域の記事は、以下のステップで多重チェックを行います。"
+          lead="医療・介護・福祉領域の記事は、以下のステップで多重チェックを行います。"
         >
           <ol>
             <li>
@@ -206,7 +206,7 @@ export default function EditorialPolicyPage() {
           <h3>訂正のご報告</h3>
           <p>
             記事に事実誤認・誤情報がある場合、{' '}
-            <a href="mailto:info@sokoe.co.jp">info@sokoe.co.jp</a>{' '}
+            <a href="mailto:k.tsuchida@phelix-hd.com">k.tsuchida@phelix-hd.com</a>{' '}
             までご一報ください。確認のうえ、速やかに対応します。
           </p>
         </ProseSection>
@@ -214,7 +214,7 @@ export default function EditorialPolicyPage() {
         {/* 7. AI 利用に関する方針 */}
         <ProseSection eyebrow="07" title="AI 利用に関する方針" containerSize="narrow">
           <p>
-            当社は、自社事業の一環として ヘルスケア領域における AI
+            当社は、自社事業の一環として 医療・介護・福祉領域における AI
             の活用を推進しています。記事制作においても、調査補助やドラフト生成に生成 AI
             を利用する場合があります。ただし、以下を厳守します。
           </p>
@@ -248,7 +248,7 @@ export default function EditorialPolicyPage() {
         <ProseSection eyebrow="09" title="お問い合わせ" containerSize="narrow">
           <p>
             本ポリシーに関するご質問、記事内容に関するご指摘等は、{' '}
-            <a href="mailto:info@sokoe.co.jp">info@sokoe.co.jp</a> までお問い合わせください。
+            <a href="mailto:k.tsuchida@phelix-hd.com">k.tsuchida@phelix-hd.com</a> までお問い合わせください。
           </p>
           <p className="text-sm text-charcoal-muted">
             最終更新日：{UPDATED_AT_LABEL}

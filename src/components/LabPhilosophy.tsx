@@ -46,7 +46,7 @@ export function LabPhilosophy() {
             なぜ、sokoe AI Lab か。
           </Heading>
           <p className="text-stone text-base md:text-lg leading-[1.85]">
-            ヘルスケア領域の AI コンサルは数多くあります。
+            医療・介護・福祉領域の AI コンサルは数多くあります。
             <br className="hidden md:block" />
             私たちが、3つの点で違うこと。
           </p>

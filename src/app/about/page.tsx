@@ -22,12 +22,12 @@ const SITE_URL = siteConfig.url;
 export const metadata: Metadata = {
   title: '会社概要 ｜ sokoe',
   description:
-    '株式会社sokoe の会社概要。介護施設を運営する会社が、ヘルスケア領域のソフトウェアと AI コンサルティングを提供します。本社：大阪府大阪市淀川区。代表取締役 槌田一輝（レッツ倶楽部川西能勢口 施設長代理／株式会社ピースファーマシー 在籍）。',
+    '株式会社sokoe の会社概要。デイサービス・介護施設・薬局を運営する会社が、医療・介護・福祉領域のソフトウェアと AI コンサルティングを提供します。本社：大阪府大阪市淀川区。',
   alternates: { canonical: `${SITE_URL}/about/` },
   openGraph: {
     title: '会社概要 ｜ sokoe',
     description:
-      '介護施設を運営する会社が、ヘルスケア領域のソフトウェアと AI コンサルティングを提供。',
+      'デイサービス・介護施設・薬局を運営する会社が、医療・介護・福祉領域のソフトウェアと AI コンサルティングを提供。',
     url: `${SITE_URL}/about/`,
     siteName: 'sokoe',
     locale: 'ja_JP',
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 };
 
 const companyInfoRows: InfoRow[] = [
-  { label: '会社名', value: '株式会社sokoe（カブシキガイシャ ソコエ）' },
+  { label: '会社名', value: '株式会社sokoe（ソコエ）' },
   { label: '英語表記', value: 'sokoe Inc.' },
   { label: '設立', value: '2026年5月1日' },
   { label: '代表取締役', value: '槌田 一輝' },
@@ -51,23 +51,11 @@ const companyInfoRows: InfoRow[] = [
     ),
   },
   {
-    label: '関連施設',
-    value: (
-      <>
-        レッツ倶楽部川西能勢口（兵庫県川西市・1日型デイサービス）
-        <br />
-        <span className="text-sm text-charcoal-muted">
-          ※代表取締役が施設長代理を兼任。sokoe Day の自社運用施設
-        </span>
-      </>
-    ),
-  },
-  {
     label: '事業内容',
     value: (
       <ul className="space-y-1.5">
-        <li>・ヘルスケア領域のソフトウェア開発</li>
-        <li>・ヘルスケア領域の AI コンサルティング</li>
+        <li>・医療・介護・福祉領域のソフトウェア開発</li>
+        <li>・医療・介護・福祉領域の AI コンサルティング</li>
       </ul>
     ),
   },
@@ -75,10 +63,10 @@ const companyInfoRows: InfoRow[] = [
     label: 'お問い合わせ',
     value: (
       <a
-        href="mailto:info@sokoe.co.jp"
+        href="mailto:k.tsuchida@phelix-hd.com"
         className="text-brand-red transition-colors hover:underline"
       >
-        info@sokoe.co.jp
+        k.tsuchida@phelix-hd.com
       </a>
     ),
   },
@@ -97,16 +85,16 @@ const timelineItems: TimelineItem[] = [
     month: '5月',
     event: '株式会社sokoe 設立',
     detail:
-      '大阪府大阪市淀川区に本社を構え、ヘルスケア領域のソフトウェア開発と AI コンサルティング事業を開始。',
+      '大阪府大阪市淀川区に本社を構え、医療・介護・福祉領域のソフトウェア開発と AI コンサルティング事業を開始。',
   },
   {
     year: '2027',
-    event: 'sokoe Facility 公開予定',
+    event: 'sokoe Facility（仮名）公開予定',
     detail: '住宅型・施設型介護向けシステムを Phase 2 で公開予定。',
   },
   {
     year: '2027',
-    event: 'sokoe Pharma 公開予定',
+    event: 'sokoe Pharma（仮名）公開予定',
     detail: '薬局向けアプリを Phase 3 で公開予定。',
   },
 ];
@@ -120,18 +108,18 @@ const businesses = [
   },
   {
     name: 'sokoe AI Lab',
-    desc: 'ヘルスケア領域の AI コンサルティング。戦略策定／導入支援／研修／顧問契約。',
+    desc: '医療・介護・福祉領域の AI コンサルティング。戦略策定／導入支援／研修／顧問契約。',
     status: 'Now Live',
     href: '/consulting/',
   },
   {
-    name: 'sokoe Facility',
+    name: 'sokoe Facility（仮名）',
     desc: '介護施設向けシステム。住宅型・施設型に対応予定。',
     status: 'Coming Soon',
     href: null,
   },
   {
-    name: 'sokoe Pharma',
+    name: 'sokoe Pharma（仮名）',
     desc: '薬局向けアプリ。処方箋管理・服薬指導等に対応予定。',
     status: 'Coming Soon',
     href: null,
@@ -161,14 +149,14 @@ export default function AboutPage() {
 
         <PageHero
           label="ABOUT — COMPANY"
-          title="介護施設を運営する会社が、ヘルスケアの現場を変える。"
-          lead="株式会社sokoe は、自社で介護施設を運営しながら、ヘルスケア領域のソフトウェアと AI コンサルティングを提供する会社です。"
+          title="デイサービス・介護施設・薬局を運営する会社が、医療・介護の現場を変える。"
+          lead="株式会社sokoe は、自社でデイサービス・介護施設・薬局を運営しながら、医療・介護・福祉領域のソフトウェアと AI コンサルティングを提供する会社です。"
         />
 
         {/* ミッション */}
         <ProseSection eyebrow="MISSION" title="現場を、本来の仕事に戻す。" serif>
           <p>
-            ヘルスケアの現場には、本来やる必要のない雑務が積み上がっています。紙、情報伝達のすれ違い、終わらない記録、別アプリの操作
+            医療・介護の現場には、本来やる必要のない雑務が積み上がっています。紙、情報伝達のすれ違い、終わらない記録、別アプリの操作
             ── その雑務を消して、現場を本来の仕事に戻す。
           </p>
           <p>

@@ -65,10 +65,10 @@ export function ComingSoon({ label, title, description, inquiry }: ComingSoonPro
           <p className="mt-12 text-sm text-charcoal-muted">
             メールで直接ご連絡いただく場合：{' '}
             <a
-              href="mailto:info@sokoe.co.jp"
+              href="mailto:k.tsuchida@phelix-hd.com"
               className="text-brand-red underline transition-opacity hover:opacity-70"
             >
-              info@sokoe.co.jp
+              k.tsuchida@phelix-hd.com
             </a>
           </p>
         </div>
