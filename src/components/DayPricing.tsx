@@ -36,7 +36,7 @@ const plans: Plan[] = [
       '入浴カンバン / バイタル記録 / 申し送り',
       '体力測定 AI 評価',
       'AI ケアプラン生成（通所介護計画書）',
-      '初期費用ゼロ・30 日間無料トライアル',
+      '初期費用ゼロ',
     ],
   },
   {
@@ -338,7 +338,7 @@ export function DayPricing() {
         </div>
 
         <p className="text-center text-sm text-mid mt-10">
-          ※ 初期費用は無料です。30 日間無料でお試しいただけます。
+          ※ 初期費用は無料です。
         </p>
       </Container>
     </Section>

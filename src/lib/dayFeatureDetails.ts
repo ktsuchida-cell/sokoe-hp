@@ -214,7 +214,7 @@ export const featureDetails: FeatureDetail[] = [
     positioning: 'ケアプランを、数分で施設様式に',
     title: 'ケアプラン AI 生成',
     bullets: [
-      'ケアマネ計画書を OCR で読み取り、AI が施設様式へ自動変換',
+      '通所介護計画書を OCR で読み取り、AI が施設様式へ自動変換',
       '個別機能訓練計画書も、過去履歴をベースに AI が下書き',
       '月 20 名で 10 時間の転記業務が、ほぼゼロに',
     ],

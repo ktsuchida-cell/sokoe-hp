@@ -68,9 +68,9 @@ export function DayHero() {
             {/* 判断材料 3 点バッジ */}
             <ul className="mt-6 flex flex-wrap justify-center gap-x-5 gap-y-2 lg:justify-start">
               {[
-                'カイポケ等の介護記録ソフトと併用 OK',
+                'カスタム開発も可能',
                 '1 日型・半日型・ハイブリッドに対応',
-                '30 日間無料トライアル',
+                'カイポケ等の介護記録ソフトと併用 OK',
               ].map((badge) => (
                 <li
                   key={badge}
