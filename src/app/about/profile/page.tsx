@@ -50,7 +50,6 @@ const profileInfoRows: InfoRow[] = [
       </>
     ),
   },
-  { label: '学歴', value: '薬学部 卒業（2025年）' },
   {
     label: '専門領域',
     value: (
