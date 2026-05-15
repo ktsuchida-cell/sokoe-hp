@@ -21,13 +21,15 @@ export function Hero() {
         <div className="max-w-4xl mx-auto text-center">
           <Label className="mb-8">SOKOE ─ 株式会社 sokoe</Label>
 
-          <Heading level="display" serif className="mb-10">
-            介護施設を運営する会社が、
+          <Heading level="display" serif className="mb-6">
+            薬局・介護事業を運営する会社が、
             <br className="hidden md:block" />
-            医療・介護の現場を
-            <br className="hidden md:block" />
-            ソフトウェアと AI で変える。
+            本気で現場を変える。
           </Heading>
+
+          <p className="font-serif text-2xl md:text-3xl lg:text-4xl text-charcoal leading-[1.4] mb-12">
+            アプリ開発 × AI コンサルティング
+          </p>
 
           <p className="text-stone text-lg md:text-xl leading-[1.85] mb-12 max-w-2xl mx-auto">
             紙運用、情報伝達の分断、終わらない記録。
