@@ -42,7 +42,7 @@ export function AboutUs() {
           <div className="md:col-span-7">
             <Label className="mb-5">ABOUT US</Label>
             <Heading level="h2" className="mb-8" serif>
-              「これ、本来やる必要ないよね」
+              「もっと楽してほしい」
             </Heading>
 
             <div className="space-y-5 text-stone text-[15px] md:text-base leading-[1.95] mb-10">
@@ -64,15 +64,9 @@ export function AboutUs() {
               </p>
             </div>
 
-            <div className="flex flex-wrap items-center gap-x-8 gap-y-4 mb-8 pb-8 border-b border-border">
-              <div>
-                <p className="text-xs uppercase tracking-[0.15em] text-mid mb-1">代表取締役</p>
-                <p className="font-bold text-lg text-ink">槌田 一輝</p>
-              </div>
-              <div>
-                <p className="text-xs uppercase tracking-[0.15em] text-mid mb-1">兼任</p>
-                <p className="text-[15px] text-charcoal">レッツ倶楽部川西能勢口 施設長代理</p>
-              </div>
+            <div className="mb-8 pb-8 border-b border-border">
+              <p className="text-xs uppercase tracking-[0.15em] text-mid mb-1">代表取締役</p>
+              <p className="font-bold text-lg text-ink">槌田 一輝</p>
             </div>
 
             <Link
