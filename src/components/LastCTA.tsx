@@ -22,16 +22,22 @@ export function LastCTA() {
             CONTACT
           </Label>
 
-          <Heading level="h2" tone="white" serif className="mb-10">
-            ベンダーが書いた仕様書ではなく、
+          <Heading level="h2" tone="white" serif className="mb-6">
+            薬局・介護事業を運営する会社が、
             <br className="hidden md:block" />
-            施設長が書いた仕様書。
+            本気で現場を変える。
           </Heading>
 
+          <p className="font-serif text-white text-2xl md:text-3xl leading-[1.4] mb-10">
+            アプリ開発 × AI コンサルティング
+          </p>
+
           <p className="text-white/90 text-base md:text-lg leading-[1.85] mb-12">
-            代表は現役の施設長代理として、毎日 sokoe Day を使っています。
+            紙運用、情報伝達の分断、終わらない記録。
             <br className="hidden md:block" />
-            「うちの場合、何ができるんだろう」を、30 分のオンライン相談で。
+            本来の仕事を取り戻すための、
+            <br className="hidden md:block" />
+            現場発のソフトウェアと AI コンサルティング。
           </p>
 
           <div className="flex flex-wrap justify-center gap-4">
