@@ -65,7 +65,7 @@ const featureCategories: FeatureCategory[] = [
       badge: '自社運営で実践中',
       prefix: '基本操作は、',
       highlight: 'スマホのみで完結',
-      suffix: '！',
+      suffix: '',
       caption:
         '自社運営施設「レッツ倶楽部川西能勢口」で、フロアの記録・申し送り・入浴・バイタル管理を毎日スマホで動かしています。一部の業務（管理者レポート等）は PC を使う場合があります。',
     },
@@ -98,7 +98,7 @@ const featureCategories: FeatureCategory[] = [
       badge: '現場発の設計',
       prefix: '初めての家でも、急な追加でも、',
       highlight: 'ドライバーは迷わない',
-      suffix: '。',
+      suffix: '',
       caption: '訪問先の写真・連絡先・注意点を事前に参照。送迎計画とアプリが連携しているので、急な便変更や飛び込みの追加もその場で対応できます。',
     },
     features: [
