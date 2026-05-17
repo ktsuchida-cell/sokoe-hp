@@ -2,7 +2,6 @@ import { Container } from '@/components/Container';
 import { Heading } from '@/components/Heading';
 import { Label } from '@/components/Label';
 import { Section } from '@/components/Section';
-import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
 const useCases = [
@@ -39,7 +38,7 @@ const useCases = [
  * SmartHR「選ばれる理由」型に寄せた構成：
  *   - 中央寄せのタイトル + リード
  *   - 番号バッジ付き縦並びカード 5 枚
- *   - 末尾に「すべての実証事例を見る」リンク
+ *   - 5 枚のカードで実証事例を提示
  *
  * 写真は意図的に外し、メトリクスのインパクトに集中させる。
  * E-E-A-T 訴求（自社実証）は本文リードで担保。
@@ -92,19 +91,6 @@ export function DaySelfUse() {
             </li>
           ))}
         </ul>
-
-        <div className="mt-12 text-center">
-          <Link
-            href="/case/"
-            className="inline-flex items-center gap-2 text-base font-semibold text-ink hover:text-brand-red transition-colors group"
-          >
-            すべての実証事例を見る
-            <ArrowRight
-              className="w-4 h-4 transition-transform group-hover:translate-x-1"
-              strokeWidth={1.5}
-            />
-          </Link>
-        </div>
       </Container>
     </Section>
   );
