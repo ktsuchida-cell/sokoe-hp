@@ -332,7 +332,6 @@ export function DayPricing() {
           </Link>
         </div>
 
-        <p className="text-center text-sm text-mid mt-10">※ 初期費用は無料です。</p>
       </Container>
     </Section>
   );
