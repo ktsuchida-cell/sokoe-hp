@@ -1,58 +1,70 @@
 import { Button } from '@/components/Button';
 import { Container } from '@/components/Container';
 import { Heading } from '@/components/Heading';
-import { Label } from '@/components/Label';
 import { Section } from '@/components/Section';
+import Image from 'next/image';
 import Link from 'next/link';
 
 /**
  * コーポレートTOP Hero セクション
  *
- * Step 4 デザイン方針：
- * - センター集中型レイアウト
+ * - 背景に自社運営施設の現場写真をフルブリードで配置
+ * - 文字読みやすさのため白系オーバーレイで写真をやわらげる
  * - セリフ体（Playfair Display + Noto Serif JP）の大見出し
- * - 編集メディア風のラベル（uppercase tracking）
- * - 80% 以上が白＋ニュートラル、赤は CTA のみに限定
  */
 export function Hero() {
   return (
-    <Section spacing="xl">
-      <Container>
-        <div className="max-w-4xl mx-auto text-center">
-          <Label className="mb-8">SOKOE ─ 株式会社 sokoe</Label>
+    <div className="relative isolate">
+      {/* 背景画像 + 白系オーバーレイ */}
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        <Image
+          src="/images/hero/corporate-facility-1672x941.webp"
+          alt=""
+          fill
+          priority
+          quality={85}
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-white/80 backdrop-blur-[2px]" aria-hidden="true" />
+      </div>
 
-          <Heading level="display" serif className="mb-6">
-            薬局・介護事業を運営する会社が、
-            <br className="hidden md:block" />
-            本気で現場を変える。
-          </Heading>
+      <Section spacing="xl">
+        <Container>
+          <div className="max-w-4xl mx-auto text-center">
+            <Heading level="display" serif className="mb-6">
+              薬局・介護事業を運営する会社が、
+              <br className="hidden md:block" />
+              本気で現場を変える。
+            </Heading>
 
-          <p className="font-serif text-2xl md:text-3xl lg:text-4xl text-charcoal leading-[1.4] mb-12">
-            アプリ開発 × AI コンサルティング
-          </p>
+            <p className="font-serif text-2xl md:text-3xl lg:text-4xl text-charcoal leading-[1.4] mb-12">
+              アプリ開発 × AI コンサルティング
+            </p>
 
-          <p className="text-stone text-lg md:text-xl leading-[1.85] mb-12 max-w-2xl mx-auto">
-            紙運用、情報伝達の分断、終わらない記録。
-            <br className="hidden md:block" />
-            本来の仕事を取り戻すための、
-            <br className="hidden md:block" />
-            現場発のソフトウェアと AI コンサルティング。
-          </p>
+            <p className="text-stone text-lg md:text-xl leading-[1.85] mb-12 max-w-2xl mx-auto">
+              紙運用、情報伝達の分断、終わらない記録。
+              <br className="hidden md:block" />
+              本来の仕事を取り戻すための、
+              <br className="hidden md:block" />
+              現場発のソフトウェアと AI コンサルティング。
+            </p>
 
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/day-service/">
-              <Button variant="primary" size="lg">
-                サービスを見る
-              </Button>
-            </Link>
-            <Link href="/about/">
-              <Button variant="secondary" size="lg">
-                私たちについて
-              </Button>
-            </Link>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link href="/day-service/">
+                <Button variant="primary" size="lg">
+                  サービスを見る
+                </Button>
+              </Link>
+              <Link href="/about/">
+                <Button variant="secondary" size="lg">
+                  私たちについて
+                </Button>
+              </Link>
+            </div>
           </div>
-        </div>
-      </Container>
-    </Section>
+        </Container>
+      </Section>
+    </div>
   );
 }

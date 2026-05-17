@@ -1,7 +1,6 @@
 import { AboutUs } from '@/components/AboutUs';
 import { CaseStudies } from '@/components/CaseStudies';
 import { Footer } from '@/components/Footer';
-import { FullBleedImage } from '@/components/FullBleedImage';
 import { Header } from '@/components/Header';
 import { Hero } from '@/components/Hero';
 import { Insights } from '@/components/Insights';
@@ -44,16 +43,15 @@ export const metadata: Metadata = {
  *
  * Step 3-B / Step 4 で確定したセクション構成：
  * [1] ヘッダー
- * [2] ヒーロー（センター集中型・セリフ体大見出し）
- * [3] フルブリード写真（自社運営施設）
- * [4] What we do（4事業）
- * [5] Our Approach（3つの考え方）
- * [6] Insights（最新の知見記事 4本）
- * [7] Case studies（自社実践事例 4ケース）
- * [8] About us（創業ストーリー要約）
- * [9] Recruit（採用）
- * [10] Last CTA
- * [11] Footer
+ * [2] ヒーロー（自社運営施設の現場写真を背景に配置）
+ * [3] What we do（4事業）
+ * [4] Our Approach（3つの考え方）
+ * [5] Insights（最新の知見記事 4本）
+ * [6] Case studies（自社実践事例 4ケース）
+ * [7] About us（創業ストーリー要約）
+ * [8] Recruit（採用）
+ * [9] Last CTA
+ * [10] Footer
  *
  * 構造化データ（Step 4.8 GEO/AEO 対応）：
  * - Organization Schema
@@ -69,7 +67,6 @@ export default function HomePage() {
 
       <main>
         <Hero />
-        <FullBleedImage />
         <WhatWeDo />
         <OurApproach />
         <Insights />

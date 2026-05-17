@@ -331,7 +331,6 @@ export function DayPricing() {
             </Button>
           </Link>
         </div>
-
       </Container>
     </Section>
   );
