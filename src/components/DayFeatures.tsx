@@ -47,7 +47,7 @@ const featureCategories: FeatureCategory[] = [
     englishLabel: 'FLOOR OPERATIONS',
     category: 'フロア業務',
     subtitle: '記録から申し送りまで、フロアの手間をまるごと圧縮。',
-    lead: '日々の現場業務を、スマホ 1 台で効率化。ご利用者の受け入れから記録・申し送りまで、7つの機能で支えます。',
+    lead: 'ご利用者の受け入れ、バイタル記録、入浴・申し送り、体力測定の評価まで。日々の現場業務をスマホ 1 台で完結できるよう、7 つの機能で支えます。',
     features: [
       { icon: LayoutDashboard, title: 'ダッシュボード', description: '今日の業務状況を一目で把握' },
       {
@@ -71,7 +71,7 @@ const featureCategories: FeatureCategory[] = [
     englishLabel: 'TRANSPORT',
     category: '送迎業務',
     subtitle: '当日のドライバーに、寄り添った設計。',
-    lead: '4 便 + 6 パターンの便構成や AI 配車最適化はもちろん、ドライバー画面では訪問先の写真・ご家族連絡先・注意点まで事前に参照できます。送迎計画とアプリが連携しているため、順番通りに操作すれば迷わず、急な便変更や飛び込みの追加もその場で対応できる、現場発の設計です。',
+    lead: '4 便 + 6 パターンの便構成や AI 配車最適化に対応。ドライバー画面では訪問先の写真・ご家族連絡先・注意点を事前参照できます。送迎計画とアプリの連携で、急な便変更や飛び込みの追加もその場で対応できる、現場発の設計です。',
     features: [
       { icon: CarFront, title: '配車計画', description: 'AI 最適化＋6 パターン便対応', isAI: true },
       {
@@ -86,7 +86,7 @@ const featureCategories: FeatureCategory[] = [
     englishLabel: 'BACK OFFICE',
     category: '管理者業務',
     subtitle: 'ケアマネ営業から議事録・名刺データまで、AI で。',
-    lead: 'ケアマネ営業から議事録・名刺データ・レポートまで。施設運営のバックオフィスを支える 6 つの機能。',
+    lead: 'ケアマネ営業、担当者会議の議事録、名刺管理、ケアプラン作成、スケジュール、レポート出力まで。施設運営のバックオフィスを AI と効率化機能で支える 6 つの機能。',
     features: [
       { icon: Briefcase, title: '営業管理', description: 'ケアマネ営業履歴を一元管理' },
       { icon: Mic, title: '担当者会議 AI', description: '音声 → 議事録を自動生成', isAI: true },
