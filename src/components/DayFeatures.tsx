@@ -33,22 +33,12 @@ type Feature = {
   isAI?: boolean;
 };
 
-type Metric = {
-  /** メトリクス上部のバッジ。省略時は "現場実証データ" */
-  badge?: string;
-  prefix: string;
-  highlight: string;
-  suffix: string;
-  caption: string;
-};
-
 type FeatureCategory = {
   englishLabel: string;
   category: string;
   /** 大タイトル直下の効能サブタイトル（1 行） */
   subtitle: string;
   lead: string;
-  metric: Metric;
   features: Feature[];
 };
 
@@ -58,14 +48,6 @@ const featureCategories: FeatureCategory[] = [
     category: 'フロア業務',
     subtitle: '記録から申し送りまで、フロアの手間をまるごと圧縮。',
     lead: '日々の現場業務を、スマホ 1 台で効率化。ご利用者の受け入れから記録・申し送りまで、7つの機能で支えます。',
-    metric: {
-      badge: '自社運営で実践中',
-      prefix: '基本操作は、',
-      highlight: 'スマホのみで完結',
-      suffix: '',
-      caption:
-        '自社運営施設「レッツ倶楽部川西能勢口」で、フロアの記録・申し送り・入浴・バイタル管理を毎日スマホで動かしています。一部の業務（管理者レポート等）は PC を使う場合があります。',
-    },
     features: [
       { icon: LayoutDashboard, title: 'ダッシュボード', description: '今日の業務状況を一目で把握' },
       {
@@ -90,14 +72,6 @@ const featureCategories: FeatureCategory[] = [
     category: '送迎業務',
     subtitle: '当日のドライバーに、寄り添った設計。',
     lead: '4 便 + 6 パターンの便構成や AI 配車最適化はもちろん、ドライバー画面では訪問先の写真・ご家族連絡先・注意点まで事前に参照できます。送迎計画とアプリが連携しているため、順番通りに操作すれば迷わず、急な便変更や飛び込みの追加もその場で対応できる、現場発の設計です。',
-    metric: {
-      badge: '現場発の設計',
-      prefix: '初めての家でも、急な追加でも、',
-      highlight: 'ドライバーは迷わない',
-      suffix: '',
-      caption:
-        '訪問先の写真・連絡先・注意点を事前に参照。送迎計画とアプリが連携しているので、急な便変更や飛び込みの追加もその場で対応できます。',
-    },
     features: [
       { icon: CarFront, title: '配車計画', description: 'AI 最適化＋6 パターン便対応', isAI: true },
       {
@@ -113,12 +87,6 @@ const featureCategories: FeatureCategory[] = [
     category: '管理者業務',
     subtitle: 'ケアマネ営業から議事録・名刺データまで、AI で。',
     lead: 'ケアマネ営業から議事録・名刺データ・レポートまで。施設運営のバックオフィスを支える 6 つの機能。',
-    metric: {
-      prefix: 'ケアプラン転記、',
-      highlight: '月 10 時間',
-      suffix: 'を取り戻す',
-      caption: 'OCR + 生成 AI で計画書を数分に。月20名なら 10 時間の業務がほぼゼロに。',
-    },
     features: [
       { icon: Briefcase, title: '営業管理', description: 'ケアマネ営業履歴を一元管理' },
       { icon: Mic, title: '担当者会議 AI', description: '音声 → 議事録を自動生成', isAI: true },
@@ -185,36 +153,12 @@ export function DayFeatures() {
                 </p>
               </div>
 
-              {/* 下：左にリード+メトリクス、右に機能+詳しく見る */}
+              {/* 下：左にリード、右に機能+詳しく見る */}
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
-                <div className="lg:col-span-5 space-y-10">
+                <div className="lg:col-span-5">
                   <p className="text-stone text-[15px] md:text-base leading-[1.85] max-w-xl mx-auto lg:mx-0">
                     {cat.lead}
                   </p>
-
-                  {/* メトリクスビジュアル（背景色付きカード） */}
-                  <div className="rounded-[12px] bg-tint-orange border border-product-orange/20 p-6 md:p-8">
-                    <span className="inline-flex items-center gap-1.5 mb-5 rounded-full bg-white px-3 py-1 text-[11px] md:text-xs font-semibold tracking-[0.05em] text-product-orange shadow-sm">
-                      <Sparkles className="w-3 h-3" strokeWidth={2} />
-                      {cat.metric.badge ?? '現場実証データ'}
-                    </span>
-
-                    <p className="font-serif font-bold text-ink leading-tight mb-5">
-                      <span className="block text-[15px] md:text-base mb-2 text-charcoal">
-                        {cat.metric.prefix}
-                      </span>
-                      <span className="text-product-orange text-[48px] md:text-[64px] leading-none align-middle">
-                        {cat.metric.highlight}
-                      </span>
-                      <span className="text-2xl md:text-3xl ml-2 text-ink">
-                        {cat.metric.suffix}
-                      </span>
-                    </p>
-
-                    <p className="text-[12px] md:text-[13px] text-stone leading-[1.85]">
-                      {cat.metric.caption}
-                    </p>
-                  </div>
                 </div>
 
                 <div className="lg:col-span-7">
