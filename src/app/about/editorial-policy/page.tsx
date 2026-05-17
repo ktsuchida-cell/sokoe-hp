@@ -248,7 +248,8 @@ export default function EditorialPolicyPage() {
         <ProseSection eyebrow="09" title="お問い合わせ" containerSize="narrow">
           <p>
             本ポリシーに関するご質問、記事内容に関するご指摘等は、{' '}
-            <a href="mailto:k.tsuchida@phelix-hd.com">k.tsuchida@phelix-hd.com</a> までお問い合わせください。
+            <a href="mailto:k.tsuchida@phelix-hd.com">k.tsuchida@phelix-hd.com</a>{' '}
+            までお問い合わせください。
           </p>
           <p className="text-sm text-charcoal-muted">
             最終更新日：{UPDATED_AT_LABEL}

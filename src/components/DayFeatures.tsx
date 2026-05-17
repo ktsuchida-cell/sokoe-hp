@@ -95,7 +95,8 @@ const featureCategories: FeatureCategory[] = [
       prefix: '初めての家でも、急な追加でも、',
       highlight: 'ドライバーは迷わない',
       suffix: '',
-      caption: '訪問先の写真・連絡先・注意点を事前に参照。送迎計画とアプリが連携しているので、急な便変更や飛び込みの追加もその場で対応できます。',
+      caption:
+        '訪問先の写真・連絡先・注意点を事前に参照。送迎計画とアプリが連携しているので、急な便変更や飛び込みの追加もその場で対応できます。',
     },
     features: [
       { icon: CarFront, title: '配車計画', description: 'AI 最適化＋6 パターン便対応', isAI: true },
@@ -121,7 +122,12 @@ const featureCategories: FeatureCategory[] = [
     features: [
       { icon: Briefcase, title: '営業管理', description: 'ケアマネ営業履歴を一元管理' },
       { icon: Mic, title: '担当者会議 AI', description: '音声 → 議事録を自動生成', isAI: true },
-      { icon: Contact, title: '名刺 OCR', description: '撮影で自動登録、営業履歴に紐付け', isAI: true },
+      {
+        icon: Contact,
+        title: '名刺 OCR',
+        description: '撮影で自動登録、営業履歴に紐付け',
+        isAI: true,
+      },
       {
         icon: ScanLine,
         title: 'ケアプラン AI 生成',
@@ -261,7 +267,6 @@ export function DayFeatures() {
                   </div>
                 </div>
               </div>
-
             </article>
           ))}
         </div>

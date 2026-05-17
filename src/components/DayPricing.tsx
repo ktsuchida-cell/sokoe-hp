@@ -129,10 +129,7 @@ export function DayPricing() {
             <span className="font-serif text-xl md:text-2xl font-bold text-product-orange">
               STEP 1
             </span>
-            <label
-              htmlFor="people-input"
-              className="text-base md:text-lg font-semibold text-ink"
-            >
+            <label htmlFor="people-input" className="text-base md:text-lg font-semibold text-ink">
               1 日平均利用者数
             </label>
           </div>
@@ -164,7 +161,9 @@ export function DayPricing() {
               <Plus className="w-4 h-4" strokeWidth={2} />
             </button>
           </div>
-          <p className="mt-2 text-xs text-mid">＋ / − は 1 名ずつ、入力欄からは自由入力できます（1〜200 名）。</p>
+          <p className="mt-2 text-xs text-mid">
+            ＋ / − は 1 名ずつ、入力欄からは自由入力できます（1〜200 名）。
+          </p>
         </div>
 
         {/* STEP 2: 使う機能を選ぶ（プランカード自体がトグル） */}
@@ -286,16 +285,12 @@ export function DayPricing() {
             <span className="font-serif text-xl md:text-2xl font-bold text-product-orange">
               STEP 3
             </span>
-            <span className="text-base md:text-lg font-semibold text-ink">
-              ひと月の目安
-            </span>
+            <span className="text-base md:text-lg font-semibold text-ink">ひと月の目安</span>
           </div>
 
           <div className="rounded-[8px] bg-white border border-border p-5 md:p-6">
             {breakdown.length === 0 ? (
-              <p className="text-center text-sm text-mid py-2">
-                STEP 2 から機能を選んでください。
-              </p>
+              <p className="text-center text-sm text-mid py-2">STEP 2 から機能を選んでください。</p>
             ) : (
               <ul className="space-y-1.5 text-[13px] md:text-[14px] text-stone mb-4">
                 {breakdown.map((b) => (
@@ -337,9 +332,7 @@ export function DayPricing() {
           </Link>
         </div>
 
-        <p className="text-center text-sm text-mid mt-10">
-          ※ 初期費用は無料です。
-        </p>
+        <p className="text-center text-sm text-mid mt-10">※ 初期費用は無料です。</p>
       </Container>
     </Section>
   );

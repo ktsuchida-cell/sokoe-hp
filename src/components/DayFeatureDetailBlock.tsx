@@ -46,10 +46,7 @@ export function DayFeatureDetailBlock({ feature, reverse = false }: Props) {
               key={bullet}
               className="flex items-start gap-3 text-stone text-[15px] md:text-base leading-[1.85]"
             >
-              <CheckCircle2
-                className="shrink-0 mt-1 w-5 h-5 text-product-orange"
-                strokeWidth={2}
-              />
+              <CheckCircle2 className="shrink-0 mt-1 w-5 h-5 text-product-orange" strokeWidth={2} />
               <span>{bullet}</span>
             </li>
           ))}
@@ -71,9 +68,7 @@ export function DayFeatureDetailBlock({ feature, reverse = false }: Props) {
             <div className="absolute inset-0 flex flex-col items-center justify-center text-mid">
               <ImageIcon className="w-10 h-10 mb-3" strokeWidth={1.5} />
               <p className="text-sm font-medium">画面イメージ準備中</p>
-              <p className="mt-1 text-xs px-6 text-center leading-relaxed">
-                {feature.image.alt}
-              </p>
+              <p className="mt-1 text-xs px-6 text-center leading-relaxed">{feature.image.alt}</p>
             </div>
           )}
         </div>

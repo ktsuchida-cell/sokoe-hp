@@ -37,7 +37,8 @@ export function DayPositioning() {
 
         {/* スクリーンリーダー向けの関係性補足 */}
         <p className="sr-only">
-          介護記録ソフトに sokoe Day を加える関係です。請求業務は介護記録ソフト、現場業務は sokoe Day が担当します。
+          介護記録ソフトに sokoe Day を加える関係です。請求業務は介護記録ソフト、現場業務は sokoe
+          Day が担当します。
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-0 md:gap-6 items-stretch">
@@ -53,8 +54,8 @@ export function DayPositioning() {
               カイポケ・ナーシングネット・ファーストケア 等
             </p>
             <p className="text-stone text-[14px] md:text-[15px] leading-[1.85] mb-5">
-              国保連請求や基幹データの保管は、これまで使ってきたソフトで継続いただけます。
-              sokoe Day は、この領域は担当しません。
+              国保連請求や基幹データの保管は、これまで使ってきたソフトで継続いただけます。 sokoe Day
+              は、この領域は担当しません。
             </p>
             <ul className="space-y-2.5 text-[13px] md:text-[14px] text-stone">
               <li className="flex items-start gap-2">
@@ -116,8 +117,8 @@ export function DayPositioning() {
               現場業務の効率化は、お任せください。
             </p>
             <p className="text-stone text-[14px] md:text-[15px] leading-[1.85] mb-5">
-              紙の運用や転記の手間を、現場目線で減らしていきます。
-              フロア業務と AI 計画書づくりに専念する設計です。
+              紙の運用や転記の手間を、現場目線で減らしていきます。 フロア業務と AI
+              計画書づくりに専念する設計です。
             </p>
             <ul className="space-y-2.5 text-[13px] md:text-[14px] text-stone">
               <li className="flex items-start gap-2">

@@ -27,7 +27,8 @@ export const metadata: Metadata = {
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: '採用情報 ｜ sokoe',
-    description: '医療・介護・福祉領域でソフトウェアと AI を作る仲間を募集中。まずはカジュアル面談から。',
+    description:
+      '医療・介護・福祉領域でソフトウェアと AI を作る仲間を募集中。まずはカジュアル面談から。',
     url: PAGE_URL,
     siteName: 'sokoe',
     locale: 'ja_JP',
