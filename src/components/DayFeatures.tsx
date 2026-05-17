@@ -135,32 +135,27 @@ export function DayFeatures() {
         <div className="space-y-24 md:space-y-32">
           {featureCategories.map((cat) => (
             <article key={cat.category}>
-              {/* 上：英語ラベル + 主に使う人バッジ + 大タイトル + 効能サブタイトル */}
-              <div className="mb-10 md:mb-12 text-center lg:text-left">
-                <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-brand-red">
-                  {cat.englishLabel}
-                </p>
-                <Heading
-                  level="h3"
-                  serif
-                  className="!text-[32px] sm:!text-[40px] md:!text-[48px] lg:!text-[56px] !leading-[1.15] mb-4"
-                >
-                  <span className="text-brand-red">sokoe Day</span>{' '}
-                  <span className="text-ink">{cat.category}</span>
-                </Heading>
-                <p className="text-lg md:text-xl text-charcoal font-medium leading-[1.6] max-w-2xl mx-auto lg:mx-0">
-                  {cat.subtitle}
-                </p>
-              </div>
-
-              {/* 下：左にリード、右に機能+詳しく見る */}
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+                {/* 左：ヘッダー（英語ラベル + 大タイトル + subtitle + lead） */}
                 <div className="lg:col-span-5">
-                  <p className="text-stone text-[15px] md:text-base leading-[1.85] max-w-xl mx-auto lg:mx-0">
-                    {cat.lead}
+                  <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-brand-red">
+                    {cat.englishLabel}
                   </p>
+                  <Heading
+                    level="h3"
+                    serif
+                    className="!text-[28px] sm:!text-[32px] md:!text-[36px] lg:!text-[40px] !leading-[1.2] mb-4"
+                  >
+                    <span className="text-brand-red">sokoe Day</span>{' '}
+                    <span className="text-ink">{cat.category}</span>
+                  </Heading>
+                  <p className="text-base md:text-lg text-charcoal font-medium leading-[1.6] mb-5">
+                    {cat.subtitle}
+                  </p>
+                  <p className="text-stone text-[15px] md:text-base leading-[1.85]">{cat.lead}</p>
                 </div>
 
+                {/* 右：機能カード + 詳しく見る */}
                 <div className="lg:col-span-7">
                   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {cat.features.map((feature) => {
