@@ -158,9 +158,6 @@ export function DayPositioning() {
 
         {/* 結論文（注記ではなく結論として昇格） */}
         <div className="mt-14 md:mt-16 max-w-2xl mx-auto text-center">
-          <p className="text-[11px] md:text-xs font-semibold uppercase tracking-[0.18em] text-brand-red mb-4">
-            CONCLUSION
-          </p>
           <p className="font-serif text-[20px] md:text-[24px] lg:text-[26px] leading-[1.7] text-ink">
             請求は介護記録ソフトで、現場は sokoe Day で。
             <br className="hidden md:block" />
