@@ -1,6 +1,5 @@
 import { Container } from '@/components/Container';
 import { Heading } from '@/components/Heading';
-import { Label } from '@/components/Label';
 import { Section } from '@/components/Section';
 
 const solutions = [
@@ -50,11 +49,8 @@ export function DaySolution() {
     <Section variant="tint-orange" spacing="lg" bordered>
       <Container>
         <div className="max-w-3xl mb-14 md:mb-16">
-          <Label tone="product-orange" className="mb-5">
-            OUR SOLUTION
-          </Label>
           <Heading level="h2" serif className="mb-6">
-            sokoe Day の、解決の仕方。
+            その悩み、sokoe Day で解決できます！
           </Heading>
           <p className="text-stone text-base md:text-lg leading-[1.85]">
             sokoe Day がどのように
