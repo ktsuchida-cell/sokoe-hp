@@ -58,10 +58,6 @@ export function DayPain() {
             ))}
           </ul>
         </div>
-
-        <p className="mx-auto mt-8 max-w-3xl text-center text-sm md:text-base leading-[1.85] text-stone">
-          介護施設を運営する会社として、私たち自身もずっと向き合ってきた課題です。
-        </p>
       </Container>
     </Section>
   );
