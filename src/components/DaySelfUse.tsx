@@ -54,9 +54,9 @@ export function DaySelfUse() {
         <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16">
           <Label className="mb-5">AFTER INTRODUCTION</Label>
           <Heading level="h2" serif>
-            50 名規模のデイサービスの自社は導入後、
+            50 名規模のデイサービスの自社は
             <br className="hidden md:block" />
-            現場はこう変わった。
+            導入後、現場はこう変わった
           </Heading>
         </div>
 
