@@ -5,7 +5,7 @@ import { Section } from '@/components/Section';
 const solutions = [
   {
     number: '01',
-    title: '紙ゼロ。',
+    title: 'スマホ、PC のみで完結するから紙ゼロへ。',
     subtitle: 'スマホ 1 台で完結する設計。',
     description:
       'バインダーで管理していた紙や、記録のための保管スペース、転記の時間までもすべて削減します。スマホで撮る・書く・共有するができるから、紙をゼロにできます。',
