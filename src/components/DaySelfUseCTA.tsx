@@ -42,10 +42,14 @@ export function DaySelfUseCTA() {
             1 行固定の見出し。文字数が長め（半角 sokoe Day 含めて約 22 字幅相当）
             のため、各ブレークポイントで折り返さないサイズに抑えてある。
           */}
+          {/*
+            1 行固定。文字幅は約 22 字相当（半角 sokoe Day 含む）。
+            max-w-3xl ≈ 768px なので lg は 32px 以下に抑える必要がある。
+          */}
           <Heading
             level="h2"
             serif
-            className="mb-6 !text-[16px] sm:!text-[24px] md:!text-[30px] lg:!text-[36px]"
+            className="mb-6 !text-[14px] sm:!text-[22px] md:!text-[28px] lg:!text-[32px]"
           >
             自社で動いた sokoe Day を、あなたの施設でも。
           </Heading>

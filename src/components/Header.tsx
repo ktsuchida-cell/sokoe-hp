@@ -68,7 +68,10 @@ export function Header() {
             </Link>
 
             {/* PC ナビゲーション */}
-            <nav className="hidden lg:flex items-center gap-1" aria-label="メインナビゲーション">
+            <nav
+              className="hidden lg:flex items-center gap-1 shrink min-w-0"
+              aria-label="メインナビゲーション"
+            >
               {mainNavigation.map((item) => (
                 <NavItemPC
                   key={item.label}
@@ -79,15 +82,15 @@ export function Header() {
               ))}
             </nav>
 
-            {/* PC CTA */}
-            <div className="hidden lg:flex items-center gap-3">
+            {/* PC CTA — pill 形状で 2 ボタン揃え、お問い合わせは primary で目立たせる */}
+            <div className="hidden lg:flex items-center gap-2 shrink-0">
               <Link href="/resource/">
-                <Button variant="secondary" size="md">
+                <Button variant="secondary" size="sm" className="rounded-full whitespace-nowrap">
                   資料ダウンロード
                 </Button>
               </Link>
               <Link href="/contact/">
-                <Button variant="secondary" size="md">
+                <Button variant="primary" size="sm" className="rounded-full whitespace-nowrap">
                   お問い合わせ
                 </Button>
               </Link>
@@ -133,7 +136,7 @@ function NavItemPC({ item, isOpen, onOpenChange }: NavItemPCProps) {
       <Link
         href={item.href}
         className={cn(
-          'px-4 py-2 text-[16px] font-medium text-charcoal',
+          'px-3 py-2 text-[15px] font-medium text-charcoal whitespace-nowrap',
           'transition-colors hover:text-brand-red',
         )}
       >
@@ -151,7 +154,7 @@ function NavItemPC({ item, isOpen, onOpenChange }: NavItemPCProps) {
       <button
         type="button"
         className={cn(
-          'flex items-center gap-1 px-4 py-2 text-[16px] font-medium text-charcoal',
+          'flex items-center gap-1 px-3 py-2 text-[15px] font-medium text-charcoal whitespace-nowrap',
           'transition-colors hover:text-brand-red',
         )}
         aria-expanded={isOpen}

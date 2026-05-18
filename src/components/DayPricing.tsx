@@ -149,7 +149,7 @@ export function DayPricing() {
               max={PEOPLE_MAX}
               value={people}
               onChange={(e) => setPeople(clampPeople(Number(e.target.value)))}
-              className="flex-1 text-center font-serif text-3xl md:text-4xl font-bold text-ink bg-bg-muted border border-border rounded-[6px] py-3 focus:outline-none focus:border-product-orange"
+              className="flex-1 text-center font-serif text-3xl md:text-4xl font-bold text-ink bg-bg-muted border border-border rounded-[6px] py-3 focus:outline-none focus:border-product-orange [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
             />
             <span className="shrink-0 text-base md:text-lg text-ink font-semibold">名</span>
             <button
