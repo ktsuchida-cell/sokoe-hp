@@ -2,36 +2,29 @@ import { Button } from '@/components/Button';
 import { Container } from '@/components/Container';
 import { Heading } from '@/components/Heading';
 import { Section } from '@/components/Section';
-import Image from 'next/image';
 import Link from 'next/link';
 
 /**
  * コーポレートTOP Hero セクション
  *
- * - 背景に「無人のモダンクリニック内装」写真をフルブリードで配置
- *   （Pavel Danilyuk on Pexels、Pexels License、人感なし、teal/white の cool tone）
- * - 上に弱めの白オーバーレイ + 縦グラデーションで、画像のニュアンスを残しつつ
- *   見出し・CTA の可読性を担保する
+ * - 背景に自社制作の SVG（建築 + 光 + brand-red アクセント）を CSS background で配置
+ *   写真ではなくベクターなので、軽量・任意拡大耐性・ブランド色との整合を確保
+ * - 上に微弱な白オーバーレイ + 縦グラデーションで CTA 周辺の可読性を担保
  * - 方針: design-notes 内のデザイナーエージェントレポート（2026-05-19）に基づく
  */
 export function Hero() {
   return (
     <div className="relative isolate">
-      {/* 背景画像 + 白系オーバーレイ */}
+      {/* 背景 SVG + 白系オーバーレイ */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
-        <Image
-          src="/images/hero/corporate-hero-clinic.jpg"
-          alt=""
-          fill
-          priority
-          quality={82}
-          className="object-cover object-center"
-          sizes="100vw"
-        />
-        {/* 純白で被せると画像が消えるので、白 60% に弱める + 上→下に向かって白を強くするグラデーションを重ね、CTA 周辺だけ可読性を上げる */}
-        <div className="absolute inset-0 bg-white/60 backdrop-blur-[1px]" aria-hidden="true" />
         <div
-          className="absolute inset-0 bg-gradient-to-b from-white/10 via-white/30 to-white/70"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('/images/hero/corporate-hero-generated.svg')" }}
+          aria-hidden="true"
+        />
+        {/* SVG 自体が高明度なので、オーバーレイは軽め。CTA 周辺は下方向のグラデで白を強める */}
+        <div
+          className="absolute inset-0 bg-gradient-to-b from-white/0 via-white/20 to-white/60"
           aria-hidden="true"
         />
       </div>

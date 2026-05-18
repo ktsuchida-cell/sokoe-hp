@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1672 941" width="1672" height="941" preserveAspectRatio="xMidYMid slice" role="img" aria-label="sokoe hero background">
+  <defs>
+    <linearGradient id="bgBase" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="55%" stop-color="#f7f9fc"/>
+      <stop offset="100%" stop-color="#e3eaf2"/>
+    </linearGradient>
+
+    <linearGradient id="bgSide" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#eef2f7" stop-opacity="0.7"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#d0dde8" stop-opacity="0.55"/>
+    </linearGradient>
+
+    <radialGradient id="lensGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="45%" stop-color="#eaf1f8" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#d0dde8" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="lensRing" cx="50%" cy="50%" r="50%">
+      <stop offset="80%" stop-color="#c8d6e3" stop-opacity="0"/>
+      <stop offset="92%" stop-color="#a9bdd0" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#a9bdd0" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="columnGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d0dde8" stop-opacity="0"/>
+      <stop offset="35%" stop-color="#c0d0de" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#9fb4c8" stop-opacity="0.85"/>
+    </linearGradient>
+
+    <linearGradient id="windowGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#dce6f0" stop-opacity="0.6"/>
+    </linearGradient>
+
+    <linearGradient id="floorFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.85"/>
+    </linearGradient>
+
+    <pattern id="dotGrid" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="1.2" cy="1.2" r="1.2" fill="#b8c8d8" fill-opacity="0.28"/>
+    </pattern>
+
+    <pattern id="fineGrid" x="0" y="0" width="96" height="96" patternUnits="userSpaceOnUse">
+      <path d="M96 0H0V96" fill="none" stroke="#c8d6e3" stroke-opacity="0.18" stroke-width="1"/>
+    </pattern>
+
+    <clipPath id="lowerHalf">
+      <rect x="0" y="314" width="1672" height="627"/>
+    </clipPath>
+  </defs>
+
+  <rect width="1672" height="941" fill="url(#bgBase)"/>
+  <rect width="1672" height="941" fill="url(#bgSide)"/>
+
+  <g opacity="0.55">
+    <rect x="0" y="0" width="1672" height="941" fill="url(#fineGrid)"/>
+  </g>
+
+  <g clip-path="url(#lowerHalf)" opacity="0.9">
+    <rect x="0" y="314" width="1672" height="627" fill="url(#dotGrid)"/>
+  </g>
+
+  <g opacity="0.85">
+    <circle cx="836" cy="170" r="520" fill="url(#lensGlow)"/>
+    <circle cx="836" cy="170" r="520" fill="url(#lensRing)"/>
+    <circle cx="836" cy="170" r="360" fill="none" stroke="#cdd9e6" stroke-opacity="0.35" stroke-width="1"/>
+    <circle cx="836" cy="170" r="240" fill="none" stroke="#cdd9e6" stroke-opacity="0.25" stroke-width="1"/>
+  </g>
+
+  <g opacity="0.95">
+    <rect x="120"  y="430" width="22" height="500" fill="url(#columnGrad)"/>
+    <rect x="260"  y="380" width="22" height="550" fill="url(#columnGrad)" opacity="0.85"/>
+    <rect x="408"  y="460" width="22" height="470" fill="url(#columnGrad)" opacity="0.75"/>
+    <rect x="1248" y="420" width="22" height="510" fill="url(#columnGrad)" opacity="0.8"/>
+    <rect x="1396" y="370" width="22" height="560" fill="url(#columnGrad)" opacity="0.9"/>
+    <rect x="1540" y="450" width="22" height="480" fill="url(#columnGrad)" opacity="0.7"/>
+  </g>
+
+  <g opacity="0.55">
+    <line x1="0" y1="700"  x2="1672" y2="700"  stroke="#b9c9d8" stroke-opacity="0.35" stroke-width="1"/>
+    <line x1="0" y1="800"  x2="1672" y2="800"  stroke="#b9c9d8" stroke-opacity="0.25" stroke-width="1"/>
+    <line x1="0" y1="880"  x2="1672" y2="880"  stroke="#b9c9d8" stroke-opacity="0.2"  stroke-width="1"/>
+  </g>
+
+  <g opacity="0.9">
+    <rect x="540"  y="560" width="120" height="270" rx="14" fill="url(#windowGrad)" stroke="#cdd9e6" stroke-width="1"/>
+    <rect x="690"  y="510" width="120" height="320" rx="14" fill="url(#windowGrad)" stroke="#cdd9e6" stroke-width="1"/>
+    <rect x="840"  y="540" width="120" height="290" rx="14" fill="url(#windowGrad)" stroke="#cdd9e6" stroke-width="1"/>
+    <rect x="990"  y="490" width="120" height="340" rx="14" fill="url(#windowGrad)" stroke="#cdd9e6" stroke-width="1"/>
+    <rect x="1140" y="570" width="120" height="260" rx="14" fill="url(#windowGrad)" stroke="#cdd9e6" stroke-width="1"/>
+
+    <g stroke="#dbe5ef" stroke-opacity="0.7" stroke-width="1">
+      <line x1="540"  y1="650" x2="660"  y2="650"/>
+      <line x1="540"  y1="740" x2="660"  y2="740"/>
+      <line x1="690"  y1="620" x2="810"  y2="620"/>
+      <line x1="690"  y1="720" x2="810"  y2="720"/>
+      <line x1="840"  y1="640" x2="960"  y2="640"/>
+      <line x1="840"  y1="730" x2="960"  y2="730"/>
+      <line x1="990"  y1="600" x2="1110" y2="600"/>
+      <line x1="990"  y1="700" x2="1110" y2="700"/>
+      <line x1="1140" y1="660" x2="1260" y2="660"/>
+      <line x1="1140" y1="750" x2="1260" y2="750"/>
+    </g>
+  </g>
+
+  <g opacity="0.5">
+    <path d="M0 760 Q 836 700 1672 770" fill="none" stroke="#b9c9d8" stroke-width="1.2"/>
+    <path d="M0 820 Q 836 770 1672 830" fill="none" stroke="#b9c9d8" stroke-opacity="0.6" stroke-width="1"/>
+  </g>
+
+  <g>
+    <line x1="1300" y1="500" x2="1300" y2="610" stroke="#ed1a29" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="1300" cy="490" r="4" fill="#ed1a29"/>
+  </g>
+
+  <rect x="0" y="640" width="1672" height="301" fill="url(#floorFade)"/>
+</svg>
