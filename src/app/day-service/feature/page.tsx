@@ -14,6 +14,7 @@ import { featureCategories, featureDetails } from '@/lib/dayFeatureDetails';
 import { createWebPageSchema } from '@/lib/schemas';
 import { siteConfig } from '@/lib/siteConfig';
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 
 const PAGE_URL = `${siteConfig.url}/day-service/feature/`;
@@ -121,8 +122,24 @@ export default function DayServiceFeaturePage() {
         {/* 料金表（LP と同一の DayPricing を流用） */}
         <DayPricing />
 
-        {/* 料金直下の中間 CTA：お問い合わせ + 資料 DL */}
-        <Section spacing="md" bordered>
+        {/* 料金直下の中間 CTA：お問い合わせ + 資料 DL（背景画像付き） */}
+        <section
+          className="relative isolate overflow-hidden border-t border-border py-16 md:py-20"
+          aria-label="料金確認後の中間 CTA"
+        >
+          {/* 背景画像（チェックリストに書き込む手） + 白オーバーレイ */}
+          <div className="absolute inset-0 -z-10">
+            <Image
+              src="/images/midcta/pricing-cta-checklist.jpg"
+              alt=""
+              fill
+              quality={80}
+              sizes="100vw"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-white/72 backdrop-blur-[2px]" aria-hidden="true" />
+          </div>
+
           <Container>
             <div className="max-w-2xl mx-auto text-center">
               <Heading level="h3" serif className="mb-5">
@@ -145,23 +162,7 @@ export default function DayServiceFeaturePage() {
               </div>
             </div>
           </Container>
-        </Section>
-
-        {/* Day LP トップへ戻る導線 */}
-        <Section spacing="md" bordered>
-          <Container>
-            <div className="text-center">
-              <p className="text-stone text-base md:text-lg leading-[1.85] mb-6">
-                sokoe Day の概要・導入事例は、こちらのページにまとめています。
-              </p>
-              <Link href="/day-service/" className="inline-block">
-                <Button variant="secondary" size="md">
-                  sokoe Day トップへ
-                </Button>
-              </Link>
-            </div>
-          </Container>
-        </Section>
+        </section>
 
         {/* 最終 CTA */}
         <DayLastCTA />
