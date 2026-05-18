@@ -29,7 +29,7 @@ export function Hero() {
         />
       </div>
 
-      <Section spacing="xl">
+      <Section spacing="xl" className="!bg-transparent">
         <Container>
           <div className="max-w-4xl mx-auto text-center">
             {/*
