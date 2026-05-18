@@ -107,7 +107,7 @@ export function DayPricing() {
   const total = breakdown.reduce((sum, b) => sum + b.cost, 0);
 
   return (
-    <Section spacing="lg" bordered>
+    <Section id="pricing" spacing="lg" bordered className="scroll-mt-20">
       <Container>
         <div className="text-center mb-14 md:mb-16">
           <Label tone="product-orange" className="mb-5">

@@ -39,10 +39,14 @@ export function DayHero() {
             <Heading
               level="h1"
               serif
-              className="!text-[28px] !leading-[1.2] sm:!text-4xl sm:!leading-[1.15] md:!text-5xl lg:!text-[40px] xl:!text-[44px] 2xl:!text-5xl"
+              className="!text-[26px] !leading-[1.25] sm:!text-[32px] sm:!leading-[1.2] md:!text-[40px] lg:!text-[34px] xl:!text-[38px] 2xl:!text-[42px]"
             >
-              <span className="text-product-orange">現場発の、</span>
+              <span className="text-product-orange">現場発！</span>
               <br />
+              「心のゆとり」を残し、
+              <br className="hidden sm:block" />
+              残業を減らす、
+              <br className="sm:hidden" />
               デイサービスアプリ。
             </Heading>
 
@@ -56,8 +60,8 @@ export function DayHero() {
               <Link href="/day-service/document/">
                 <Button variant="primary">資料をダウンロード（無料）</Button>
               </Link>
-              <Link href="/contact/?type=sokoe-day">
-                <Button variant="secondary">相談する →</Button>
+              <Link href="#pricing">
+                <Button variant="secondary">料金を見る →</Button>
               </Link>
             </div>
 
