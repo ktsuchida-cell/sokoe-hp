@@ -49,13 +49,13 @@ const improvements: Improvement[] = [
 ];
 
 /**
- * DaySelfUse セクション（自社導入後の改善効果）v2
+ * DaySelfUse セクション（自社導入後の改善効果）v2.1
  *
- * design-notes/self-use-v2.md の判断に基づく：
- *   - tint-pink 背景の上に白カードを 2 カラムグリッドで配置（スマホは 1 カラム）
- *   - 5 枚目は md:col-span-2 で中央寄せ
+ * design-notes/self-use-v2.md の判断 + 雑誌記事風ズラシレイアウト：
+ *   - tint-pink 背景の上に白カードを縦並びで配置
+ *   - 偶数番（0,2,4）は左寄せ、奇数番（1,3）は右寄せ＝交互ズラシで「読み進めるリズム」を作る
  *   - 各カード：brand-red 薄塗り円バッジ + 業務アイコン + 短いタイトル + 短い本文 + 業務カテゴリタグ
- *   - 文字量を v1 の約半分に圧縮
+ *   - スマホは中央寄せ（ズラシ無し）
  *   - Before/After 2 カラム比較は v1 でオーナー指示により撤去済みなので復活させない
  *   - 数値は自社運営施設での体感ベース（caption で出所明記、断定調を避ける）
  *   - CTA はこのセクションに置かない（DaySelfUseCTA に独立）
@@ -73,36 +73,36 @@ export function DaySelfUse() {
           </Heading>
         </div>
 
-        <ul className="mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+        <ul className="mx-auto max-w-5xl space-y-5 md:space-y-6">
           {improvements.map((improvement, i) => {
             const Icon = improvement.icon;
-            const isLast = i === improvements.length - 1;
+            const alignRight = i % 2 === 1;
             return (
               <li
                 key={improvement.title}
                 className={
-                  isLast
-                    ? 'md:col-span-2 md:max-w-[calc(50%-0.625rem)] md:mx-auto md:w-full rounded-[8px] bg-white border border-border p-6 md:p-7 transition-shadow hover:shadow-sm'
-                    : 'rounded-[8px] bg-white border border-border p-6 md:p-7 transition-shadow hover:shadow-sm'
+                  alignRight
+                    ? 'md:ml-auto md:mr-0 md:max-w-[34rem] rounded-[10px] bg-white border border-border p-6 md:p-8 transition-shadow hover:shadow-md'
+                    : 'md:mr-auto md:ml-0 md:max-w-[34rem] rounded-[10px] bg-white border border-border p-6 md:p-8 transition-shadow hover:shadow-md'
                 }
               >
-                <div className="flex items-start gap-4">
+                <div className="flex items-start gap-5">
                   <span
-                    className="shrink-0 flex h-12 w-12 items-center justify-center rounded-full bg-brand-red/10"
+                    className="shrink-0 flex h-14 w-14 items-center justify-center rounded-full bg-brand-red/10"
                     aria-hidden="true"
                   >
-                    <Icon className="h-5 w-5 text-brand-red" strokeWidth={1.75} />
+                    <Icon className="h-6 w-6 text-brand-red" strokeWidth={1.75} />
                   </span>
                   <div className="flex-1 min-w-0">
-                    <h3 className="font-serif text-base md:text-lg font-bold text-brand-red leading-snug">
+                    <p className="mb-2 text-[11px] uppercase tracking-[0.14em] font-semibold text-mid">
+                      {improvement.categoryTag}
+                    </p>
+                    <h3 className="font-serif text-lg md:text-xl font-bold text-brand-red leading-snug">
                       {improvement.title}
                     </h3>
-                    <div className="my-3 border-t border-border" aria-hidden="true" />
+                    <div className="my-3 md:my-4 border-t border-border" aria-hidden="true" />
                     <p className="text-stone text-[14px] md:text-[15px] leading-[1.85]">
                       {improvement.body}
-                    </p>
-                    <p className="mt-4 text-[11px] uppercase tracking-[0.14em] font-semibold text-mid">
-                      {improvement.categoryTag}
                     </p>
                   </div>
                 </div>
