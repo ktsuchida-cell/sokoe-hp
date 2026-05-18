@@ -1,9 +1,7 @@
-import { Button } from '@/components/Button';
 import { Container } from '@/components/Container';
 import { Heading } from '@/components/Heading';
 import { Label } from '@/components/Label';
 import { Section } from '@/components/Section';
-import Link from 'next/link';
 
 type Improvement = {
   title: string;
@@ -49,7 +47,7 @@ const improvements: Improvement[] = [
  *   - 数値は自社運営施設での体感ベース（caption で明示、断定調を避ける）
  *   - 背景は variant="tint-pink"。隣接の DayPositioning（白）/ DayFeatures（soft）
  *     と色トーンを差別化し、「読ませる」フォーカスセクションとして際立たせる
- *   - セクション末尾に CTA（導入相談 + 資料 DL）。DayMidCTA とは別軸
+ *   - CTA は直後の DaySelfUseCTA セクションに切り出している
  */
 export function DaySelfUse() {
   return (
@@ -85,19 +83,6 @@ export function DaySelfUse() {
           名規模）での日常運用に基づく体感ベースの目安です。2026 年 4
           月の稼働開始以降、施設長代理（当社代表）と職員の業務感覚に基づくもので、厳密な実測値ではありません。事業所の規模・業務手順により効果は異なります。
         </p>
-
-        <div className="mt-12 md:mt-14 flex flex-wrap items-center justify-center gap-4">
-          <Link href="/contact/?type=sokoe-day">
-            <Button variant="primary" size="lg">
-              導入の相談を予約する
-            </Button>
-          </Link>
-          <Link href="/day-service/document/">
-            <Button variant="secondary" size="lg">
-              資料をダウンロード
-            </Button>
-          </Link>
-        </div>
       </Container>
     </Section>
   );

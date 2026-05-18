@@ -8,6 +8,7 @@ import { DayPain } from '@/components/DayPain';
 import { DayPositioning } from '@/components/DayPositioning';
 import { DayPricing } from '@/components/DayPricing';
 import { DaySelfUse } from '@/components/DaySelfUse';
+import { DaySelfUseCTA } from '@/components/DaySelfUseCTA';
 import { DaySolution } from '@/components/DaySolution';
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
@@ -99,6 +100,7 @@ export default function DayServicePage() {
         <DayMidCTA />
         <DayPositioning />
         <DaySelfUse />
+        <DaySelfUseCTA />
         <DayFeatures />
         <DayPricing />
         <DayFAQ />
