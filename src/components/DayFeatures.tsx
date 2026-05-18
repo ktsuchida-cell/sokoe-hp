@@ -36,7 +36,7 @@ type Feature = {
 type FeatureCategory = {
   englishLabel: string;
   category: string;
-  /** /day-service/feature/[category]/ の slug。dayFeatureDetails の FeatureCategoryId と一致 */
+  /** /day-service/feature/#<slug> アンカーで飛ぶ先。dayFeatureDetails の FeatureCategoryId と一致 */
   slug: 'floor' | 'transport' | 'backoffice';
   /** 大タイトル直下の効能サブタイトル（1 行） */
   subtitle: string;
@@ -168,7 +168,7 @@ export function DayFeatures() {
                       return (
                         <li key={feature.title}>
                           <Link
-                            href={`/day-service/feature/${cat.slug}/`}
+                            href={`/day-service/feature/#${cat.slug}`}
                             className="group flex items-start gap-4 bg-white border border-border rounded-[6px] p-4 hover:border-ink transition-colors"
                           >
                             <Icon
@@ -203,7 +203,7 @@ export function DayFeatures() {
 
                   {/* 詳しく見る（機能リスト直下） */}
                   <div className="mt-6 text-center sm:text-left">
-                    <Link href={`/day-service/feature/${cat.slug}/`} className="inline-block">
+                    <Link href={`/day-service/feature/#${cat.slug}`} className="inline-block">
                       <Button variant="secondary" size="sm">
                         {cat.category}の全機能を見る →
                       </Button>
