@@ -20,16 +20,16 @@ const cases: CaseCard[] = [
     slug: 'care-plan-ai-generation',
     metric: '30分 → 数分',
     metricLabel: '計画書1枚あたり',
-    title: 'ケアプラン AI 自動生成',
-    description: 'ケアマネージャーから受け取ったケアプランPDFをOCR、Claude APIで計画書を自動生成。',
+    title: '計画書 AI 自動生成',
+    description: '関係者から受け取った書類を OCR で構造化し、Claude API で施設様式の計画書を自動生成。',
     tech: 'Claude API / AI OCR',
   },
   {
     slug: 'fitness-test-ai-comment',
     metric: '全利用者に',
     metricLabel: '個別フィードバック',
-    title: '体力測定 AI 評価コメント生成',
-    description: '測定数値から AI が個別の評価コメントを瞬時に生成。記録PDFとして出力。',
+    title: '測定値からの個別評価コメント生成',
+    description: '測定数値から AI が個別の評価コメントを瞬時に生成。記録 PDF として出力。',
     tech: 'Claude API',
   },
   {
@@ -37,7 +37,7 @@ const cases: CaseCard[] = [
     metric: '1時間 → 10分',
     metricLabel: '議事録作成時間',
     title: '会議議事録 AI 自動化',
-    description: '音声認識 + Claude で議事録を自動生成。サービス担当者会議の負担を激減。',
+    description: '音声認識 + Claude で議事録を自動生成。各種会議の準備・記録の負担を激減。',
     tech: '音声認識 API / Claude API',
   },
   {
@@ -45,7 +45,7 @@ const cases: CaseCard[] = [
     metric: '数秒で完了',
     metricLabel: '名刺1枚あたり',
     title: '名刺 OCR で営業データ自動登録',
-    description: 'ケアマネージャーから受け取る名刺を撮影するだけで自動登録。',
+    description: '関係者から受け取る名刺を撮影するだけで、氏名・事業所・連絡先・役職を自動登録。',
     tech: 'AI OCR',
   },
 ];
@@ -72,8 +72,8 @@ export function CaseStudies() {
               自分たちで証明する。
             </Heading>
             <p className="text-stone text-base md:text-lg leading-[1.85]">
-              sokoe Day は自社運営施設で毎日動いています。
-              AIを使った業務改善の実例を、私たちが先に証明します。
+              自社で運営する医療・介護の現場で、私たちは毎日 AI を実運用しています。
+              机上ではなく、自分たちの業務で先に証明した実例です。
             </p>
           </div>
           <Link
