@@ -29,28 +29,27 @@ export function DayHero() {
         <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-10 xl:gap-14">
           {/* ─── 左：テキスト + CTA ─── */}
           {/*
-            lg: col-span-6（画像と等分）— 1024-1279 では左カラム実幅が約 444px しか取れないため、
-            5/7 比率だと「デイサービスアプリ。」がカラム幅を超え「プリ。」が orphan になる。
-            xl+: 本来の 5/7 比率に戻す（カラム幅 465px 以上が取れるため）。
+            左カラムを広く取ってヒーロー見出しに視覚的体重を与える。
+            画像は col-span-5 / col-span-6 でも UI モックの可読性は保てる。
           */}
-          <div className="text-center lg:col-span-6 lg:text-left xl:col-span-5">
+          <div className="text-center lg:col-span-7 lg:text-left xl:col-span-6">
             <Label className="mb-6 text-product-orange">SOKOE DAY ─ デイサービス向けアプリ</Label>
 
             {/*
               3 行固定の見出し。2 行目「『心のゆとり』を残し、残業を減らす、」が
               最も長い行（約 18 全角文字）なので、これが折り返さないサイズに
               各ブレークポイントを調整している。
-                - mobile  (~345px): 18px → 18×18≈324px で 1 行
-                - sm      (~600px): 24px
-                - md      (~720px): 32px
-                - lg col-6 (~430px): 22px（左カラムが狭まる）
-                - xl col-5 (~465px): 24px
-                - 2xl     (~580px): 30px
+                - mobile  (~335px): 18px → 18×18≈324px で 1 行
+                - sm      (~600px): 28px
+                - md      (~720px): 36px
+                - lg col-7 (~520px): 26px
+                - xl col-6 (~580px): 30px
+                - 2xl     (~720px): 36px
             */}
             <Heading
               level="h1"
               serif
-              className="!text-[18px] !leading-[1.4] sm:!text-[24px] sm:!leading-[1.35] md:!text-[32px] md:!leading-[1.3] lg:!text-[22px] xl:!text-[24px] 2xl:!text-[30px]"
+              className="!text-[18px] !leading-[1.4] sm:!text-[28px] sm:!leading-[1.3] md:!text-[36px] md:!leading-[1.25] lg:!text-[26px] xl:!text-[30px] 2xl:!text-[36px]"
             >
               <span className="text-product-orange">現場発！</span>
               <br />
@@ -100,8 +99,8 @@ export function DayHero() {
             </ul>
           </div>
 
-          {/* ─── 右：プロダクト画像（大） ─── */}
-          <div className="lg:col-span-6 xl:col-span-7">
+          {/* ─── 右：プロダクト画像 ─── */}
+          <div className="lg:col-span-5 xl:col-span-6">
             <Image
               src="/images/day/hero-mockup.svg"
               alt="sokoe Day のホーム画面：バイタル・入浴・マシン訓練の進捗、本日の業務、To-Do、メモボード、申し送りが一画面で見える"
