@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: `${legalMeta.title} ｜ sokoe`,
-    description: '株式会社sokoe の特定商取引法に基づく表記。',
+    description: '株式会社ソコエの特定商取引法に基づく表記。',
     url: PAGE_URL,
     siteName: 'sokoe',
     locale: 'ja_JP',
@@ -59,7 +59,7 @@ export default function LegalPage() {
       <JsonLd
         data={createWebPageSchema({
           name: `${legalMeta.title} ｜ sokoe`,
-          description: '株式会社sokoe の特定商取引法に基づく表記。',
+          description: '株式会社ソコエの特定商取引法に基づく表記。',
           url: PAGE_URL,
           datePublished: legalMeta.publishedAt,
           dateModified: legalMeta.updatedAt,
@@ -88,7 +88,7 @@ export default function LegalPage() {
               <br />
               最終更新日：{legalMeta.updatedAtLabel}
               <br />
-              株式会社sokoe
+              株式会社ソコエ
             </p>
           </Container>
         </Section>

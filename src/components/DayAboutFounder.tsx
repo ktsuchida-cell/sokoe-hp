@@ -41,12 +41,12 @@ export function DayAboutFounder() {
                 <p className="text-mid text-xs uppercase tracking-[0.15em] mb-2">CEO / FOUNDER</p>
                 <h3 className="font-bold text-2xl md:text-3xl text-ink mb-2">槌田 一輝</h3>
                 <p className="text-stone text-sm mb-6 leading-[1.85]">
-                  株式会社sokoe 代表取締役 / レッツ倶楽部川西能勢口 施設長代理 /
+                  株式会社ソコエ 代表取締役 / レッツ倶楽部川西能勢口 施設長代理 /
                   株式会社ピースファーマシー 在籍
                 </p>
 
                 <p className="text-charcoal text-[15px] md:text-base leading-[1.95] mb-6">
-                  薬学部卒業後、株式会社ピースファーマシーで薬局運営に携わり、同社運営の1日型デイサービス施設長代理を経て、株式会社sokoe
+                  薬学部卒業後、株式会社ピースファーマシーで薬局運営に携わり、同社運営の1日型デイサービス施設長代理を経て、株式会社ソコエ
                   を創業。 「介護施設を運営する会社が、ソフトウェアと AI を作る」をコンセプトに、
                   自社施設でプロダクトを毎日使いながら、現場で動くものだけを提供しています。
                 </p>

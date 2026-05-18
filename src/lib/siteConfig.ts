@@ -4,7 +4,7 @@
 
 export const siteConfig = {
   name: 'sokoe',
-  fullName: '株式会社sokoe',
+  fullName: '株式会社ソコエ',
   tagline: '現場を、本来の仕事に戻す。',
   taglineEn: 'Bring back the work that matters.',
   description:
@@ -20,7 +20,7 @@ export const siteConfig = {
 
   // 会社情報
   company: {
-    name: '株式会社sokoe',
+    name: '株式会社ソコエ',
     foundedDate: '2026-05-01',
     representative: '槌田 一輝',
     representativeRole: '代表取締役',

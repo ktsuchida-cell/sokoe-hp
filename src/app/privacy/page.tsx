@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: `${privacyMeta.title} ｜ sokoe`,
-    description: '株式会社sokoe のプライバシーポリシー。',
+    description: '株式会社ソコエのプライバシーポリシー。',
     url: PAGE_URL,
     siteName: 'sokoe',
     locale: 'ja_JP',
@@ -37,7 +37,7 @@ export default function PrivacyPage() {
       <JsonLd
         data={createWebPageSchema({
           name: `${privacyMeta.title} ｜ sokoe`,
-          description: '株式会社sokoe のプライバシーポリシー。',
+          description: '株式会社ソコエのプライバシーポリシー。',
           url: PAGE_URL,
           datePublished: privacyMeta.publishedAt,
           dateModified: privacyMeta.updatedAt,
@@ -50,7 +50,7 @@ export default function PrivacyPage() {
         <PageHero
           label="PRIVACY POLICY"
           title={privacyMeta.title}
-          lead="株式会社sokoe は、お客様の個人情報の保護を重要な責務と認識しています。当社が取り扱う個人情報の取得・利用・管理について、以下のとおり定めます。"
+          lead="株式会社ソコエは、お客様の個人情報の保護を重要な責務と認識しています。当社が取り扱う個人情報の取得・利用・管理について、以下のとおり定めます。"
           updatedAt={privacyMeta.updatedAtLabel}
         />
 
@@ -62,7 +62,7 @@ export default function PrivacyPage() {
               <br />
               最終更新日：{privacyMeta.updatedAtLabel}
               <br />
-              株式会社sokoe
+              株式会社ソコエ
             </p>
           </Container>
         </Section>

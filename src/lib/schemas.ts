@@ -101,7 +101,7 @@ export const personSchemaDetailed = {
   jobTitle: '代表取締役',
   worksFor: { '@id': ORG_ID },
   description:
-    '株式会社sokoe 代表取締役。レッツ倶楽部川西能勢口（兵庫県川西市・1日型デイサービス）施設長代理を兼任。薬学部を卒業し、薬学・IT・薬局・介護現場を横断したキャリアを持つ。自社運営施設で AI を本番運用しながら、デイサービス向けアプリ「sokoe Day」と AI コンサルティング「sokoe AI Lab」を展開。',
+    '株式会社ソコエ 代表取締役。レッツ倶楽部川西能勢口（兵庫県川西市・1日型デイサービス）施設長代理を兼任。薬学部を卒業し、薬学・IT・薬局・介護現場を横断したキャリアを持つ。自社運営施設で AI を本番運用しながら、デイサービス向けアプリ「sokoe Day」と AI コンサルティング「sokoe AI Lab」を展開。',
   alumniOf: {
     '@type': 'EducationalOrganization' as const,
     name: '薬学部',
@@ -288,7 +288,7 @@ export const profilePageSchema = {
   '@type': 'ProfilePage' as const,
   '@id': PROFILE_PAGE_ID,
   url: `${SITE_URL}/about/profile/`,
-  name: '代表プロフィール ― 槌田 一輝｜株式会社sokoe',
+  name: '代表プロフィール ― 槌田 一輝｜株式会社ソコエ',
   mainEntity: { '@id': PERSON_ID },
   isPartOf: { '@id': WEBSITE_ID },
   inLanguage: 'ja-JP',
@@ -434,7 +434,7 @@ export const localBusinessLetsKawanishi = {
   '@id': LETS_FACILITY_ID,
   name: 'レッツ倶楽部川西能勢口',
   description:
-    '兵庫県川西市の1日型デイサービス。株式会社ピースファーマシー運営。株式会社sokoe 代表取締役 槌田一輝が施設長代理を兼任し、デイサービス向けアプリ sokoe Day の自社運営施設として AI を本番運用している。',
+    '兵庫県川西市の1日型デイサービス。株式会社ピースファーマシー運営。株式会社ソコエ 代表取締役 槌田一輝が施設長代理を兼任し、デイサービス向けアプリ sokoe Day の自社運営施設として AI を本番運用している。',
   address: {
     '@type': 'PostalAddress' as const,
     addressCountry: 'JP',

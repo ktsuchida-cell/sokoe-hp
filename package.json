@@ -2,7 +2,7 @@
   "name": "sokoe-web",
   "version": "0.1.0",
   "private": true,
-  "description": "株式会社sokoe コーポレートサイト",
+  "description": "株式会社ソコエ コーポレートサイト",
   "scripts": {
     "dev": "next dev -p 3100",
     "build": "next build",
@@ -43,3 +43,5 @@
   },
   "packageManager": "pnpm@8.15.0"
 }
+
+

@@ -48,9 +48,9 @@ export const metadata: Metadata = {
     'ケアプランAI',
     '介護記録自動化',
   ],
-  authors: [{ name: '株式会社sokoe' }],
-  creator: '株式会社sokoe',
-  publisher: '株式会社sokoe',
+  authors: [{ name: '株式会社ソコエ' }],
+  creator: '株式会社ソコエ',
+  publisher: '株式会社ソコエ',
   formatDetection: {
     email: false,
     address: false,

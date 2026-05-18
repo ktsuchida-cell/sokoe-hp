@@ -64,7 +64,7 @@ export default function EditorialPolicyPage() {
         {/* 1. 基本方針 */}
         <ProseSection eyebrow="01" title="基本方針" containerSize="narrow">
           <p>
-            株式会社sokoe（以下「当社」といいます）は、介護・薬局・医療をはじめとする医療・介護・福祉領域で事業を行っています。当社が発信する情報は、読者の健康・安全・経営判断に影響を及ぼす可能性があるため、Google
+            株式会社ソコエ（以下「当社」といいます）は、介護・薬局・医療をはじめとする医療・介護・福祉領域で事業を行っています。当社が発信する情報は、読者の健康・安全・経営判断に影響を及ぼす可能性があるため、Google
             の品質評価ガイドラインにおける YMYL（Your Money or Your
             Life）領域に該当することを認識し、以下の方針に基づき記事を制作・公開しています。
           </p>
@@ -92,7 +92,7 @@ export default function EditorialPolicyPage() {
           <p>当社の記事は、以下のいずれかの体制で制作・公開されます。</p>
           <h3>執筆者</h3>
           <p>
-            原則として、株式会社sokoe 代表取締役 槌田一輝（薬学部卒業／レッツ倶楽部川西能勢口
+            原則として、株式会社ソコエ 代表取締役 槌田一輝（薬学部卒業／レッツ倶楽部川西能勢口
             施設長代理）、または当社が公開している外部執筆者が執筆します。執筆者は記事内に明示します。
           </p>
           <h3>監修・レビュアー</h3>
@@ -101,7 +101,7 @@ export default function EditorialPolicyPage() {
             槌田一輝（現役の介護施設長代理）が最終レビューを行います。範囲外の内容（労務・法務・税務等）については、必要に応じて外部の有資格者にレビューを依頼します。
           </p>
           <h3>編集責任</h3>
-          <p>最終的な編集責任は、株式会社sokoe が負います。</p>
+          <p>最終的な編集責任は、株式会社ソコエが負います。</p>
         </ProseSection>
 
         {/* 3. ファクトチェック */}
@@ -254,7 +254,7 @@ export default function EditorialPolicyPage() {
           <p className="text-sm text-charcoal-muted">
             最終更新日：{UPDATED_AT_LABEL}
             <br />
-            策定：株式会社sokoe
+            策定：株式会社ソコエ
           </p>
         </ProseSection>
 

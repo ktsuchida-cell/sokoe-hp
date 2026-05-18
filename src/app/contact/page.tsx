@@ -17,12 +17,12 @@ const PAGE_URL = `${SITE_URL}/contact/`;
 export const metadata: Metadata = {
   title: 'お問い合わせ ｜ sokoe',
   description:
-    '株式会社sokoe へのお問い合わせフォーム。sokoe Day（デイサービス向けアプリ）、sokoe AI Lab（AI コンサルティング）、採用、取材依頼など、ご相談を承ります。担当者より2営業日以内にご連絡いたします。',
+    '株式会社ソコエへのお問い合わせフォーム。sokoe Day（デイサービス向けアプリ）、sokoe AI Lab（AI コンサルティング）、採用、取材依頼など、ご相談を承ります。担当者より2営業日以内にご連絡いたします。',
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: 'お問い合わせ ｜ sokoe',
     description:
-      '株式会社sokoe へのお問い合わせ。sokoe Day / sokoe AI Lab / 採用 / 取材依頼を承ります。',
+      '株式会社ソコエへのお問い合わせ。sokoe Day / sokoe AI Lab / 採用 / 取材依頼を承ります。',
     url: PAGE_URL,
     siteName: 'sokoe',
     locale: 'ja_JP',
@@ -36,7 +36,7 @@ export default function ContactPage() {
       <JsonLd
         data={createWebPageSchema({
           name: 'お問い合わせ ｜ sokoe',
-          description: '株式会社sokoe へのお問い合わせフォーム。',
+          description: '株式会社ソコエへのお問い合わせフォーム。',
           url: PAGE_URL,
           datePublished: '2026-05-12',
           dateModified: '2026-05-12',
@@ -97,7 +97,7 @@ export default function ContactPage() {
                     所在地
                   </h2>
                   <address className="mt-2 text-base not-italic leading-relaxed text-ink">
-                    株式会社sokoe
+                    株式会社ソコエ
                     <br />
                     〒532-0033
                     <br />

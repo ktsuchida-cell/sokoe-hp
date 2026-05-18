@@ -29,7 +29,7 @@ export type LegalDataRow = {
 export const legalDataRows: LegalDataRow[] = [
   {
     label: '販売事業者',
-    value: '株式会社sokoe（カブシキガイシャ ソコエ）',
+    value: '株式会社ソコエ（カブシキガイシャ ソコエ）',
   },
   {
     label: '運営統括責任者',

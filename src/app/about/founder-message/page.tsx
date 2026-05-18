@@ -21,12 +21,12 @@ const PAGE_URL = `${SITE_URL}/about/founder-message/`;
 export const metadata: Metadata = {
   title: `${founderMessage.title} ｜ 代表メッセージ ｜ sokoe`,
   description:
-    '「これ、本来やる必要ないよね」── 株式会社sokoe 代表取締役 槌田一輝が、介護現場の違和感、薬学・IT・薬局・介護を横断したキャリア、自社運営施設で AI を本番運用するまでの経緯を語ります。',
+    '「これ、本来やる必要ないよね」── 株式会社ソコエ 代表取締役 槌田一輝が、介護現場の違和感、薬学・IT・薬局・介護を横断したキャリア、自社運営施設で AI を本番運用するまでの経緯を語ります。',
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: `${founderMessage.title} ｜ 代表メッセージ`,
     description:
-      '株式会社sokoe 代表取締役 槌田一輝による創業メッセージ。デイサービス・介護施設・薬局を運営する会社が、医療・介護の現場をソフトウェアと AI で変えていく。',
+      '株式会社ソコエ 代表取締役 槌田一輝による創業メッセージ。デイサービス・介護施設・薬局を運営する会社が、医療・介護の現場をソフトウェアと AI で変えていく。',
     url: PAGE_URL,
     siteName: 'sokoe',
     locale: 'ja_JP',
@@ -46,7 +46,7 @@ export default function FounderMessagePage() {
         data={createArticleSchema({
           headline: founderMessage.title,
           description:
-            '株式会社sokoe 代表取締役 槌田一輝による創業メッセージ。介護現場の違和感、薬学・IT・薬局・介護を横断したキャリア、自社運営施設で AI を本番運用するまでの経緯。',
+            '株式会社ソコエ 代表取締役 槌田一輝による創業メッセージ。介護現場の違和感、薬学・IT・薬局・介護を横断したキャリア、自社運営施設で AI を本番運用するまでの経緯。',
           url: PAGE_URL,
           datePublished: founderMessage.publishedAt,
           dateModified: founderMessage.updatedAt,
@@ -61,7 +61,7 @@ export default function FounderMessagePage() {
         <PageHero
           label="FOUNDER MESSAGE"
           title={founderMessage.title}
-          lead="株式会社sokoe 代表取締役 槌田一輝 ── 介護現場の施設長代理として、医療・介護の違和感をソフトウェアと AI で消そうとしている、その理由について。"
+          lead="株式会社ソコエ 代表取締役 槌田一輝 ── 介護現場の施設長代理として、医療・介護の違和感をソフトウェアと AI で消そうとしている、その理由について。"
           updatedAt={founderMessage.updatedAtLabel}
         />
 
@@ -85,7 +85,7 @@ export default function FounderMessagePage() {
           <SignatureBlock
             name="槌田 一輝"
             roles={[
-              '株式会社sokoe 代表取締役',
+              '株式会社ソコエ 代表取締役',
               'レッツ倶楽部川西能勢口 施設長代理',
               '株式会社ピースファーマシー 在籍',
             ]}

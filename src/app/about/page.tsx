@@ -14,7 +14,7 @@ const SITE_URL = siteConfig.url;
 export const metadata: Metadata = {
   title: '会社概要 ｜ sokoe',
   description:
-    '株式会社sokoe の会社概要。デイサービス・介護施設・薬局を運営する会社が、医療・介護・福祉領域のソフトウェアと AI コンサルティングを提供します。本社：大阪府大阪市淀川区。',
+    '株式会社ソコエの会社概要。デイサービス・介護施設・薬局を運営する会社が、医療・介護・福祉領域のソフトウェアと AI コンサルティングを提供します。本社：大阪府大阪市淀川区。',
   alternates: { canonical: `${SITE_URL}/about/` },
   openGraph: {
     title: '会社概要 ｜ sokoe',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 };
 
 const companyInfoRows: InfoRow[] = [
-  { label: '会社名', value: '株式会社sokoe（ソコエ）' },
+  { label: '会社名', value: '株式会社ソコエ' },
   { label: '英語表記', value: 'sokoe Inc.' },
   { label: '設立', value: '2026年5月1日' },
   { label: '代表取締役', value: '槌田 一輝' },
@@ -74,7 +74,7 @@ export default function AboutPage() {
       <JsonLd
         data={createWebPageSchema({
           name: '会社概要 ｜ sokoe',
-          description: '株式会社sokoe の会社概要。',
+          description: '株式会社ソコエの会社概要。',
           url: `${SITE_URL}/about/`,
           datePublished: '2026-05-12',
           dateModified: '2026-05-19',
@@ -88,7 +88,7 @@ export default function AboutPage() {
         <PageHero
           label="ABOUT — COMPANY"
           title="デイサービス・介護施設・薬局を運営する会社が、医療・介護の現場を変える。"
-          lead="株式会社sokoe は、自社でデイサービス・介護施設・薬局を運営しながら、医療・介護・福祉領域のソフトウェアと AI コンサルティングを提供する会社です。"
+          lead="株式会社ソコエは、自社でデイサービス・介護施設・薬局を運営しながら、医療・介護・福祉領域のソフトウェアと AI コンサルティングを提供する会社です。"
         />
 
         {/* ミッション */}
@@ -105,7 +105,7 @@ export default function AboutPage() {
 
         {/* 会社情報テーブル（メッセージ層の下に事実層を残す） */}
         <ProseSection eyebrow="COMPANY INFO" title="会社情報">
-          <InfoTable rows={companyInfoRows} caption="株式会社sokoe 会社情報" />
+          <InfoTable rows={companyInfoRows} caption="株式会社ソコエ 会社情報" />
         </ProseSection>
       </main>
       <Footer />

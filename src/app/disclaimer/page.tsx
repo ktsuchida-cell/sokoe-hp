@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: `${disclaimerMeta.title} ｜ sokoe`,
-    description: '株式会社sokoe コーポレートサイトの免責事項。',
+    description: '株式会社ソコエ コーポレートサイトの免責事項。',
     url: PAGE_URL,
     siteName: 'sokoe',
     locale: 'ja_JP',
@@ -37,7 +37,7 @@ export default function DisclaimerPage() {
       <JsonLd
         data={createWebPageSchema({
           name: `${disclaimerMeta.title} ｜ sokoe`,
-          description: '株式会社sokoe コーポレートサイトの免責事項。',
+          description: '株式会社ソコエ コーポレートサイトの免責事項。',
           url: PAGE_URL,
           datePublished: disclaimerMeta.publishedAt,
           dateModified: disclaimerMeta.updatedAt,
@@ -50,7 +50,7 @@ export default function DisclaimerPage() {
         <PageHero
           label="DISCLAIMER"
           title={disclaimerMeta.title}
-          lead="株式会社sokoe が運営する本ウェブサイトの利用にあたり、以下の免責事項にご同意ください。特に医療・介護・薬学に関する情報は、専門家への相談の代替となるものではありません。"
+          lead="株式会社ソコエが運営する本ウェブサイトの利用にあたり、以下の免責事項にご同意ください。特に医療・介護・薬学に関する情報は、専門家への相談の代替となるものではありません。"
           updatedAt={disclaimerMeta.updatedAtLabel}
         />
 
@@ -62,7 +62,7 @@ export default function DisclaimerPage() {
               <br />
               最終更新日：{disclaimerMeta.updatedAtLabel}
               <br />
-              株式会社sokoe
+              株式会社ソコエ
             </p>
           </Container>
         </Section>

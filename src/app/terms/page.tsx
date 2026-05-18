@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: `${termsMeta.title} ｜ sokoe`,
-    description: '株式会社sokoe コーポレートサイトの利用規約。',
+    description: '株式会社ソコエ コーポレートサイトの利用規約。',
     url: PAGE_URL,
     siteName: 'sokoe',
     locale: 'ja_JP',
@@ -37,7 +37,7 @@ export default function TermsPage() {
       <JsonLd
         data={createWebPageSchema({
           name: `${termsMeta.title} ｜ sokoe`,
-          description: '株式会社sokoe コーポレートサイトの利用規約。',
+          description: '株式会社ソコエ コーポレートサイトの利用規約。',
           url: PAGE_URL,
           datePublished: termsMeta.publishedAt,
           dateModified: termsMeta.updatedAt,
@@ -62,7 +62,7 @@ export default function TermsPage() {
               <br />
               最終更新日：{termsMeta.updatedAtLabel}
               <br />
-              株式会社sokoe
+              株式会社ソコエ
             </p>
           </Container>
         </Section>

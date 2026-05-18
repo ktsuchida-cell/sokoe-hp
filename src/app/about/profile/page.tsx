@@ -20,12 +20,12 @@ const SITE_URL = siteConfig.url;
 export const metadata: Metadata = {
   title: '代表プロフィール ｜ 槌田一輝 ｜ sokoe',
   description:
-    '株式会社sokoe 代表取締役 槌田一輝のプロフィール。薬学部卒業後、株式会社ピースファーマシーで薬局運営に携わり、現在は同社運営のレッツ倶楽部川西能勢口（兵庫県川西市・1日型デイサービス）施設長代理を兼任。2026年5月に sokoe を設立。',
+    '株式会社ソコエ 代表取締役 槌田一輝のプロフィール。薬学部卒業後、株式会社ピースファーマシーで薬局運営に携わり、現在は同社運営のレッツ倶楽部川西能勢口（兵庫県川西市・1日型デイサービス）施設長代理を兼任。2026年5月に sokoe を設立。',
   alternates: { canonical: `${SITE_URL}/about/profile/` },
   openGraph: {
     title: '代表プロフィール ｜ 槌田一輝',
     description:
-      '株式会社sokoe 代表取締役 槌田一輝。薬学部卒業。レッツ倶楽部川西能勢口 施設長代理。',
+      '株式会社ソコエ 代表取締役 槌田一輝。薬学部卒業。レッツ倶楽部川西能勢口 施設長代理。',
     url: `${SITE_URL}/about/profile/`,
     siteName: 'sokoe',
     locale: 'ja_JP',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 
 const profileInfoRows: InfoRow[] = [
   { label: '氏名', value: '槌田 一輝（つちだ かずき）' },
-  { label: '役職', value: '株式会社sokoe 代表取締役' },
+  { label: '役職', value: '株式会社ソコエ 代表取締役' },
   {
     label: '兼任',
     value: (
@@ -104,9 +104,9 @@ const careerTimeline: TimelineItem[] = [
   {
     year: '2026',
     month: '5月',
-    event: '株式会社sokoe 設立',
+    event: '株式会社ソコエ 設立',
     detail:
-      '大阪府大阪市淀川区に株式会社sokoe を設立。医療・介護・福祉領域のソフトウェアと AI コンサルティング事業を開始。',
+      '大阪府大阪市淀川区に株式会社ソコエを設立。医療・介護・福祉領域のソフトウェアと AI コンサルティング事業を開始。',
   },
 ];
 
@@ -144,7 +144,7 @@ export default function ProfilePage() {
         <PageHero
           label="PROFILE — REPRESENTATIVE"
           title="槌田 一輝"
-          lead="株式会社sokoe 代表取締役。レッツ倶楽部川西能勢口（兵庫県川西市・1日型デイサービス）施設長代理。薬学・IT・薬局・介護を横断したキャリアを経て、2026年5月に sokoe を設立。"
+          lead="株式会社ソコエ 代表取締役。レッツ倶楽部川西能勢口（兵庫県川西市・1日型デイサービス）施設長代理。薬学・IT・薬局・介護を横断したキャリアを経て、2026年5月に sokoe を設立。"
         />
 
         {/* ポートレート＋略歴 */}
@@ -167,7 +167,7 @@ export default function ProfilePage() {
                 </p>
                 <p className="mt-4 text-base leading-relaxed text-charcoal md:text-lg">
                   「現場で起きる、本来やる必要のない雑務」をソフトウェアと AI
-                  で消すことをミッションに、自社運営施設で本番運用しながらプロダクトを磨き、2026年5月に株式会社sokoe
+                  で消すことをミッションに、自社運営施設で本番運用しながらプロダクトを磨き、2026年5月に株式会社ソコエ
                   を設立。薬学・IT・薬局・介護を横断してきた経験から、業務効率化に必要な視点を異業種側から持ち込むことを強みとする。
                 </p>
                 <p className="mt-4 text-base leading-relaxed text-charcoal md:text-lg">
