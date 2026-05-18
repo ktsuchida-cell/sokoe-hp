@@ -29,7 +29,7 @@ const cases: CaseCard[] = [
     metric: '全利用者に',
     metricLabel: '個別フィードバック',
     title: '体力測定 AI 評価コメント生成',
-    description: '測定数値から AI が個別の評価コメントを瞬時に生成。賞状PDFとして出力。',
+    description: '測定数値から AI が個別の評価コメントを瞬時に生成。記録PDFとして出力。',
     tech: 'Claude API',
   },
   {
