@@ -36,6 +36,8 @@ type Feature = {
 type FeatureCategory = {
   englishLabel: string;
   category: string;
+  /** /day-service/feature/[category]/ の slug。dayFeatureDetails の FeatureCategoryId と一致 */
+  slug: 'floor' | 'transport' | 'backoffice';
   /** 大タイトル直下の効能サブタイトル（1 行） */
   subtitle: string;
   lead: string;
@@ -46,6 +48,7 @@ const featureCategories: FeatureCategory[] = [
   {
     englishLabel: 'FLOOR OPERATIONS',
     category: 'フロア業務',
+    slug: 'floor',
     subtitle: '記録から申し送りまで、フロアの手間をまるごと圧縮。',
     lead: 'ご利用者の受け入れ、バイタル記録、入浴・申し送り、体力測定の評価まで。日々の現場業務をスマホ 1 台で完結できるよう、7 つの機能で支えます。',
     features: [
@@ -70,6 +73,7 @@ const featureCategories: FeatureCategory[] = [
   {
     englishLabel: 'TRANSPORT',
     category: '送迎業務',
+    slug: 'transport',
     subtitle: '当日のドライバーに、寄り添った設計。',
     lead: '4 便 + 6 パターンの便構成や AI 配車最適化に対応。ドライバー画面では訪問先の写真・ご家族連絡先・注意点を事前参照できます。送迎計画とアプリの連携で、急な便変更や飛び込みの追加もその場で対応できる、現場発の設計です。',
     features: [
@@ -85,6 +89,7 @@ const featureCategories: FeatureCategory[] = [
   {
     englishLabel: 'BACK OFFICE',
     category: '管理者業務',
+    slug: 'backoffice',
     subtitle: 'ケアマネ営業から議事録・名刺データまで、AI で。',
     lead: 'ケアマネ営業、担当者会議の議事録、名刺管理、ケアプラン作成、スケジュール、レポート出力まで。施設運営のバックオフィスを AI と効率化機能で支える 6 つの機能。',
     features: [
@@ -163,7 +168,7 @@ export function DayFeatures() {
                       return (
                         <li key={feature.title}>
                           <Link
-                            href="/day-service/feature/"
+                            href={`/day-service/feature/${cat.slug}/`}
                             className="group flex items-start gap-4 bg-white border border-border rounded-[6px] p-4 hover:border-ink transition-colors"
                           >
                             <Icon
@@ -198,7 +203,7 @@ export function DayFeatures() {
 
                   {/* 詳しく見る（機能リスト直下） */}
                   <div className="mt-6 text-center sm:text-left">
-                    <Link href="/day-service/feature/" className="inline-block">
+                    <Link href={`/day-service/feature/${cat.slug}/`} className="inline-block">
                       <Button variant="secondary" size="sm">
                         {cat.category}の全機能を見る →
                       </Button>
