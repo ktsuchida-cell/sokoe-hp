@@ -8,9 +8,11 @@ import Link from 'next/link';
 /**
  * コーポレートTOP Hero セクション
  *
- * - 背景に自社運営施設の現場写真をフルブリードで配置
- * - 文字読みやすさのため白系オーバーレイで写真をやわらげる
- * - セリフ体（Playfair Display + Noto Serif JP）の大見出し
+ * - 背景に「無人のモダンクリニック内装」写真をフルブリードで配置
+ *   （Pavel Danilyuk on Pexels、Pexels License、人感なし、teal/white の cool tone）
+ * - 上に弱めの白オーバーレイ + 縦グラデーションで、画像のニュアンスを残しつつ
+ *   見出し・CTA の可読性を担保する
+ * - 方針: design-notes 内のデザイナーエージェントレポート（2026-05-19）に基づく
  */
 export function Hero() {
   return (
@@ -18,15 +20,20 @@ export function Hero() {
       {/* 背景画像 + 白系オーバーレイ */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <Image
-          src="/images/hero/corporate-facility-1672x941.webp"
+          src="/images/hero/corporate-hero-clinic.jpg"
           alt=""
           fill
           priority
-          quality={85}
-          className="object-cover"
+          quality={82}
+          className="object-cover object-center"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-white/80 backdrop-blur-[2px]" aria-hidden="true" />
+        {/* 純白で被せると画像が消えるので、白 60% に弱める + 上→下に向かって白を強くするグラデーションを重ね、CTA 周辺だけ可読性を上げる */}
+        <div className="absolute inset-0 bg-white/60 backdrop-blur-[1px]" aria-hidden="true" />
+        <div
+          className="absolute inset-0 bg-gradient-to-b from-white/10 via-white/30 to-white/70"
+          aria-hidden="true"
+        />
       </div>
 
       <Section spacing="xl">
