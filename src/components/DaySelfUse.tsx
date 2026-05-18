@@ -2,52 +2,63 @@ import { Container } from '@/components/Container';
 import { Heading } from '@/components/Heading';
 import { Label } from '@/components/Label';
 import { Section } from '@/components/Section';
+import { Activity, Contact, FileText, FolderOpen, type LucideIcon, Mic } from 'lucide-react';
 
 type Improvement = {
+  icon: LucideIcon;
+  categoryTag: string;
   title: string;
   body: string;
 };
 
 /**
  * 5 事例は施設長の痛点頻度順に並び替え。
- * design-notes/self-use.md §7 参照。
+ * design-notes/self-use-v2.md §5.2 参照。
  */
 const improvements: Improvement[] = [
   {
-    title: '通所介護計画書（ケアプラン）が、ほぼ自動に。',
-    body: 'ケアマネさんから届くケアプランを、アプリを使えば自動的に文章が作成され、月 20 名規模で 10 時間相当が消えていた転記業務が、ほぼなくなりました。',
+    icon: FileText,
+    categoryTag: '通所介護計画書',
+    title: 'ケアプラン作成が、転記ゼロに。',
+    body: 'ケアマネから届くケアプランを、アプリで自動作成。月 20 名規模で 10 時間相当の転記が、ほぼなくなりました。',
   },
   {
-    title: '利用者さんごとのマシン訓練バインダーが、不要に。',
-    body: 'マシン設定や実施記録はアプリ内で完結。利用者さんごとに紙のバインダーを出し入れ・更新・保管する作業がなくなり、現場から紙がゼロになりました。',
+    icon: FolderOpen,
+    categoryTag: 'マシン訓練',
+    title: 'マシン訓練のバインダーが、紙ゼロに。',
+    body: 'マシン設定も実施記録もアプリ内で完結。利用者さんごとに紙のバインダーを出す作業がなくなりました。',
   },
   {
-    title: 'TUG・握力の測定値を入れるだけで、個別評価コメントと記録PDFがでる',
-    body: '測定値を入力すれば、AI が利用者さんに伝わる優しい言葉でコメント化。30 名分で概ね 2 時間半かかっていた手書きコメントが、入力だけで完了するようになりました。',
+    icon: Activity,
+    categoryTag: '個別評価',
+    title: '測定値を入れるだけで、個別コメント生成。',
+    body: 'TUG・握力の測定値を入力すれば、AI が優しい言葉でコメント化。30 名分の手書き作業が、入力だけで完了します。',
   },
   {
-    title: '担当者会議の議事録が、10 分の最終チェックに。',
-    body: '会議の録音をその場で文字起こしし、AI が要約と発言者識別を実行。1 件 1 時間かかっていた書き起こしが、要約を読んで整えるだけの最終チェックに変わりました。',
+    icon: Mic,
+    categoryTag: '担当者会議',
+    title: '議事録が、10 分の最終チェックに。',
+    body: '録音をその場で文字起こし、AI が要約と発言者識別。1 件 1 時間の書き起こしが、要約のチェックだけに。',
   },
   {
+    icon: Contact,
+    categoryTag: 'ケアマネ営業',
     title: '名刺が、撮影だけで営業履歴に。',
-    body: 'スマホで撮るだけで AI OCR が氏名・事業所・連絡先・役職を抽出。担当ご利用者リストにも自動で紐付き、Excel への手入力作業がなくなりました。',
+    body: 'スマホで撮るだけで AI OCR が氏名・事業所・連絡先・役職を抽出。Excel への手入力作業がなくなりました。',
   },
 ];
 
 /**
- * DaySelfUse セクション（自社導入後の改善効果）
+ * DaySelfUse セクション（自社導入後の改善効果）v2
  *
- * design-notes/self-use.md の設計判断に基づくが、オーナー指示（2026-05-18）で
- * Before/After 2 カラム比較は撤去し、After（導入後）だけを語るシンプルな
- * カードリストへ戻している：
- *   - 中央寄せ大見出し + リード + caption（出所明記）
- *   - 5 事例を白カードに「タイトル + 本文」で表示
- *   - 痛点頻度順は維持
- *   - 数値は自社運営施設での体感ベース（caption で明示、断定調を避ける）
- *   - 背景は variant="tint-pink"。隣接の DayPositioning（白）/ DayFeatures（soft）
- *     と色トーンを差別化し、「読ませる」フォーカスセクションとして際立たせる
- *   - CTA は直後の DaySelfUseCTA セクションに切り出している
+ * design-notes/self-use-v2.md の判断に基づく：
+ *   - tint-pink 背景の上に白カードを 2 カラムグリッドで配置（スマホは 1 カラム）
+ *   - 5 枚目は md:col-span-2 で中央寄せ
+ *   - 各カード：brand-red 薄塗り円バッジ + 業務アイコン + 短いタイトル + 短い本文 + 業務カテゴリタグ
+ *   - 文字量を v1 の約半分に圧縮
+ *   - Before/After 2 カラム比較は v1 でオーナー指示により撤去済みなので復活させない
+ *   - 数値は自社運営施設での体感ベース（caption で出所明記、断定調を避ける）
+ *   - CTA はこのセクションに置かない（DaySelfUseCTA に独立）
  */
 export function DaySelfUse() {
   return (
@@ -62,20 +73,42 @@ export function DaySelfUse() {
           </Heading>
         </div>
 
-        <ul className="mx-auto max-w-3xl space-y-4 md:space-y-5">
-          {improvements.map((improvement) => (
-            <li
-              key={improvement.title}
-              className="rounded-[8px] bg-white border border-border p-6 md:p-8 transition-shadow hover:shadow-sm"
-            >
-              <h3 className="font-serif text-lg md:text-xl font-bold text-brand-red leading-snug mb-3">
-                {improvement.title}
-              </h3>
-              <p className="text-stone text-[15px] md:text-base leading-[1.85]">
-                {improvement.body}
-              </p>
-            </li>
-          ))}
+        <ul className="mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+          {improvements.map((improvement, i) => {
+            const Icon = improvement.icon;
+            const isLast = i === improvements.length - 1;
+            return (
+              <li
+                key={improvement.title}
+                className={
+                  isLast
+                    ? 'md:col-span-2 md:max-w-[calc(50%-0.625rem)] md:mx-auto md:w-full rounded-[8px] bg-white border border-border p-6 md:p-7 transition-shadow hover:shadow-sm'
+                    : 'rounded-[8px] bg-white border border-border p-6 md:p-7 transition-shadow hover:shadow-sm'
+                }
+              >
+                <div className="flex items-start gap-4">
+                  <span
+                    className="shrink-0 flex h-12 w-12 items-center justify-center rounded-full bg-brand-red/10"
+                    aria-hidden="true"
+                  >
+                    <Icon className="h-5 w-5 text-brand-red" strokeWidth={1.75} />
+                  </span>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-serif text-base md:text-lg font-bold text-brand-red leading-snug">
+                      {improvement.title}
+                    </h3>
+                    <div className="my-3 border-t border-border" aria-hidden="true" />
+                    <p className="text-stone text-[14px] md:text-[15px] leading-[1.85]">
+                      {improvement.body}
+                    </p>
+                    <p className="mt-4 text-[11px] uppercase tracking-[0.14em] font-semibold text-mid">
+                      {improvement.categoryTag}
+                    </p>
+                  </div>
+                </div>
+              </li>
+            );
+          })}
         </ul>
 
         <p className="mx-auto max-w-3xl mt-10 md:mt-12 text-[12px] md:text-[13px] leading-[1.85] text-mid text-center">
