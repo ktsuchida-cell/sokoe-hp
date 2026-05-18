@@ -3,6 +3,7 @@ import { Button } from '@/components/Button';
 import { Container } from '@/components/Container';
 import { DayFeatureDetailBlock } from '@/components/DayFeatureDetailBlock';
 import { DayLastCTA } from '@/components/DayLastCTA';
+import { DayPricing } from '@/components/DayPricing';
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
 import { Heading } from '@/components/Heading';
@@ -117,12 +118,41 @@ export default function DayServiceFeaturePage() {
           );
         })}
 
-        {/* 中間 CTA: Day LP へ戻る */}
+        {/* 料金表（LP と同一の DayPricing を流用） */}
+        <DayPricing />
+
+        {/* 料金直下の中間 CTA：お問い合わせ + 資料 DL */}
+        <Section spacing="md" bordered>
+          <Container>
+            <div className="max-w-2xl mx-auto text-center">
+              <Heading level="h3" serif className="mb-5">
+                費用感が見えたら、次の一歩へ。
+              </Heading>
+              <p className="text-stone text-base md:text-lg leading-[1.85] mb-8">
+                ご質問はお問い合わせから、社内検討用には資料をどうぞ。
+              </p>
+              <div className="flex flex-wrap items-center justify-center gap-4">
+                <Link href="/contact/?type=sokoe-day">
+                  <Button variant="primary" size="lg">
+                    お問い合わせ
+                  </Button>
+                </Link>
+                <Link href="/day-service/document/">
+                  <Button variant="secondary" size="lg">
+                    資料をダウンロード
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </Container>
+        </Section>
+
+        {/* Day LP トップへ戻る導線 */}
         <Section spacing="md" bordered>
           <Container>
             <div className="text-center">
               <p className="text-stone text-base md:text-lg leading-[1.85] mb-6">
-                sokoe Day の概要・料金・導入事例は、こちらのページにまとめています。
+                sokoe Day の概要・導入事例は、こちらのページにまとめています。
               </p>
               <Link href="/day-service/" className="inline-block">
                 <Button variant="secondary" size="md">
