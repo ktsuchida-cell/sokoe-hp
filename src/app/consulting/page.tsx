@@ -7,7 +7,6 @@ import { LabHero } from '@/components/LabHero';
 import { LabLastCTA } from '@/components/LabLastCTA';
 import { LabPhilosophy } from '@/components/LabPhilosophy';
 import { LabProcess } from '@/components/LabProcess';
-import { LabProof } from '@/components/LabProof';
 import { LabServices } from '@/components/LabServices';
 import { labFaqsForSchema } from '@/lib/labFaqs';
 import { createFAQSchema, sokoeAILabSchema } from '@/lib/schemas';
@@ -75,7 +74,6 @@ export default function ConsultingPage() {
         <LabHero />
         <LabPhilosophy />
         <LabServices />
-        <LabProof />
         <LabProcess />
         <DayAboutFounder />
         <LabFAQ />

@@ -15,8 +15,9 @@ import Link from 'next/link';
  * 視覚言語：
  *   - 背景に「ノート + ペン + デスク」の Unsplash 画像（Clay Banks 撮影、
  *     人感なし、Unsplash License）を配置
- *   - 上にクリーム色オーバーレイ（tint-orange/85）でテキスト可読性を確保
- *   - LastCTA（オレンジベタ）との差別化で、こちらは柔らかい暖色の現場感
+ *   - 上に白オーバーレイ（white/78）でテキスト可読性を確保しつつ、隣接の
+ *     DaySolution（tint-orange）と同系色にならないようトーンを白寄りに振る
+ *   - LastCTA（オレンジベタ）とも色帯がぶつからない
  */
 export function DayMidCTA() {
   return (
@@ -34,10 +35,7 @@ export function DayMidCTA() {
           sizes="100vw"
           className="object-cover"
         />
-        <div
-          className="absolute inset-0 bg-tint-orange/85 backdrop-blur-[1px]"
-          aria-hidden="true"
-        />
+        <div className="absolute inset-0 bg-white/78 backdrop-blur-[2px]" aria-hidden="true" />
       </div>
 
       <Container>
