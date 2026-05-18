@@ -3,7 +3,6 @@ import { Container } from '@/components/Container';
 import { Heading } from '@/components/Heading';
 import { Label } from '@/components/Label';
 import { Section } from '@/components/Section';
-import Image from 'next/image';
 import Link from 'next/link';
 
 /**
@@ -14,27 +13,22 @@ import Link from 'next/link';
  * - コーポレート赤を継承（オレンジ不使用）
  * - 「机上ではなく、現場で動かす」コンサル思想
  *
- * 背景：日本人コンサルがホワイトボード前で戦略提示しているシーン
- * （Pexels License）。「現場で動かす AI」という主張に呼応する人物入り構図。
- * 白オーバーレイで文字の可読性を確保する。
+ * 背景：Codex に生成させたオリジナル SVG。3 人のシルエットがモニター前で
+ * 戦略討議、背景に都市スカイラインが薄く映るオフィスの抽象描写。
+ * ベクターなのでサイズが軽く、ブランド色との整合・将来の編集が容易。
  */
 export function LabHero() {
   return (
     <div className="relative isolate">
-      {/* 背景写真 + 白系オーバーレイ */}
+      {/* 背景 SVG + 白系オーバーレイ */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
-        <Image
-          src="/images/hero/lab-hero-consult-jp.jpg"
-          alt=""
-          fill
-          priority
-          quality={82}
-          sizes="100vw"
-          className="object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-white/60 backdrop-blur-[1px]" aria-hidden="true" />
         <div
-          className="absolute inset-0 bg-gradient-to-b from-white/10 via-white/25 to-white/65"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('/images/hero/lab-hero-strategy.svg')" }}
+          aria-hidden="true"
+        />
+        <div
+          className="absolute inset-0 bg-gradient-to-b from-white/10 via-white/25 to-white/60"
           aria-hidden="true"
         />
       </div>
