@@ -32,9 +32,18 @@ export function Hero() {
       <Section spacing="xl">
         <Container>
           <div className="max-w-4xl mx-auto text-center">
-            <Heading level="display" serif className="mb-6">
+            {/*
+              全画面 2 行固定。最長行「薬局・介護事業を運営する会社が、」が
+              約 17 全角字相当なので、各ブレークポイントで折り返さない最大
+              サイズに抑えてある。
+            */}
+            <Heading
+              level="display"
+              serif
+              className="mb-6 !text-[19px] sm:!text-[32px] md:!text-[40px] lg:!text-[52px]"
+            >
               薬局・介護事業を運営する会社が、
-              <br className="hidden md:block" />
+              <br />
               本気で現場を変える。
             </Heading>
 
