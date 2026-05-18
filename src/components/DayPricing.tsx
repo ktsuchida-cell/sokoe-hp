@@ -351,8 +351,8 @@ export function DayPricing() {
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link href="/contact/?type=sokoe-day">
-                <Button variant="product" size="lg">
-                  無料相談で見積もりを聞く（30 分）
+                <Button variant="primary" size="lg">
+                  導入の相談を予約する
                 </Button>
               </Link>
               <Link href="/day-service/document/">
