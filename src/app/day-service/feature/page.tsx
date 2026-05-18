@@ -2,7 +2,6 @@ import { Breadcrumb } from '@/components/Breadcrumb';
 import { Button } from '@/components/Button';
 import { Container } from '@/components/Container';
 import { DayFeatureDetailBlock } from '@/components/DayFeatureDetailBlock';
-import { DayLastCTA } from '@/components/DayLastCTA';
 import { DayPricing } from '@/components/DayPricing';
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
@@ -163,9 +162,6 @@ export default function DayServiceFeaturePage() {
             </div>
           </Container>
         </section>
-
-        {/* 最終 CTA */}
-        <DayLastCTA />
       </main>
 
       <Footer />
