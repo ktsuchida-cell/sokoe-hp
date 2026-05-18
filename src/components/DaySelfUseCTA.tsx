@@ -12,11 +12,10 @@ import Link from 'next/link';
  * 「相談（高温）」と「資料 DL（低温）」の 2 つを並列で受ける。
  *
  * 視覚言語：
- *   - 背景に「自然光の入る無人インテリア」の Unsplash 画像（Louie A 撮影、
- *     人感なし、Unsplash License）を配置
- *   - 上に白オーバーレイ（white/72）で可読性を確保しつつ、施設の柔らかい
- *     雰囲気が抜ける
- *   - DayMidCTA とは異なる画像なので、2 つの中間 CTA が同一視されない
+ *   - 背景に「ヘルスケア従事者がタブレットでアプリ説明をしているシーン」
+ *     の Pexels 画像（Cedric Fauntleroy 撮影、Pexels License）を配置
+ *   - 上に白オーバーレイ（white/70）で可読性を確保しつつ、シーン感を残す
+ *   - DayMidCTA（デスク + ノート）とは別画像で、2 つの中間 CTA が同一視されない
  */
 export function DaySelfUseCTA() {
   return (
@@ -34,7 +33,7 @@ export function DaySelfUseCTA() {
           sizes="100vw"
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-white/72 backdrop-blur-[2px]" aria-hidden="true" />
+        <div className="absolute inset-0 bg-white/70 backdrop-blur-[2px]" aria-hidden="true" />
       </div>
 
       <Container>
