@@ -8,10 +8,10 @@ import Link from 'next/link';
 /**
  * コーポレートTOP Hero セクション
  *
- * - 背景に「朝日がカーテンを抜けて室内に差し込む」写真を配置
- *   （Pexels License、人感なし、暖色 4500K 系の情景）
- * - 方針: IT/SaaS の Hero パターン調査（kubell の暖色テクスチャ、Vercel の
- *   半抽象情景）を参考に、医療・介護に静かな光が差すメタファとして採用
+ * - 背景に「朝霧の中から立ち上がる都市スカイライン」写真を配置
+ *   （Pexels License、人感なし、朝霧 + 暁の柔らかい光）
+ * - メッセージとの整合：医療・介護を運営する事業会社が、街（社会基盤）の
+ *   一員として現場を変えていく、というメタファ
  * - オーバーレイは弱め + 下方向グラデで CTA 周辺の可読性を担保
  */
 export function Hero() {
@@ -20,19 +20,19 @@ export function Hero() {
       {/* 背景写真 + 白系オーバーレイ */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <Image
-          src="/images/hero/corporate-hero-morning.jpg"
+          src="/images/hero/corporate-hero-city.jpg"
           alt=""
           fill
           priority
-          quality={80}
+          quality={82}
           sizes="100vw"
           className="object-cover object-center"
         />
         {/* ベース白オーバーレイ：写真が見えつつ文字が読めるバランス */}
-        <div className="absolute inset-0 bg-white/40 backdrop-blur-[1px]" aria-hidden="true" />
+        <div className="absolute inset-0 bg-white/45 backdrop-blur-[1px]" aria-hidden="true" />
         {/* 縦グラデで CTA 周辺だけ白を強める */}
         <div
-          className="absolute inset-0 bg-gradient-to-b from-white/10 via-white/20 to-white/55"
+          className="absolute inset-0 bg-gradient-to-b from-white/10 via-white/25 to-white/60"
           aria-hidden="true"
         />
       </div>
