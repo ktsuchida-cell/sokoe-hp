@@ -86,15 +86,14 @@ export default function DayServiceFeaturePage() {
           return (
             <Section
               key={cat.id}
+              id={cat.id}
               variant={cat.id === 'transport' ? 'soft' : 'default'}
               spacing="lg"
               bordered
+              className="scroll-mt-24"
             >
               <Container>
-                <div
-                  id={cat.id}
-                  className="max-w-3xl mx-auto text-center mb-14 md:mb-20 scroll-mt-24"
-                >
+                <div className="max-w-3xl mx-auto text-center mb-14 md:mb-20">
                   <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-brand-red">
                     {cat.englishLabel}
                   </p>
