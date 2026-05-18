@@ -67,11 +67,13 @@ export function DayFAQ() {
         </div>
 
         <Container>
-          <div className="max-w-2xl mx-auto text-center">
-            <Heading level="h3" serif className="mb-5">
-              ここにない疑問は、お気軽にどうぞ。
+          <div className="max-w-3xl mx-auto text-center">
+            <Heading level="h2" serif className="mb-6">
+              ここにない疑問は、
+              <br className="md:hidden" />
+              お気軽にどうぞ。
             </Heading>
-            <p className="text-stone text-base md:text-lg leading-[1.85] mb-8">
+            <p className="text-charcoal text-lg md:text-xl leading-[1.85] mb-10">
               代表（現役の施設長代理）が、現場目線で直接お答えします。
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
