@@ -2,29 +2,37 @@ import { Button } from '@/components/Button';
 import { Container } from '@/components/Container';
 import { Heading } from '@/components/Heading';
 import { Section } from '@/components/Section';
+import Image from 'next/image';
 import Link from 'next/link';
 
 /**
  * コーポレートTOP Hero セクション
  *
- * - 背景に自社制作の SVG（建築 + 光 + brand-red アクセント）を CSS background で配置
- *   写真ではなくベクターなので、軽量・任意拡大耐性・ブランド色との整合を確保
- * - 上に微弱な白オーバーレイ + 縦グラデーションで CTA 周辺の可読性を担保
- * - 方針: design-notes 内のデザイナーエージェントレポート（2026-05-19）に基づく
+ * - 背景に「朝日がカーテンを抜けて室内に差し込む」写真を配置
+ *   （Pexels License、人感なし、暖色 4500K 系の情景）
+ * - 方針: IT/SaaS の Hero パターン調査（kubell の暖色テクスチャ、Vercel の
+ *   半抽象情景）を参考に、医療・介護に静かな光が差すメタファとして採用
+ * - オーバーレイは弱め + 下方向グラデで CTA 周辺の可読性を担保
  */
 export function Hero() {
   return (
     <div className="relative isolate">
-      {/* 背景 SVG + 白系オーバーレイ */}
+      {/* 背景写真 + 白系オーバーレイ */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/images/hero/corporate-hero-generated.svg')" }}
-          aria-hidden="true"
+        <Image
+          src="/images/hero/corporate-hero-morning.jpg"
+          alt=""
+          fill
+          priority
+          quality={80}
+          sizes="100vw"
+          className="object-cover object-center"
         />
-        {/* SVG が見えるよう、上半分は透明、下半分だけ白寄りで CTA の可読性を確保 */}
+        {/* ベース白オーバーレイ：写真が見えつつ文字が読めるバランス */}
+        <div className="absolute inset-0 bg-white/40 backdrop-blur-[1px]" aria-hidden="true" />
+        {/* 縦グラデで CTA 周辺だけ白を強める */}
         <div
-          className="absolute inset-0 bg-gradient-to-b from-white/0 via-white/5 to-white/45"
+          className="absolute inset-0 bg-gradient-to-b from-white/10 via-white/20 to-white/55"
           aria-hidden="true"
         />
       </div>
