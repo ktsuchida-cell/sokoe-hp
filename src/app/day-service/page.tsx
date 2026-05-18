@@ -3,6 +3,7 @@ import { DayFAQ } from '@/components/DayFAQ';
 import { DayFeatures } from '@/components/DayFeatures';
 import { DayHero } from '@/components/DayHero';
 import { DayLastCTA } from '@/components/DayLastCTA';
+import { DayMidCTA } from '@/components/DayMidCTA';
 import { DayPain } from '@/components/DayPain';
 import { DayPositioning } from '@/components/DayPositioning';
 import { DayPricing } from '@/components/DayPricing';
@@ -95,6 +96,7 @@ export default function DayServicePage() {
         <DayHero />
         <DayPain />
         <DaySolution />
+        <DayMidCTA />
         <DayPositioning />
         <DaySelfUse />
         <DayFeatures />
