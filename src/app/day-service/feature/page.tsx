@@ -162,6 +162,22 @@ export default function DayServiceFeaturePage() {
             </div>
           </Container>
         </section>
+
+        {/* Day LP トップへ戻る導線 */}
+        <Section spacing="md" bordered>
+          <Container>
+            <div className="text-center">
+              <p className="text-stone text-base md:text-lg leading-[1.85] mb-6">
+                sokoe Day の概要・導入事例は、こちらのページにまとめています。
+              </p>
+              <Link href="/day-service/" className="inline-block">
+                <Button variant="secondary" size="md">
+                  sokoe Day トップへ
+                </Button>
+              </Link>
+            </div>
+          </Container>
+        </Section>
       </main>
 
       <Footer />
