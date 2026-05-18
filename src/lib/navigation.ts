@@ -30,12 +30,6 @@ export const mainNavigation: NavItem[] = [
   {
     label: 'コラム',
     href: '#',
-    children: [
-      { label: 'ガイド', href: '/guide/' },
-      { label: 'メディア', href: '/media/' },
-      { label: '無料ツール', href: '/tool/' },
-      { label: '用語集', href: '/glossary/' },
-    ],
   },
   {
     label: '会社情報',
