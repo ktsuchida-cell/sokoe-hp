@@ -1,7 +1,7 @@
 import { Button } from '@/components/Button';
 import { Container } from '@/components/Container';
 import { Heading } from '@/components/Heading';
-import { Section } from '@/components/Section';
+import Image from 'next/image';
 import Link from 'next/link';
 
 /**
@@ -12,19 +12,43 @@ import Link from 'next/link';
  * 「相談（高温）」と「資料 DL（低温）」の 2 つを並列で受ける。
  *
  * 視覚言語：
- *   - 上の DaySelfUse（tint-pink）から白へ抜けることで「読み物 → 行動」の
- *     切替感を出す
- *   - LastCTA（オレンジベタ）とも色帯がぶつからない
+ *   - 背景に「自然光の入る無人インテリア」の Unsplash 画像（Louie A 撮影、
+ *     人感なし、Unsplash License）を配置
+ *   - 上に白オーバーレイ（white/72）で可読性を確保しつつ、施設の柔らかい
+ *     雰囲気が抜ける
+ *   - DayMidCTA とは異なる画像なので、2 つの中間 CTA が同一視されない
  */
 export function DaySelfUseCTA() {
   return (
-    <Section spacing="md" bordered aria-label="sokoe Day 導入相談 CTA">
+    <section
+      className="relative isolate overflow-hidden border-t border-border py-16 md:py-20"
+      aria-label="sokoe Day 導入相談 CTA"
+    >
+      {/* 背景画像 + 白オーバーレイ */}
+      <div className="absolute inset-0 -z-10">
+        <Image
+          src="/images/midcta/selfuse-cta-room.jpg"
+          alt=""
+          fill
+          quality={80}
+          sizes="100vw"
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-white/72 backdrop-blur-[2px]" aria-hidden="true" />
+      </div>
+
       <Container>
         <div className="max-w-3xl mx-auto text-center">
-          <Heading level="h3" serif className="mb-6">
-            自社で動いた sokoe Day を、
-            <br className="hidden md:block" />
-            あなたの施設でも。
+          {/*
+            1 行固定の見出し。文字数が長め（半角 sokoe Day 含めて約 22 字幅相当）
+            のため、各ブレークポイントで折り返さないサイズに抑えてある。
+          */}
+          <Heading
+            level="h2"
+            serif
+            className="mb-6 !text-[16px] sm:!text-[24px] md:!text-[30px] lg:!text-[36px]"
+          >
+            自社で動いた sokoe Day を、あなたの施設でも。
           </Heading>
 
           <p className="text-stone text-base md:text-lg leading-[1.85] mb-10">
@@ -47,6 +71,6 @@ export function DaySelfUseCTA() {
           </div>
         </div>
       </Container>
-    </Section>
+    </section>
   );
 }
