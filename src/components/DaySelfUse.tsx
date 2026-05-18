@@ -2,101 +2,49 @@ import { Container } from '@/components/Container';
 import { Heading } from '@/components/Heading';
 import { Label } from '@/components/Label';
 import { Section } from '@/components/Section';
-import {
-  ArrowDown,
-  ArrowRight,
-  CheckSquare,
-  ClipboardList,
-  Contact,
-  FileText,
-  Mic,
-  PenLine,
-  ScanLine,
-  Smartphone,
-  Sparkles,
-  Wand2,
-} from 'lucide-react';
 import Link from 'next/link';
-import type { ComponentType, SVGProps } from 'react';
 
-type IconType = ComponentType<SVGProps<SVGSVGElement>>;
-
-type UseCase = {
+type Improvement = {
   title: string;
-  before: { icon: IconType; copy: string };
-  after: { icon: IconType; copy: string };
+  body: string;
 };
 
 /**
  * 5 事例は施設長の痛点頻度順に並び替え。
  * design-notes/self-use.md §7 参照。
  */
-const useCases: UseCase[] = [
+const improvements: Improvement[] = [
   {
-    title: '通所介護計画書（ケアプラン）。月 10 時間が消えていた転記が、ほぼ無くなった。',
-    before: {
-      icon: FileText,
-      copy: 'ケアマネから届く情報を、施設フォーマットへ毎月 1 人 30 分かけて転記。月 20 名規模で 10 時間相当が消えていた。',
-    },
-    after: {
-      icon: Sparkles,
-      copy: 'AI が施設フォーマットへ自動変換し、職員は内容を確認するだけ。転記そのものが業務から消えた。',
-    },
+    title: '通所介護計画書（ケアプラン）が、ほぼ自動に。',
+    body: 'ケアマネさんから届く情報を、AI が施設フォーマットへ自動変換。職員は内容を確認するだけになり、月 20 名規模で 10 時間相当が消えていた転記業務が、ほぼなくなりました。',
   },
   {
-    title: '利用者さんごとのマシン訓練バインダーが、紙ゼロに。',
-    before: {
-      icon: ClipboardList,
-      copy: '利用者さんごとにマシン設定・実施記録のバインダーを用意し、毎回出し入れ・更新・紛失対応が発生していた。',
-    },
-    after: {
-      icon: CheckSquare,
-      copy: 'マシン設定と完了の有無をアプリ内で管理。バインダー印刷・差し替え・保管が不要になった。',
-    },
+    title: '利用者さんごとのマシン訓練バインダーが、不要に。',
+    body: 'マシン設定や実施記録はアプリ内で完結。利用者さんごとに紙のバインダーを出し入れ・更新・保管する作業がなくなり、現場の机から紙束が減りました。',
   },
   {
-    title: 'TUG・握力の測定値を入れるだけで、個別コメントと賞状 PDF が出る。',
-    before: {
-      icon: PenLine,
-      copy: 'TUG・握力などの結果に対し、利用者さん 1 人ずつ職員が言葉を選んでコメントを書いていた。30 名分で概ね 2 時間半。',
-    },
-    after: {
-      icon: Wand2,
-      copy: '測定値を入力すれば、AI が利用者さんに伝わる優しい言葉でコメント化。賞状 PDF も同時に出力される。',
-    },
+    title: 'TUG・握力の測定値を入れるだけで、個別評価コメントと賞状 PDF が出る。',
+    body: '測定値を入力すれば、AI が利用者さんに伝わる優しい言葉でコメント化。30 名分で概ね 2 時間半かかっていた手書きコメントが、入力だけで完了するようになりました。',
   },
   {
-    title: '担当者会議の議事録。1 時間の書き起こしが、10 分の最終チェックに。',
-    before: {
-      icon: Mic,
-      copy: '会議後に録音を聞き直し、発言者を判別しながら書き起こすため、1 件で概ね 1 時間。会議件数が増えるほど夜の残業に積み上がっていた。',
-    },
-    after: {
-      icon: Smartphone,
-      copy: 'その場で文字起こしと話者識別が走り、AI が要約まで出す。担当は要約を読んで整えるだけ。',
-    },
+    title: '担当者会議の議事録が、10 分の最終チェックに。',
+    body: '会議の録音をその場で文字起こしし、AI が要約と発言者識別を実行。1 件 1 時間かかっていた書き起こしが、要約を読んで整えるだけの最終チェックに変わりました。',
   },
   {
-    title: '撮影 → 手入力 → ファイル化が、数秒で営業履歴に。',
-    before: {
-      icon: Contact,
-      copy: 'もらった名刺を Excel に手入力し、後日「あの会社の誰だっけ？」を探す時間が積み重なっていた。',
-    },
-    after: {
-      icon: ScanLine,
-      copy: 'スマホで撮るだけで氏名・事業所・連絡先・役職を AI OCR が抽出。担当ご利用者リストにも自動で紐付く。',
-    },
+    title: '名刺が、撮影だけで営業履歴に。',
+    body: 'スマホで撮るだけで AI OCR が氏名・事業所・連絡先・役職を抽出。担当ご利用者リストにも自動で紐付き、Excel への手入力作業がなくなりました。',
   },
 ];
 
 /**
  * DaySelfUse セクション（自社導入後の改善効果）
  *
- * design-notes/self-use.md の設計判断に基づく：
+ * design-notes/self-use.md の設計判断に基づくが、オーナー指示（2026-05-18）で
+ * Before/After 2 カラム比較は撤去し、After（導入後）だけを語るシンプルな
+ * カードリストへ戻している：
  *   - 中央寄せ大見出し + リード + caption（出所明記）
- *   - 5 事例を Before/After 2 カラム比較カードで均等表示
- *   - Before = stone 系で「紙世界」、After = brand-red アクセントで「現役感」
- *   - 矢印は md 以上で水平、未満で垂直
+ *   - 5 事例を白カードに「タイトル + 本文」で表示
+ *   - 痛点頻度順は維持
  *   - 数値は自社運営施設での体感ベース（caption で明示、断定調を避ける）
  *   - このセクションには CTA を置かない（信頼形成段階）
  */
@@ -112,62 +60,31 @@ export function DaySelfUse() {
             現場はこう変わった。
           </Heading>
           <p className="text-stone text-base md:text-lg leading-[1.85]">
-            sokoe Day は、自社運営する50名規模のデイサービス「
+            sokoe Day を導入した、自社運営する50名規模のデイサービス「
             <Link
               href="/about/"
               className="text-ink font-semibold underline-offset-4 hover:underline"
             >
               レッツ倶楽部川西能勢口
             </Link>
-            」で 2026年4月から本番稼働中。
+            」では、こう変わりました。
             <br className="hidden md:block" />
             代表が現役の施設長代理として、毎日 sokoe Day を使い、改善し、また使っています。
           </p>
         </div>
 
-        <ul className="mx-auto max-w-4xl space-y-5 md:space-y-6">
-          {useCases.map((useCase) => (
+        <ul className="mx-auto max-w-3xl space-y-4 md:space-y-5">
+          {improvements.map((improvement) => (
             <li
-              key={useCase.title}
+              key={improvement.title}
               className="rounded-[8px] bg-white border border-border p-6 md:p-8 transition-shadow hover:shadow-sm"
             >
-              <h3 className="font-serif text-lg md:text-xl font-bold text-brand-red leading-snug mb-5 md:mb-6">
-                {useCase.title}
+              <h3 className="font-serif text-lg md:text-xl font-bold text-brand-red leading-snug mb-3">
+                {improvement.title}
               </h3>
-
-              <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-4 md:gap-5 items-stretch">
-                {/* Before */}
-                <div className="rounded-[6px] bg-soft-bg border border-border/60 p-5 md:p-6">
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="font-sans text-[11px] tracking-[0.14em] font-semibold uppercase text-mid">
-                      Before
-                    </span>
-                    <useCase.before.icon className="h-4 w-4 text-mid" aria-hidden="true" />
-                  </div>
-                  <p className="text-stone text-[14.5px] md:text-[15px] leading-[1.85]">
-                    {useCase.before.copy}
-                  </p>
-                </div>
-
-                {/* 矢印（md 以上で水平、未満で垂直） */}
-                <div className="flex items-center justify-center text-brand-red" aria-hidden="true">
-                  <ArrowRight className="hidden md:block h-6 w-6" />
-                  <ArrowDown className="md:hidden h-5 w-5" />
-                </div>
-
-                {/* After */}
-                <div className="rounded-[6px] bg-white border border-brand-red/30 border-l-[3px] border-l-brand-red p-5 md:p-6">
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="font-sans text-[11px] tracking-[0.14em] font-semibold uppercase text-brand-red">
-                      After
-                    </span>
-                    <useCase.after.icon className="h-4 w-4 text-brand-red" aria-hidden="true" />
-                  </div>
-                  <p className="text-charcoal text-[14.5px] md:text-[15px] leading-[1.85]">
-                    {useCase.after.copy}
-                  </p>
-                </div>
-              </div>
+              <p className="text-stone text-[15px] md:text-base leading-[1.85]">
+                {improvement.body}
+              </p>
             </li>
           ))}
         </ul>
