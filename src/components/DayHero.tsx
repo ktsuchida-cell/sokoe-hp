@@ -36,18 +36,27 @@ export function DayHero() {
           <div className="text-center lg:col-span-6 lg:text-left xl:col-span-5">
             <Label className="mb-6 text-product-orange">SOKOE DAY ─ デイサービス向けアプリ</Label>
 
+            {/*
+              3 行固定の見出し。2 行目「『心のゆとり』を残し、残業を減らす、」が
+              最も長い行（約 18 全角文字）なので、これが折り返さないサイズに
+              各ブレークポイントを調整している。
+                - mobile  (~345px): 18px → 18×18≈324px で 1 行
+                - sm      (~600px): 24px
+                - md      (~720px): 32px
+                - lg col-6 (~430px): 22px（左カラムが狭まる）
+                - xl col-5 (~465px): 24px
+                - 2xl     (~580px): 30px
+            */}
             <Heading
               level="h1"
               serif
-              className="!text-[26px] !leading-[1.25] sm:!text-[32px] sm:!leading-[1.2] md:!text-[40px] lg:!text-[34px] xl:!text-[38px] 2xl:!text-[42px]"
+              className="!text-[18px] !leading-[1.4] sm:!text-[24px] sm:!leading-[1.35] md:!text-[32px] md:!leading-[1.3] lg:!text-[22px] xl:!text-[24px] 2xl:!text-[30px]"
             >
               <span className="text-product-orange">現場発！</span>
               <br />
-              「心のゆとり」を残し、
-              <br className="hidden sm:block" />
-              残業を減らす、
-              <br className="sm:hidden" />
-              デイサービスアプリ。
+              「心のゆとり」を残し、残業を減らす、
+              <br />
+              SOKOE デイサービスアプリ
             </Heading>
 
             <p className="mx-auto mt-6 max-w-lg text-base leading-relaxed text-charcoal md:mt-8 md:text-lg md:leading-[1.85] lg:mx-0">
