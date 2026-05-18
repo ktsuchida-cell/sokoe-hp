@@ -1,21 +1,13 @@
-﻿import { Breadcrumb } from '@/components/Breadcrumb';
-import { Button } from '@/components/Button';
-import { Card } from '@/components/Card';
-import { Container } from '@/components/Container';
+import { Breadcrumb } from '@/components/Breadcrumb';
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
-import { Heading } from '@/components/Heading';
 import { type InfoRow, InfoTable } from '@/components/InfoTable';
 import { JsonLd } from '@/components/JsonLd';
-import { Label } from '@/components/Label';
 import { PageHero } from '@/components/PageHero';
 import { ProseSection } from '@/components/ProseSection';
-import { Section } from '@/components/Section';
-import { Timeline, type TimelineItem } from '@/components/Timeline';
 import { createWebPageSchema, localBusinessLetsKawanishi, organizationSchema } from '@/lib/schemas';
 import { siteConfig } from '@/lib/siteConfig';
 import type { Metadata } from 'next';
-import Link from 'next/link';
 
 const SITE_URL = siteConfig.url;
 
@@ -72,60 +64,6 @@ const companyInfoRows: InfoRow[] = [
   },
 ];
 
-const timelineItems: TimelineItem[] = [
-  {
-    year: '2026',
-    month: '4月',
-    event: 'sokoe Day 自社運営施設で本番稼働開始',
-    detail:
-      'レッツ倶楽部川西能勢口（兵庫県川西市）で、デイサービス向けアプリ sokoe Day の本番運用を開始。',
-  },
-  {
-    year: '2026',
-    month: '5月',
-    event: '株式会社sokoe 設立',
-    detail:
-      '大阪府大阪市淀川区に本社を構え、医療・介護・福祉領域のソフトウェア開発と AI コンサルティング事業を開始。',
-  },
-  {
-    year: '2027',
-    event: 'sokoe Facility（仮名）公開予定',
-    detail: '住宅型・施設型介護向けシステムを Phase 2 で公開予定。',
-  },
-  {
-    year: '2027',
-    event: 'sokoe Pharma（仮名）公開予定',
-    detail: '薬局向けアプリを Phase 3 で公開予定。',
-  },
-];
-
-const businesses = [
-  {
-    name: 'sokoe Day',
-    desc: 'デイサービス向けアプリ。1日型・半日型・ハイブリッド型に対応。',
-    status: 'Now Live',
-    href: '/day-service/',
-  },
-  {
-    name: 'sokoe AI Lab',
-    desc: '医療・介護・福祉領域の AI コンサルティング。戦略策定／導入支援／研修／顧問契約。',
-    status: 'Now Live',
-    href: '/consulting/',
-  },
-  {
-    name: 'sokoe Facility（仮名）',
-    desc: '介護施設向けシステム。住宅型・施設型に対応予定。',
-    status: 'Coming Soon',
-    href: null,
-  },
-  {
-    name: 'sokoe Pharma（仮名）',
-    desc: '薬局向けアプリ。処方箋管理・服薬指導等に対応予定。',
-    status: 'Coming Soon',
-    href: null,
-  },
-] as const;
-
 const breadcrumbItems = [{ label: '会社情報' }];
 
 export default function AboutPage() {
@@ -139,7 +77,7 @@ export default function AboutPage() {
           description: '株式会社sokoe の会社概要。',
           url: `${SITE_URL}/about/`,
           datePublished: '2026-05-12',
-          dateModified: '2026-05-12',
+          dateModified: '2026-05-19',
         })}
       />
 
@@ -165,97 +103,10 @@ export default function AboutPage() {
           <p>私たち sokoe の事業すべてが、この一点を目的にしています。</p>
         </ProseSection>
 
-        {/* 会社情報テーブル */}
+        {/* 会社情報テーブル（メッセージ層の下に事実層を残す） */}
         <ProseSection eyebrow="COMPANY INFO" title="会社情報">
           <InfoTable rows={companyInfoRows} caption="株式会社sokoe 会社情報" />
         </ProseSection>
-
-        {/* 事業ポートフォリオ */}
-        <Section spacing="md" className="bg-bg-muted">
-          <Container size="default">
-            <Label className="mb-4">BUSINESS</Label>
-            <Heading level="h2" className="mb-12">
-              4つの事業
-            </Heading>
-            <div className="grid gap-6 md:grid-cols-2">
-              {businesses.map((b, i) => {
-                const ordinal = String(i + 1).padStart(2, '0');
-                const statusClass =
-                  b.status === 'Now Live' ? 'text-brand-red' : 'text-charcoal-muted';
-                if (b.href) {
-                  return (
-                    <Link key={b.name} href={b.href} className="block">
-                      <Card interactive className="h-full">
-                        <div className="flex items-start justify-between gap-4">
-                          <div className="font-display text-3xl tracking-tight text-ink">
-                            {ordinal}
-                          </div>
-                          <Label className={statusClass}>{b.status}</Label>
-                        </div>
-                        <h3 className="mt-6 text-xl font-medium text-ink">{b.name}</h3>
-                        <p className="mt-3 text-base leading-relaxed text-charcoal">{b.desc}</p>
-                        <p className="mt-6 text-sm text-brand-red">詳しく見る →</p>
-                      </Card>
-                    </Link>
-                  );
-                }
-                return (
-                  <Card key={b.name} className="h-full">
-                    <div className="flex items-start justify-between gap-4">
-                      <div className="font-display text-3xl tracking-tight text-ink">{ordinal}</div>
-                      <Label className={statusClass}>{b.status}</Label>
-                    </div>
-                    <h3 className="mt-6 text-xl font-medium text-ink">{b.name}</h3>
-                    <p className="mt-3 text-base leading-relaxed text-charcoal">{b.desc}</p>
-                  </Card>
-                );
-              })}
-            </div>
-          </Container>
-        </Section>
-
-        {/* 関連施設 */}
-        <ProseSection eyebrow="OUR FACILITY" title="自社で運営している介護施設があります。">
-          <p>
-            sokoe の代表取締役 槌田一輝は、兵庫県川西市の <strong>レッツ倶楽部川西能勢口</strong>{' '}
-            （1日型デイサービス）で施設長代理を兼任しています。デイサービス向けアプリ sokoe Day
-            は、この施設で 2026年4月から本番稼働中です。
-          </p>
-          <p>
-            私たちが作るソフトウェアと AI
-            は、机上の構想ではありません。施設長代理が毎日使い、現場スタッフからのフィードバックを反映しながら磨き上げているものです。
-          </p>
-        </ProseSection>
-
-        {/* 沿革 */}
-        <ProseSection eyebrow="HISTORY" title="沿革・ロードマップ" variant="muted">
-          <Timeline items={timelineItems} />
-        </ProseSection>
-
-        {/* CTA */}
-        <Section spacing="md">
-          <Container size="default">
-            <div className="border-t border-border-soft pt-12 text-center">
-              <Heading level="h3" className="mb-4">
-                もっと詳しく知りたい方へ
-              </Heading>
-              <p className="mb-8 text-base text-charcoal">
-                代表のプロフィールや、創業の背景をお読みください。
-              </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <Link href="/about/profile/">
-                  <Button variant="secondary">代表プロフィール</Button>
-                </Link>
-                <Link href="/about/founder-message/">
-                  <Button variant="secondary">代表メッセージ</Button>
-                </Link>
-                <Link href="/contact/">
-                  <Button variant="primary">お問い合わせ</Button>
-                </Link>
-              </div>
-            </div>
-          </Container>
-        </Section>
       </main>
       <Footer />
     </>
