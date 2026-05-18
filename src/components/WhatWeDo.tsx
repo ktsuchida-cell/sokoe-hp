@@ -14,7 +14,8 @@ type BusinessCard = {
   description: string;
   href: string;
   status: 'live' | 'soon';
-  isProduct: 'day' | 'aiLab' | null; // sokoe Day だけオレンジtint
+  /** ブランド色：Day=オレンジ, Pharma=緑, AI Lab=赤, Facility=中立 */
+  isProduct: 'day' | 'pharma' | 'aiLab' | null;
 };
 
 const businesses: BusinessCard[] = [
@@ -41,10 +42,10 @@ const businesses: BusinessCard[] = [
     number: '03',
     name: 'sokoe',
     product: 'Pharma',
-    description: '薬局向けアプリ。Phase 3（2027年後半）で公開予定。',
+    description: '緑をコンセプトカラーとした薬局向けアプリ。Phase 3（2027年後半）で公開予定。',
     href: '/pharmacy/',
     status: 'soon',
-    isProduct: null,
+    isProduct: 'pharma',
   },
   {
     number: '04',
@@ -96,6 +97,7 @@ export function WhatWeDo() {
                     className={cn(
                       'font-serif text-[42px] md:text-[52px] font-bold leading-none',
                       biz.isProduct === 'day' && 'text-product-orange/50',
+                      biz.isProduct === 'pharma' && 'text-emerald-600/50',
                       biz.isProduct === 'aiLab' && 'text-brand-red/50',
                       !biz.isProduct && 'text-mid/40',
                     )}
@@ -121,6 +123,7 @@ export function WhatWeDo() {
                   <span
                     className={cn(
                       biz.isProduct === 'day' && 'text-product-orange',
+                      biz.isProduct === 'pharma' && 'text-emerald-600',
                       biz.isProduct === 'aiLab' && 'text-brand-red',
                     )}
                   >
