@@ -2,7 +2,6 @@ import { Container } from '@/components/Container';
 import { Heading } from '@/components/Heading';
 import { Label } from '@/components/Label';
 import { Section } from '@/components/Section';
-import Link from 'next/link';
 
 type Improvement = {
   title: string;
@@ -55,21 +54,20 @@ export function DaySelfUse() {
         <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16">
           <Label className="mb-5">AFTER INTRODUCTION</Label>
           <Heading level="h2" serif className="mb-6">
-            自社導入後、
+            50 名規模のデイサービスの自社は導入後、
             <br className="hidden md:block" />
             現場はこう変わった。
           </Heading>
-          <p className="text-stone text-base md:text-lg leading-[1.85]">
-            sokoe Day を導入した、自社運営する50名規模のデイサービス「
-            <Link
-              href="/about/"
-              className="text-ink font-semibold underline-offset-4 hover:underline"
-            >
-              レッツ倶楽部川西能勢口
-            </Link>
-            」では、こう変わりました。
-            <br className="hidden md:block" />
-            代表が現役の施設長代理として、毎日 sokoe Day を使い、改善し、また使っています。
+          {/*
+            2 行固定。最長行「代表が施設長代理として、毎日改善しています。」が
+            20 全角字なので、スマホ 14px でも 1 行に収まる。caption に
+            「レッツ倶楽部川西能勢口」「2026 年 4 月稼働開始」を集約済みで、
+            リードでは情報密度より読みやすさを優先する。
+          */}
+          <p className="text-stone text-[14px] sm:text-base md:text-lg leading-[1.85]">
+            50 名規模のデイサービスでの実体験です。
+            <br />
+            代表が施設長代理として、毎日改善しています。
           </p>
         </div>
 
