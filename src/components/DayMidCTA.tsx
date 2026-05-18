@@ -40,10 +40,12 @@ export function DayMidCTA() {
 
       <Container>
         <div className="max-w-3xl mx-auto text-center">
-          <Heading level="h3" serif className="mb-6">
-            気になった方は、
-            <br className="hidden md:block" />
-            こちらからどうぞ。
+          <Heading
+            level="h2"
+            serif
+            className="mb-6 !text-[18px] sm:!text-[26px] md:!text-[32px] lg:!text-[40px]"
+          >
+            気になった方は、こちらからどうぞ。
           </Heading>
 
           <p className="text-stone text-base md:text-lg leading-[1.85] mb-10">
