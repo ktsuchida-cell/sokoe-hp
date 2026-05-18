@@ -22,9 +22,9 @@ export function Hero() {
           style={{ backgroundImage: "url('/images/hero/corporate-hero-generated.svg')" }}
           aria-hidden="true"
         />
-        {/* SVG 自体が高明度なので、オーバーレイは軽め。CTA 周辺は下方向のグラデで白を強める */}
+        {/* SVG が見えるよう、上半分は透明、下半分だけ白寄りで CTA の可読性を確保 */}
         <div
-          className="absolute inset-0 bg-gradient-to-b from-white/0 via-white/20 to-white/60"
+          className="absolute inset-0 bg-gradient-to-b from-white/0 via-white/5 to-white/45"
           aria-hidden="true"
         />
       </div>
