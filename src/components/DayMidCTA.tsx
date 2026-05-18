@@ -13,11 +13,10 @@ import Link from 'next/link';
  *   - 従：料金を確認する（#pricing アンカーへジャンプ）
  *
  * 視覚言語：
- *   - 背景に「ノート + ペン + デスク」の Unsplash 画像（Clay Banks 撮影、
- *     人感なし、Unsplash License）を配置
- *   - 上に白オーバーレイ（white/78）でテキスト可読性を確保しつつ、隣接の
- *     DaySolution（tint-orange）と同系色にならないようトーンを白寄りに振る
- *   - LastCTA（オレンジベタ）とも色帯がぶつからない
+ *   - 背景に「モダンオフィスでのチームディスカッション」写真
+ *     （Pexels License、コンサル感のある現場対話シーン）
+ *   - 白オーバーレイで可読性を確保しつつ、人物のシルエットが「現場で
+ *     一緒に動く」雰囲気を残す
  */
 export function DayMidCTA() {
   return (
@@ -28,14 +27,14 @@ export function DayMidCTA() {
       {/* 背景画像 + クリームオーバーレイ */}
       <div className="absolute inset-0 -z-10">
         <Image
-          src="/images/midcta/desk-notebook.jpg"
+          src="/images/midcta/consult-board.jpg"
           alt=""
           fill
           quality={80}
           sizes="100vw"
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-white/78 backdrop-blur-[2px]" aria-hidden="true" />
+        <div className="absolute inset-0 bg-white/72 backdrop-blur-[2px]" aria-hidden="true" />
       </div>
 
       <Container>

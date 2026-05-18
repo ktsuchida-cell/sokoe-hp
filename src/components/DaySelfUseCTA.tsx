@@ -12,10 +12,9 @@ import Link from 'next/link';
  * 「相談（高温）」と「資料 DL（低温）」の 2 つを並列で受ける。
  *
  * 視覚言語：
- *   - 背景に「タブレットを操作する人の横顔（顔は写らない）」の Pexels 画像
- *     （Yan Krukau 撮影、Pexels License）を配置。アプリ使用中の現場感が出る
+ *   - 背景に「モダンオフィスの廊下で立ち話するコンサル」写真
+ *     （Pexels License、現場で話している雰囲気のスタイリッシュなシーン）
  *   - 上に白オーバーレイ（white/70）で可読性を確保しつつ、シーン感を残す
- *   - DayMidCTA（デスク + ノート）とは別画像で、2 つの中間 CTA が同一視されない
  */
 export function DaySelfUseCTA() {
   return (
@@ -26,7 +25,7 @@ export function DaySelfUseCTA() {
       {/* 背景画像 + 白オーバーレイ */}
       <div className="absolute inset-0 -z-10">
         <Image
-          src="/images/midcta/selfuse-cta-room.jpg"
+          src="/images/midcta/consult-hallway.jpg"
           alt=""
           fill
           quality={80}

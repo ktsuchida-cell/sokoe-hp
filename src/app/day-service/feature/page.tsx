@@ -126,10 +126,10 @@ export default function DayServiceFeaturePage() {
           className="relative isolate overflow-hidden border-t border-border py-16 md:py-20"
           aria-label="料金確認後の中間 CTA"
         >
-          {/* 背景画像（チェックリストに書き込む手） + 白オーバーレイ */}
+          {/* 背景画像（モダンオフィスでチームディスカッション） + 白オーバーレイ */}
           <div className="absolute inset-0 -z-10">
             <Image
-              src="/images/midcta/pricing-cta-checklist.jpg"
+              src="/images/midcta/consult-discussion.jpg"
               alt=""
               fill
               quality={80}
