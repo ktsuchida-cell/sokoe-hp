@@ -27,7 +27,7 @@ export function DayMidCTA() {
       {/* 背景画像 + クリームオーバーレイ */}
       <div className="absolute inset-0 -z-10">
         <Image
-          src="/images/midcta/consult-board.jpg"
+          src="/images/midcta/consult-board-jp.jpg"
           alt=""
           fill
           quality={80}

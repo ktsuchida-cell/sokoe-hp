@@ -129,7 +129,7 @@ export default function DayServiceFeaturePage() {
           {/* 背景画像（モダンオフィスでチームディスカッション） + 白オーバーレイ */}
           <div className="absolute inset-0 -z-10">
             <Image
-              src="/images/midcta/consult-discussion.jpg"
+              src="/images/midcta/consult-discussion-jp.jpg"
               alt=""
               fill
               quality={80}

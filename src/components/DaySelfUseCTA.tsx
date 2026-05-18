@@ -25,7 +25,7 @@ export function DaySelfUseCTA() {
       {/* 背景画像 + 白オーバーレイ */}
       <div className="absolute inset-0 -z-10">
         <Image
-          src="/images/midcta/consult-hallway.jpg"
+          src="/images/midcta/consult-hallway-jp.jpg"
           alt=""
           fill
           quality={80}
