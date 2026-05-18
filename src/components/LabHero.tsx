@@ -14,8 +14,9 @@ import Link from 'next/link';
  * - コーポレート赤を継承（オレンジ不使用）
  * - 「机上ではなく、現場で動かす」コンサル思想
  *
- * 背景：無人のモダン会議室写真（Pexels License、人感なし、ガラス壁 + 白テーブル）。
- * コンサルファーム感を出し、白オーバーレイで文字の可読性を確保する。
+ * 背景：日本人コンサルがホワイトボード前で戦略提示しているシーン
+ * （Pexels License）。「現場で動かす AI」という主張に呼応する人物入り構図。
+ * 白オーバーレイで文字の可読性を確保する。
  */
 export function LabHero() {
   return (
@@ -23,7 +24,7 @@ export function LabHero() {
       {/* 背景写真 + 白系オーバーレイ */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <Image
-          src="/images/hero/lab-hero-boardroom.jpg"
+          src="/images/hero/lab-hero-consult-jp.jpg"
           alt=""
           fill
           priority
