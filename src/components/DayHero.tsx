@@ -56,7 +56,7 @@ export function DayHero() {
               <br />
               「心のゆとり」を残し、残業を減らす、
               <br />
-              SOKOE デイサービスアプリ
+              SOKOEデイサービスアプリ
             </Heading>
 
             <p className="mx-auto mt-6 max-w-lg text-base leading-relaxed text-charcoal md:mt-8 md:text-lg md:leading-[1.85] lg:mx-0">
