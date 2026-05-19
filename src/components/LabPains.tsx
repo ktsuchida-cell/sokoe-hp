@@ -32,10 +32,14 @@ const pains: Pain[] = [
 ];
 
 /**
- * AI Lab LP「AI導入の壁」セクション
+ * AI Lab LP「AI 導入の壁」セクション
  *
- * Hero 直後で課題提示。3 カラムカードに 01-03 の番号、太字タイトル、本文、
- * 右下に brand-red の薄塗り円バッジ + アイコン。
+ * Hero 直後で課題提示。参考画像の特徴を反映：
+ *   - 見出し下に短い赤アンダーライン（中央寄せ、幅 48px）
+ *   - 薄い赤の serif 番号 01-03（不透明度低めで主張を抑える）
+ *   - 本文 12-13px（参考のサイズに合わせる）
+ *   - 右下に薄ピンク円バッジ + 線画アイコン（細め、控えめ）
+ *   - hover shadow は撤去して静的な軽さを保つ
  */
 export function LabPains() {
   return (
@@ -45,6 +49,10 @@ export function LabPains() {
           <Heading level="h2" serif>
             AI 導入で、こんな壁はありませんか？
           </Heading>
+          <div
+            className="mt-5 mx-auto h-[3px] w-12 rounded-full bg-brand-red"
+            aria-hidden="true"
+          />
         </div>
 
         <ul className="mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
@@ -53,23 +61,23 @@ export function LabPains() {
             return (
               <li
                 key={pain.number}
-                className="flex flex-col rounded-[10px] bg-white border border-border p-7 md:p-8 transition-shadow hover:shadow-md"
+                className="flex flex-col rounded-[12px] bg-white border border-border p-7 md:p-8"
               >
-                <p className="mb-4 font-serif text-2xl md:text-3xl font-bold text-brand-red leading-none">
+                <p className="mb-3 font-serif text-2xl md:text-3xl font-bold text-brand-red/50 leading-none">
                   {pain.number}
                 </p>
-                <h3 className="mb-4 font-bold text-lg md:text-xl text-ink leading-snug whitespace-pre-line">
+                <h3 className="mb-3 font-bold text-[15px] md:text-base text-ink leading-[1.5] whitespace-pre-line">
                   {pain.title}
                 </h3>
-                <p className="text-stone text-[14px] md:text-[15px] leading-[1.85] mb-6 flex-1">
+                <p className="text-stone text-[12px] md:text-[13px] leading-[1.85] mb-6 flex-1">
                   {pain.description}
                 </p>
                 <div className="flex justify-end">
                   <span
-                    className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-brand-red/10"
+                    className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-tint-pink/60"
                     aria-hidden="true"
                   >
-                    <Icon className="h-6 w-6 text-brand-red" strokeWidth={1.5} />
+                    <Icon className="h-5 w-5 text-brand-red/70" strokeWidth={1.3} />
                   </span>
                 </div>
               </li>
