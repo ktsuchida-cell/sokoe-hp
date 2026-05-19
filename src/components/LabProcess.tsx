@@ -2,6 +2,7 @@ import { Container } from '@/components/Container';
 import { Heading } from '@/components/Heading';
 import { Section } from '@/components/Section';
 import {
+  ChevronRight,
   ClipboardList,
   type LucideIcon,
   MessageCircle,
@@ -9,6 +10,7 @@ import {
   Route,
   UserCheck,
 } from 'lucide-react';
+import { Fragment } from 'react';
 
 type ProcessStep = {
   number: string;
@@ -53,9 +55,11 @@ const processSteps: ProcessStep[] = [
 /**
  * LabProcess セクション「導入までの 5 ステップ」
  *
- * 5 ステップを横並びタイムラインで表示。
- * カード上部の番号バブル列に水平赤線を引いて視覚的に「流れ」を表現する
- * （PC のみ）。スマホは縦並び。
+ * 参考画像準拠：
+ *   - 見出し下に短い赤アンダーライン
+ *   - 5 ステップを横並び、背景は soft（カードの border / shadow なし）
+ *   - 各ステップ：薄ピンクの円番号バブル（赤文字 serif）→ タイトル → 説明 → 線画アイコン
+ *   - ステップ間に小さな赤矢印 ▶ を配置（PC のみ）
  */
 export function LabProcess() {
   return (
@@ -65,48 +69,45 @@ export function LabProcess() {
           <Heading level="h2" serif>
             導入までの 5 ステップ
           </Heading>
-        </div>
-
-        <div className="relative mx-auto max-w-6xl">
-          {/* 横の赤い接続線（PC のみ表示）。番号バブル中央（top-7）に揃える */}
           <div
-            className="hidden lg:block absolute left-[10%] right-[10%] top-7 h-px bg-brand-red/30"
+            className="mt-5 mx-auto h-[3px] w-12 rounded-full bg-brand-red"
             aria-hidden="true"
           />
+        </div>
 
-          <ol className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-5">
-            {processSteps.map((step) => {
-              const Icon = step.icon;
-              return (
-                <li key={step.number} className="flex flex-col items-center text-center">
-                  {/* 番号バブル */}
+        <ol className="mx-auto max-w-6xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr_auto_1fr] gap-y-10 gap-x-4 items-start">
+          {processSteps.map((step, i) => {
+            const Icon = step.icon;
+            return (
+              <Fragment key={step.number}>
+                <li className="flex flex-col items-center text-center">
                   <span
-                    className="relative z-10 mb-5 inline-flex h-14 w-14 items-center justify-center rounded-full bg-brand-red text-white font-serif text-lg font-bold shadow-md"
+                    className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-tint-pink/70 font-serif text-[13px] font-bold text-brand-red"
                     aria-hidden="true"
                   >
                     {step.number}
                   </span>
-
-                  {/* カード本体 */}
-                  <div className="flex w-full flex-1 flex-col items-center rounded-[16px] bg-white border border-border p-6 transition-shadow hover:shadow-md">
-                    <h3 className="font-bold text-base md:text-[17px] text-ink leading-snug mb-3 whitespace-pre-line">
-                      {step.title}
-                    </h3>
-                    <p className="text-stone text-[12px] md:text-[13px] leading-[1.85] mb-5 flex-1">
-                      {step.description}
-                    </p>
-                    <span
-                      className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-brand-red/10"
-                      aria-hidden="true"
-                    >
-                      <Icon className="h-5 w-5 text-brand-red" strokeWidth={1.5} />
-                    </span>
-                  </div>
+                  <h3 className="font-bold text-[13px] md:text-sm text-ink leading-[1.45] mb-2 whitespace-pre-line">
+                    {step.title}
+                  </h3>
+                  <p className="text-stone text-[11px] md:text-[12px] leading-[1.75] mb-4">
+                    {step.description}
+                  </p>
+                  <Icon className="h-7 w-7 text-charcoal" strokeWidth={1.4} />
                 </li>
-              );
-            })}
-          </ol>
-        </div>
+
+                {i < processSteps.length - 1 && (
+                  <li
+                    className="hidden lg:flex items-center justify-center pt-3"
+                    aria-hidden="true"
+                  >
+                    <ChevronRight className="h-4 w-4 text-brand-red" strokeWidth={2.5} />
+                  </li>
+                )}
+              </Fragment>
+            );
+          })}
+        </ol>
       </Container>
     </Section>
   );
