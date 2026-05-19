@@ -5,6 +5,7 @@ import { JsonLd } from '@/components/JsonLd';
 import { LabFAQ } from '@/components/LabFAQ';
 import { LabHero } from '@/components/LabHero';
 import { LabLastCTA } from '@/components/LabLastCTA';
+import { LabPains } from '@/components/LabPains';
 import { LabPhilosophy } from '@/components/LabPhilosophy';
 import { LabProcess } from '@/components/LabProcess';
 import { LabServices } from '@/components/LabServices';
@@ -72,6 +73,7 @@ export default function ConsultingPage() {
 
       <main>
         <LabHero />
+        <LabPains />
         <LabPhilosophy />
         <LabServices />
         <LabProcess />
