@@ -66,28 +66,21 @@ export function LabBusinessExamples() {
           </Heading>
         </div>
 
-        <ul className="mx-auto max-w-6xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+        <ul className="mx-auto max-w-7xl grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4">
           {examples.map((example) => {
             const Icon = example.icon;
             return (
               <li
                 key={example.title}
-                className="flex items-start gap-4 rounded-[12px] bg-white border border-border p-6 md:p-7 transition-shadow hover:shadow-md"
+                className="flex flex-col items-center text-center rounded-[14px] bg-white border border-border p-4 md:p-5 transition-shadow hover:shadow-md"
               >
-                <span
-                  className="shrink-0 inline-flex h-12 w-12 items-center justify-center rounded-full bg-brand-red/10"
-                  aria-hidden="true"
-                >
-                  <Icon className="h-5 w-5 text-brand-red" strokeWidth={1.75} />
-                </span>
-                <div className="flex-1 min-w-0">
-                  <h3 className="mb-2 font-bold text-base md:text-lg text-ink leading-snug">
-                    {example.title}
-                  </h3>
-                  <p className="text-stone text-[13px] md:text-[14px] leading-[1.85]">
-                    {example.description}
-                  </p>
-                </div>
+                <Icon className="mb-3 h-7 w-7 text-charcoal" strokeWidth={1.4} />
+                <h3 className="mb-1.5 font-bold text-[13px] md:text-[14px] text-ink leading-snug">
+                  {example.title}
+                </h3>
+                <p className="text-stone text-[11px] md:text-[12px] leading-[1.7]">
+                  {example.description}
+                </p>
               </li>
             );
           })}

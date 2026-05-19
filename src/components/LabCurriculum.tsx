@@ -29,13 +29,13 @@ const curriculum: CurriculumItem[] = [
     number: '02',
     icon: ShieldCheck,
     title: '医療介護現場での注意点',
-    description: '情報管理・法令・運用上の注意点と、安全に使うためのポイントを理解。',
+    description: '情報管理・法令・倫理など、安全に使うためのポイントを理解。',
   },
   {
     number: '03',
     icon: Sparkles,
     title: '明日から使える AI 活用',
-    description: '日々の業務で使える具体的な活用アイデアを実践演習。',
+    description: '日々の業務で使える具体的な活用アイデアと実践演習。',
   },
   {
     number: '04',
@@ -53,15 +53,15 @@ const curriculum: CurriculumItem[] = [
     number: '06',
     icon: RefreshCw,
     title: '定着支援',
-    description: '振り返りと改善の仕組みから、現場に定着させる方法を学ぶ。',
+    description: '振り返りと改善の仕組みで、現場に定着させる方法を学ぶ。',
   },
 ];
 
 /**
- * LabCurriculum セクション「現場職員から管理者まで学べる、実務直結のAIカリキュラム」
+ * LabCurriculum セクション「現場職員から管理者まで学べる、実務直結の AI カリキュラム」
  *
- * 黒背景（variant="ink"）、3 × 2 グリッドの白カード × 6。
- * 各カードに 01-06 の serif 番号、lucide アイコン、太字タイトル、本文。
+ * 黒背景、3 × 2 の横長カードグリッド（参考画像準拠）。
+ * 各カード：左にアイコン円バッジ + 番号、右にタイトル + 本文（横並び）。
  *
  * id="curriculum" は LabHero の「カリキュラムを見る」ボタンの anchor target。
  */
@@ -77,31 +77,36 @@ export function LabCurriculum() {
           </Heading>
         </div>
 
-        <ul className="mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+        <ul className="mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3">
           {curriculum.map((item) => {
             const Icon = item.icon;
             return (
               <li
                 key={item.number}
-                className="rounded-[12px] bg-white p-6 md:p-7 transition-transform hover:-translate-y-1"
+                className="rounded-[8px] bg-white/[0.04] border border-white/10 p-5 transition-colors hover:border-white/30"
               >
-                <div className="flex items-start justify-between mb-4">
-                  <p className="font-serif text-2xl md:text-3xl font-bold text-brand-red leading-none">
-                    {item.number}
-                  </p>
+                <div className="flex items-start gap-4">
+                  {/* 左：アイコン円 */}
                   <span
-                    className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-brand-red/10"
+                    className="shrink-0 inline-flex h-10 w-10 items-center justify-center rounded-md bg-brand-red/15"
                     aria-hidden="true"
                   >
                     <Icon className="h-5 w-5 text-brand-red" strokeWidth={1.75} />
                   </span>
+
+                  {/* 右：番号(小) + タイトル + 本文 */}
+                  <div className="flex-1 min-w-0">
+                    <p className="font-serif text-[13px] font-bold text-brand-red leading-none mb-1.5 tracking-wider">
+                      {item.number}
+                    </p>
+                    <h3 className="mb-2 font-bold text-[15px] md:text-base text-white leading-snug">
+                      {item.title}
+                    </h3>
+                    <p className="text-white/70 text-[12px] md:text-[13px] leading-[1.8]">
+                      {item.description}
+                    </p>
+                  </div>
                 </div>
-                <h3 className="mb-3 font-bold text-base md:text-lg text-ink leading-snug">
-                  {item.title}
-                </h3>
-                <p className="text-stone text-[13px] md:text-[14px] leading-[1.85]">
-                  {item.description}
-                </p>
               </li>
             );
           })}

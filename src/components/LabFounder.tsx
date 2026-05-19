@@ -27,7 +27,7 @@ export function LabFounder() {
             <div className="shrink-0 mx-auto md:mx-0">
               <div className="relative h-32 w-32 md:h-36 md:w-36 rounded-full overflow-hidden border border-coral-light">
                 <Image
-                  src="/images/founder/lab-founder-portrait.jpg"
+                  src="/images/founder/lab-founder-jp-smile.jpg"
                   alt="代表 槌田 一輝のプロフィール写真"
                   fill
                   quality={85}
