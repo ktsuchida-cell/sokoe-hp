@@ -30,30 +30,26 @@ export function LabLastCTA() {
 
       <Container>
         <div className="max-w-3xl mx-auto text-center">
-          <Heading level="h2" tone="white" serif className="mb-6">
-            まずは、現場の業務を
+          <Heading level="h2" tone="white" serif className="mb-4">
+            まずは、現場の課題やご一緒に
             <br className="hidden md:block" />
-            一緒に整理しませんか。
+            解決策を考えましょう。
           </Heading>
 
-          <p className="text-white/90 text-base md:text-lg leading-[1.85] mb-10">
-            無料相談では、課題のヒアリングと改善のヒントをご提案します。
+          <p className="text-white/95 text-lg md:text-xl leading-[1.7] mb-10 font-semibold">
+            小さな一歩から、確かな変化を。
           </p>
 
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/contact/">
+            <Link href="/contact/?type=sokoe-ailab">
               <Button
                 size="lg"
-                className="bg-white text-brand-red hover:bg-white/90 active:bg-white/80"
+                className="bg-white text-brand-red hover:bg-white/90 active:bg-white/80 !rounded-full min-w-[200px]"
               >
                 無料相談する →
               </Button>
             </Link>
           </div>
-
-          <p className="text-white/70 text-sm mt-8">
-            ※ 初回相談は完全無料。1 営業日以内に折り返しご連絡します。
-          </p>
         </div>
       </Container>
     </section>

@@ -10,11 +10,11 @@ import { useEffect, useState } from 'react';
 
 const labNav = [
   { label: 'サービス', href: '#services' },
-  { label: 'カリキュラム', href: '#curriculum' },
   { label: '導入事例', href: '#use-cases' },
-  { label: '支援の流れ', href: '#process' },
-  { label: 'よくあるご質問', href: '#faq' },
-  { label: '会社情報', href: '/about/' },
+  { label: 'よくある質問', href: '#faq' },
+  { label: 'お役立ち情報', href: '/guide/' },
+  { label: 'イベント情報', href: '/events/' },
+  { label: 'AI活用コラム', href: '/column/' },
 ];
 
 /**
@@ -52,7 +52,7 @@ export function LabHeader() {
               <span className="hidden md:flex flex-col leading-tight border-l border-border pl-3">
                 <span className="font-serif text-[13px] font-bold text-ink">AI Lab</span>
                 <span className="text-[10px] text-mid font-medium whitespace-nowrap">
-                  医療・介護向けAIコンサルティング / AI研修
+                  医療・介護のこれからを、AIの力で。
                 </span>
               </span>
             </Link>
