@@ -34,13 +34,13 @@ const processSteps: ProcessStep[] = [
     number: '03',
     icon: Route,
     title: '施策設計・\nロードマップ作成',
-    description: '解決策となるロードマップをご提案します。',
+    description: '優先施策とロードマップをご提案します。',
   },
   {
     number: '04',
     icon: UserCheck,
-    title: '研修・実践支援',
-    description: '研修や実践支援を通じて現場の活用を支援します。',
+    title: '研修 / 実装支援',
+    description: '研修実施と実装支援で現場での活用を支援します。',
   },
   {
     number: '05',
@@ -51,10 +51,11 @@ const processSteps: ProcessStep[] = [
 ];
 
 /**
- * LabProcess セクション「導入までの5ステップ」
+ * LabProcess セクション「導入までの 5 ステップ」
  *
- * 5 列横並びカード（スマホは 1 列縦並び）。各カードに 01-05 番号、
- * lucide アイコン、太字タイトル、本文。
+ * 5 ステップを横並びタイムラインで表示。
+ * カード上部の番号バブル列に水平赤線を引いて視覚的に「流れ」を表現する
+ * （PC のみ）。スマホは縦並び。
  */
 export function LabProcess() {
   return (
@@ -66,35 +67,46 @@ export function LabProcess() {
           </Heading>
         </div>
 
-        <ol className="mx-auto max-w-6xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-5">
-          {processSteps.map((step) => {
-            const Icon = step.icon;
-            return (
-              <li
-                key={step.number}
-                className="flex flex-col rounded-[12px] bg-white border border-border p-6 transition-shadow hover:shadow-md"
-              >
-                <p className="font-serif text-xl md:text-2xl font-bold text-brand-red leading-none mb-3">
-                  {step.number}
-                </p>
-                <h3 className="font-bold text-sm md:text-base text-ink leading-snug mb-3 whitespace-pre-line">
-                  {step.title}
-                </h3>
-                <p className="text-stone text-[12px] md:text-[13px] leading-[1.85] mb-5 flex-1">
-                  {step.description}
-                </p>
-                <div className="flex justify-center">
+        <div className="relative mx-auto max-w-6xl">
+          {/* 横の赤い接続線（PC のみ表示）。番号バブル中央（top-7）に揃える */}
+          <div
+            className="hidden lg:block absolute left-[10%] right-[10%] top-7 h-px bg-brand-red/30"
+            aria-hidden="true"
+          />
+
+          <ol className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-5">
+            {processSteps.map((step) => {
+              const Icon = step.icon;
+              return (
+                <li key={step.number} className="flex flex-col items-center text-center">
+                  {/* 番号バブル */}
                   <span
-                    className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-brand-red/10"
+                    className="relative z-10 mb-5 inline-flex h-14 w-14 items-center justify-center rounded-full bg-brand-red text-white font-serif text-lg font-bold shadow-md"
                     aria-hidden="true"
                   >
-                    <Icon className="h-5 w-5 text-brand-red" strokeWidth={1.75} />
+                    {step.number}
                   </span>
-                </div>
-              </li>
-            );
-          })}
-        </ol>
+
+                  {/* カード本体 */}
+                  <div className="flex w-full flex-1 flex-col items-center rounded-[16px] bg-white border border-border p-6 transition-shadow hover:shadow-md">
+                    <h3 className="font-bold text-base md:text-[17px] text-ink leading-snug mb-3 whitespace-pre-line">
+                      {step.title}
+                    </h3>
+                    <p className="text-stone text-[12px] md:text-[13px] leading-[1.85] mb-5 flex-1">
+                      {step.description}
+                    </p>
+                    <span
+                      className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-brand-red/10"
+                      aria-hidden="true"
+                    >
+                      <Icon className="h-5 w-5 text-brand-red" strokeWidth={1.5} />
+                    </span>
+                  </div>
+                </li>
+              );
+            })}
+          </ol>
+        </div>
       </Container>
     </Section>
   );
