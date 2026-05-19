@@ -14,25 +14,47 @@ const badges = [
 ];
 
 /**
- * sokoe AI Lab LP Hero セクション v5
+ * sokoe AI Lab LP Hero セクション v6
  *
- * 参考画像「ファーストビュー」準拠：
- *   - 2 カラム（左 48% / 右 52%）
- *   - 左：見出し（3 行）+ サブコピー + CTA 2 つ + チップ 4 つ
- *   - 右：日本人 3 名 + ノートPC の笑顔シーン（浮きカードは撤去）
- *   - 見出しの赤強調：「医療・介護」と「"使われ続けるAI"」
+ * 参考画像「明るい白背景＋右側に日本人 3 名のシーン」準拠：
+ *   - フルブリード背景画像を `object-right` で右寄せ配置
+ *   - 左→右の白グラデオーバーレイで左カラムのテキスト可読性を確保
+ *   - テキストは左寄せ、画像が見える右側はクリーンに保つ
+ *   - 浮きカードは無し（参考画像になし）
  */
 export function LabHero() {
   return (
-    <Section spacing="md">
-      <Container>
-        <div className="grid items-center gap-12 lg:grid-cols-[48fr_52fr] lg:gap-14 xl:gap-16">
-          {/* ─── 左：見出し + サブコピー + CTA + チップ ─── */}
-          <div>
+    <div className="relative isolate">
+      {/* 背景画像 + 左→右白グラデオーバーレイ */}
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        <Image
+          src="/images/hero/lab-hero-jp-medical-team.jpg"
+          alt=""
+          fill
+          priority
+          quality={85}
+          sizes="100vw"
+          className="object-cover object-right"
+        />
+        {/* デスクトップ：左側を強く白く、右に向かって透過 */}
+        <div
+          className="absolute inset-0 hidden md:block bg-gradient-to-r from-white via-white/90 to-white/25"
+          aria-hidden="true"
+        />
+        {/* モバイル：縦方向の白フェード（読みやすさ優先） */}
+        <div
+          className="absolute inset-0 md:hidden bg-gradient-to-b from-white/90 via-white/80 to-white/50"
+          aria-hidden="true"
+        />
+      </div>
+
+      <Section spacing="lg" className="!bg-transparent">
+        <Container>
+          <div className="max-w-[600px]">
             <Heading
               level="h1"
               serif
-              className="mb-6 !text-[30px] sm:!text-[38px] md:!text-[46px] lg:!text-[44px] xl:!text-[52px] !leading-[1.35] !font-bold tracking-tight"
+              className="mb-6 !text-[30px] sm:!text-[38px] md:!text-[44px] lg:!text-[44px] xl:!text-[52px] !leading-[1.35] !font-bold tracking-tight"
             >
               忙しいAIは怖くて使えない、
               <br />
@@ -42,7 +64,7 @@ export function LabHero() {
               をつくる。
             </Heading>
 
-            <p className="max-w-[520px] text-stone text-[15px] md:text-[16px] leading-[1.9] mb-8">
+            <p className="max-w-[480px] text-stone text-[15px] md:text-[16px] leading-[1.9] mb-8">
               sokoe AI Lab は、現場の声から生まれた AI サービスで、
               <br className="hidden md:block" />
               医療・介護における「記録・情報整理・業務支援」を
@@ -52,12 +74,20 @@ export function LabHero() {
 
             <div className="flex flex-wrap items-center gap-4 mb-8">
               <Link href="/contact/?type=sokoe-ailab">
-                <Button variant="primary" size="lg" className="h-14 min-w-[180px] !rounded-[8px]">
+                <Button
+                  variant="primary"
+                  size="lg"
+                  className="h-14 min-w-[180px] !rounded-[8px]"
+                >
                   無料相談する →
                 </Button>
               </Link>
               <Link href="#services">
-                <Button variant="secondary" size="lg" className="h-14 min-w-[180px] !rounded-[8px]">
+                <Button
+                  variant="secondary"
+                  size="lg"
+                  className="h-14 min-w-[180px] !rounded-[8px]"
+                >
                   AIで、もっと効率化
                 </Button>
               </Link>
@@ -75,26 +105,8 @@ export function LabHero() {
               ))}
             </ul>
           </div>
-
-          {/* ─── 右：写真のみ（浮きカードは撤去） ─── */}
-          <div className="relative">
-            <div
-              className="relative aspect-[3/2] overflow-hidden rounded-[20px]"
-              style={{ boxShadow: '0 20px 60px rgba(0, 0, 0, 0.08)' }}
-            >
-              <Image
-                src="/images/hero/lab-hero-jp-medical-team.jpg"
-                alt="医療介護の現場で AI 活用を進めるチーム"
-                fill
-                priority
-                quality={85}
-                sizes="(min-width: 1024px) 52vw, 100vw"
-                className="object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </Container>
-    </Section>
+        </Container>
+      </Section>
+    </div>
   );
 }
