@@ -28,7 +28,7 @@ export function LabHero() {
       {/* 背景画像 + 左→右白グラデオーバーレイ */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <Image
-          src="/images/hero/lab-hero-jp-3team.jpg"
+          src="/images/hero/lab-hero-bg.png"
           alt=""
           fill
           priority
