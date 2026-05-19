@@ -63,16 +63,11 @@ export function LabPains() {
                 key={pain.number}
                 className="flex flex-col rounded-[12px] bg-white border border-border p-7 md:p-8"
               >
-                <p className="mb-3 font-serif text-2xl md:text-3xl font-bold text-brand-red/50 leading-none">
-                  {pain.number}
-                </p>
-                <h3 className="mb-3 font-bold text-[15px] md:text-base text-ink leading-[1.5] whitespace-pre-line">
-                  {pain.title}
-                </h3>
-                <p className="text-stone text-[12px] md:text-[13px] leading-[1.85] mb-6 flex-1">
-                  {pain.description}
-                </p>
-                <div className="flex justify-end">
+                {/* 上段：番号 + アイコンを横並び（番号とアイコンの中心を揃える） */}
+                <div className="mb-4 flex items-center justify-between">
+                  <p className="font-serif text-2xl md:text-3xl font-bold text-brand-red/50 leading-none">
+                    {pain.number}
+                  </p>
                   <span
                     className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-tint-pink/60"
                     aria-hidden="true"
@@ -80,6 +75,16 @@ export function LabPains() {
                     <Icon className="h-5 w-5 text-brand-red/70" strokeWidth={1.3} />
                   </span>
                 </div>
+
+                {/* 中段：タイトル */}
+                <h3 className="mb-3 font-bold text-[15px] md:text-base text-ink leading-[1.5] whitespace-pre-line">
+                  {pain.title}
+                </h3>
+
+                {/* 下段：本文 */}
+                <p className="text-stone text-[12px] md:text-[13px] leading-[1.85]">
+                  {pain.description}
+                </p>
               </li>
             );
           })}
