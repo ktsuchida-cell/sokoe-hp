@@ -74,11 +74,11 @@ export function LabBusinessExamples() {
                 key={example.title}
                 className="flex flex-col items-center text-center rounded-[14px] bg-white border border-border p-4 md:p-5 transition-shadow hover:shadow-md"
               >
-                <Icon className="mb-3 h-7 w-7 text-charcoal" strokeWidth={1.4} />
-                <h3 className="mb-1.5 font-bold text-[13px] md:text-[14px] text-ink leading-snug">
+                <Icon className="mb-3 h-8 w-8 text-charcoal" strokeWidth={1.4} />
+                <h3 className="mb-1.5 font-bold text-[15px] md:text-base text-ink leading-snug">
                   {example.title}
                 </h3>
-                <p className="text-stone text-[11px] md:text-[12px] leading-[1.7]">
+                <p className="text-stone text-[13px] md:text-[14px] leading-[1.7]">
                   {example.description}
                 </p>
               </li>
