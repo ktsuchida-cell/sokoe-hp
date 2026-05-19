@@ -82,7 +82,7 @@ export function LabProcess() {
               <Fragment key={step.number}>
                 <li className="flex flex-col items-center text-center">
                   <span
-                    className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-full bg-tint-pink/70 font-serif text-base font-bold text-brand-red"
+                    className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-full bg-tint-pink/70 font-serif text-2xl font-bold leading-none text-brand-red"
                     aria-hidden="true"
                   >
                     {step.number}
