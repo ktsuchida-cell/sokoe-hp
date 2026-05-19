@@ -48,7 +48,7 @@ export function LabHero() {
         />
       </div>
 
-      <Section spacing="lg" className="!bg-transparent">
+      <Section spacing="sm" className="!bg-transparent !pt-8 md:!pt-10">
         <Container>
           {/*
             見出し 3 行固定。最長行「"使われ続けるAI"をつくる。」が約 14 全角字
