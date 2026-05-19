@@ -45,7 +45,7 @@ const capabilities: Capability[] = [
  */
 export function LabCapabilities() {
   return (
-    <Section variant="soft" spacing="lg" bordered>
+    <Section spacing="lg" bordered>
       <Container>
         <div className="text-center mb-12 md:mb-16">
           <Heading level="h2" serif>
