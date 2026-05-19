@@ -2,11 +2,12 @@ import { DayAboutFounder } from '@/components/DayAboutFounder';
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
 import { JsonLd } from '@/components/JsonLd';
+import { LabCapabilities } from '@/components/LabCapabilities';
+import { LabCurriculum } from '@/components/LabCurriculum';
 import { LabFAQ } from '@/components/LabFAQ';
 import { LabHero } from '@/components/LabHero';
 import { LabLastCTA } from '@/components/LabLastCTA';
 import { LabPains } from '@/components/LabPains';
-import { LabPhilosophy } from '@/components/LabPhilosophy';
 import { LabProcess } from '@/components/LabProcess';
 import { LabServices } from '@/components/LabServices';
 import { labFaqsForSchema } from '@/lib/labFaqs';
@@ -74,7 +75,8 @@ export default function ConsultingPage() {
       <main>
         <LabHero />
         <LabPains />
-        <LabPhilosophy />
+        <LabCapabilities />
+        <LabCurriculum />
         <LabServices />
         <LabProcess />
         <DayAboutFounder />
