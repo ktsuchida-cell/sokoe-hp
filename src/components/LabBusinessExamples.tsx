@@ -58,7 +58,7 @@ const examples: Example[] = [
  */
 export function LabBusinessExamples() {
   return (
-    <Section spacing="lg" bordered>
+    <Section variant="tint-pink" spacing="lg" bordered>
       <Container>
         <div className="text-center mb-12 md:mb-16">
           <Heading level="h2" serif>
