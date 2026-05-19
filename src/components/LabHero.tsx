@@ -85,7 +85,7 @@ export function LabHero() {
               style={{ boxShadow: '0 20px 60px rgba(0, 0, 0, 0.08)' }}
             >
               <Image
-                src="/images/hero/lab-hero-team-laptop.jpg"
+                src="/images/hero/lab-hero-medical-meeting.jpg"
                 alt="医療介護の現場で AI 活用を進めるチーム"
                 fill
                 priority
