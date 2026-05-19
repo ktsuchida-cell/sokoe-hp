@@ -1,10 +1,11 @@
-import { DayAboutFounder } from '@/components/DayAboutFounder';
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
 import { JsonLd } from '@/components/JsonLd';
+import { LabBusinessExamples } from '@/components/LabBusinessExamples';
 import { LabCapabilities } from '@/components/LabCapabilities';
 import { LabCurriculum } from '@/components/LabCurriculum';
 import { LabFAQ } from '@/components/LabFAQ';
+import { LabFounder } from '@/components/LabFounder';
 import { LabHero } from '@/components/LabHero';
 import { LabLastCTA } from '@/components/LabLastCTA';
 import { LabPains } from '@/components/LabPains';
@@ -79,7 +80,8 @@ export default function ConsultingPage() {
         <LabCurriculum />
         <LabServices />
         <LabProcess />
-        <DayAboutFounder />
+        <LabBusinessExamples />
+        <LabFounder />
         <LabFAQ />
         <LabLastCTA />
       </main>
