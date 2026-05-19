@@ -2,8 +2,9 @@
 
 import { Button } from '@/components/Button';
 import { Container } from '@/components/Container';
+import { Logo } from '@/components/Logo';
 import { cn } from '@/lib/cn';
-import { Menu, Sparkles, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
@@ -41,17 +42,16 @@ export function LabHeader() {
       <header className="w-full bg-white border-b border-border">
         <Container>
           <div className="flex items-center justify-between h-16">
-            {/* ─── 左：ロゴ ─── */}
-            <Link href="/consulting/" className="flex items-center gap-2.5">
-              <span
-                className="inline-flex h-8 w-8 items-center justify-center rounded-md bg-brand-red"
-                aria-hidden="true"
-              >
-                <Sparkles className="h-4 w-4 text-white" strokeWidth={2.25} />
-              </span>
-              <span className="flex flex-col leading-tight">
-                <span className="font-serif text-[15px] font-bold text-ink">sokoe AI Lab</span>
-                <span className="text-[10px] text-mid font-medium">
+            {/* ─── 左：sokoe ロゴ + AI Lab サブテキスト ─── */}
+            <Link
+              href="/consulting/"
+              className="flex items-center gap-3"
+              aria-label="sokoe AI Lab ホーム"
+            >
+              <Logo variant="lockup-horizontal" theme="default" height={32} priority />
+              <span className="hidden md:flex flex-col leading-tight border-l border-border pl-3">
+                <span className="font-serif text-[13px] font-bold text-ink">AI Lab</span>
+                <span className="text-[10px] text-mid font-medium whitespace-nowrap">
                   医療・介護向けAIコンサルティング / AI研修
                 </span>
               </span>
@@ -112,13 +112,14 @@ export function LabHeader() {
         <div className="flex items-center justify-between px-6 h-16 border-b border-border">
           <Link
             href="/consulting/"
-            className="flex items-center gap-2"
+            className="flex items-center gap-3"
             onClick={() => setMobileOpen(false)}
+            aria-label="sokoe AI Lab ホーム"
           >
-            <span className="inline-flex h-8 w-8 items-center justify-center rounded-md bg-brand-red">
-              <Sparkles className="h-4 w-4 text-white" strokeWidth={2.25} />
+            <Logo variant="lockup-horizontal" theme="default" height={32} priority />
+            <span className="font-serif text-[12px] font-bold text-ink border-l border-border pl-2">
+              AI Lab
             </span>
-            <span className="font-serif text-[15px] font-bold text-ink">sokoe AI Lab</span>
           </Link>
           <button
             type="button"
