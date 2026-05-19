@@ -50,11 +50,19 @@ export function LabHero() {
 
       <Section spacing="lg" className="!bg-transparent">
         <Container>
-          <div className="max-w-[600px]">
+          {/*
+            見出し 3 行固定。最長行「"使われ続けるAI"をつくる。」が約 14 全角字
+            相当なので、各ブレークポイントで折り返さないサイズに調整。
+              mobile (~335px): 22px (22 × 14 = 308)
+              sm  (~600px):    28px
+              md  (~720px):    34px
+              lg/xl (~720-720): 38 / 42
+          */}
+          <div className="max-w-[720px]">
             <Heading
               level="h1"
               serif
-              className="mb-6 !text-[30px] sm:!text-[38px] md:!text-[44px] lg:!text-[44px] xl:!text-[52px] !leading-[1.35] !font-bold tracking-tight"
+              className="mb-6 !text-[22px] sm:!text-[28px] md:!text-[34px] lg:!text-[38px] xl:!text-[42px] !leading-[1.4] !font-bold tracking-tight"
             >
               忙しいAIは怖くて使えない、
               <br />
