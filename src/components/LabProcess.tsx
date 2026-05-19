@@ -21,31 +21,31 @@ type ProcessStep = {
 
 const processSteps: ProcessStep[] = [
   {
-    number: '01',
+    number: '1',
     icon: MessageCircle,
     title: 'お問い合わせ・\nヒアリング',
     description: '課題や状況を丁寧にお伺いします。',
   },
   {
-    number: '02',
+    number: '2',
     icon: ClipboardList,
     title: '現場確認・\n課題整理',
     description: '現場ヒアリングで課題を明確化します。',
   },
   {
-    number: '03',
+    number: '3',
     icon: Route,
     title: '施策設計・\nロードマップ作成',
     description: '優先施策とロードマップをご提案します。',
   },
   {
-    number: '04',
+    number: '4',
     icon: UserCheck,
     title: '研修 / 実装支援',
     description: '研修実施と実装支援で現場での活用を支援します。',
   },
   {
-    number: '05',
+    number: '5',
     icon: Repeat,
     title: '定着支援・\n改善伴走',
     description: '運用定着と改善を継続的に伴走します。',
@@ -82,26 +82,26 @@ export function LabProcess() {
               <Fragment key={step.number}>
                 <li className="flex flex-col items-center text-center">
                   <span
-                    className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-tint-pink/70 font-serif text-[13px] font-bold text-brand-red"
+                    className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-full bg-tint-pink/70 font-serif text-base font-bold text-brand-red"
                     aria-hidden="true"
                   >
                     {step.number}
                   </span>
-                  <h3 className="font-bold text-[13px] md:text-sm text-ink leading-[1.45] mb-2 whitespace-pre-line">
+                  <h3 className="font-bold text-[15px] md:text-base text-ink leading-[1.45] mb-2 whitespace-pre-line">
                     {step.title}
                   </h3>
-                  <p className="text-stone text-[11px] md:text-[12px] leading-[1.75] mb-4">
+                  <p className="text-stone text-[13px] md:text-[14px] leading-[1.75] mb-4">
                     {step.description}
                   </p>
-                  <Icon className="h-7 w-7 text-charcoal" strokeWidth={1.4} />
+                  <Icon className="h-8 w-8 text-charcoal" strokeWidth={1.4} />
                 </li>
 
                 {i < processSteps.length - 1 && (
                   <li
-                    className="hidden lg:flex items-center justify-center pt-3"
+                    className="hidden lg:flex items-center justify-center self-stretch"
                     aria-hidden="true"
                   >
-                    <ChevronRight className="h-4 w-4 text-brand-red" strokeWidth={2.5} />
+                    <ChevronRight className="h-5 w-5 text-brand-red" strokeWidth={2.5} />
                   </li>
                 )}
               </Fragment>
